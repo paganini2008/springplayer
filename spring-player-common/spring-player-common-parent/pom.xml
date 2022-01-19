@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.paganini2008.springplayer</groupId>
+		<artifactId>spring-player-parent</artifactId>
+		<version>1.0.0-RELEASE</version>
+	</parent>
+	<artifactId>spring-player-common-parent</artifactId>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-player.version>1.0.0-RELEASE</spring-player.version>
+	</properties>
+	
+	<modules>
+		<module>../spring-player-common</module>
+		<module>../spring-player-common-redis</module>
+		<module>../spring-player-common-kafka</module>
+		<module>../spring-player-common-ampq</module>
+		<module>../spring-player-common-log</module>
+		<module>../spring-player-common-jdbc</module>
+		<module>../spring-player-common-jpa</module>
+		<module>../spring-player-common-validation</module>
+		<module>../spring-player-common-elasticsearch</module>
+		<module>../spring-player-common-mybatis</module>
+		<module>../spring-player-common-cache</module>
+		<module>../spring-player-common-feign</module>
+		<module>../spring-player-common-transaction</module>
+		<module>../spring-player-common-i18n</module>
+		<module>../spring-player-common-file</module>
+		<module>../spring-player-common-id</module>
+		<module>../spring-player-common-sentinel</module>
+		<module>../spring-player-common-upms</module>
+		<module>../spring-player-common-oauth</module>
+		<module>../spring-player-common-xxljob</module>
+	</modules>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-redis</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-kafka</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-jdbc</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-jpa</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-mybatis</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-cache</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-oauth</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-feign</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-upms</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-i18n</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
