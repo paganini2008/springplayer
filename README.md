@@ -1,5 +1,5 @@
 # Springplayer Project
-### SpringPlayer is a scaffolding work for developing SpringCloud Framework
+### SpringPlayer is a scaffolding project for developing SpringCloud Framework. It can help developer raise developing efficiency quickly.
 
 ``` shell
 springplayer
