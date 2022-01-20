@@ -16,12 +16,12 @@
 		<java.version>1.8</java.version>
 		<spring-player.version>1.0.0-RELEASE</spring-player.version>
 	</properties>
-	
+
 	<modules>
 		<module>../spring-player-common-data</module>
 		<module>../spring-player-common-redis</module>
 		<module>../spring-player-common-kafka</module>
-		<module>../spring-player-common-ampq</module>
+		<module>../spring-player-common-amqp</module>
 		<module>../spring-player-common-log</module>
 		<module>../spring-player-common-jdbc</module>
 		<module>../spring-player-common-jpa</module>
@@ -39,7 +39,7 @@
 		<module>../spring-player-common-oauth</module>
 		<module>../spring-player-common-xxljob</module>
 	</modules>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -51,6 +51,12 @@
 			<dependency>
 				<groupId>com.github.paganini2008.springplayer</groupId>
 				<artifactId>spring-player-common-redis</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-amqp</artifactId>
 				<version>${spring-player.version}</version>
 			</dependency>
 
@@ -105,6 +111,24 @@
 			<dependency>
 				<groupId>com.github.paganini2008.springplayer</groupId>
 				<artifactId>spring-player-common-i18n</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-id</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-sentinel</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-validation</artifactId>
 				<version>${spring-player.version}</version>
 			</dependency>
 
