@@ -7,7 +7,7 @@
 		<artifactId>spring-player-webmvc-dependencies</artifactId>
 		<version>1.0.0-RELEASE</version>
 	</parent>
-	<artifactId>sp-upms-service</artifactId>
+	<artifactId>spring-player-upms-service</artifactId>
 
 	<dependencies>
 

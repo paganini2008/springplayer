@@ -7,7 +7,7 @@
 		<artifactId>spring-player-webmvc-dependencies</artifactId>
 		<version>1.0.0-RELEASE</version>
 	</parent>
-	<artifactId>spring-play-i18n-service</artifactId>
+	<artifactId>spring-player-i18n-service</artifactId>
 
 	<dependencies>
 
