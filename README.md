@@ -1,4 +1,6 @@
-# springplayer
+# Springplayer Project
+### SpringPlayer is a scaffolding work for developing SpringCloud Framework
+
 ``` shell
 springplayer
 ├── spring-player-dependencies
