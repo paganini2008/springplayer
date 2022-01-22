@@ -43,7 +43,7 @@ public @interface EnableEnhancedFeignClients {
 	 * package names.
 	 * @return the array of 'basePackages'.
 	 */
-	String[] basePackages() default { "com.chinapex.cdp" };
+	String[] basePackages() default {};
 
 	/**
 	 * Type-safe alternative to {@link #basePackages()} for specifying the packages to
