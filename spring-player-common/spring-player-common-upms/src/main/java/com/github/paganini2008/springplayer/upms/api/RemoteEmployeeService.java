@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.feign.SpFeignConfig;
-import com.github.paganini2008.springplayer.upms.model.Employee;
+import com.github.paganini2008.springplayer.upms.vo.EmployeeVO;
 
 /**
  * 
@@ -19,6 +19,6 @@ import com.github.paganini2008.springplayer.upms.model.Employee;
 public interface RemoteEmployeeService {
 
 	@PostMapping("/emp/find/{username}")
-	ApiResult<Employee> findEmployeeByName(@PathVariable String username);
+	ApiResult<EmployeeVO> findEmployeeByName(@PathVariable String username);
 
 }

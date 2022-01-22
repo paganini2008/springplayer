@@ -22,12 +22,6 @@
 
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
-			<artifactId>spring-player-common-mybatis</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-feign</artifactId>
 		</dependency>
 

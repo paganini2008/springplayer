@@ -1,122 +1,70 @@
-2022-01-21 14:41:05 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
-2022-01-21 14:41:06 [INFO ] c.g.p.s.upms.UpmsApplication - No active profile set, falling back to default profiles: default
-2022-01-21 14:41:07 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-01-21 14:41:07 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-01-21 14:41:07 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
-2022-01-21 14:41:07 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2022-01-21 14:41:07 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=29c00535-faef-3a63-8f02-5555c60b49a5
-2022-01-21 14:41:07 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.RedisPubSubAutoConfiguration' of type [com.github.paganini2008.springplayer.redis.RedisPubSubAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-01-21 14:41:08 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2022-01-21 14:41:08 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2022-01-21 14:41:08 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1495 ms
-2022-01-21 14:41:08 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2022-01-21 14:41:08 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2022-01-21 14:41:08 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@32f96bba
-2022-01-21 14:41:09 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
-2022-01-21 14:41:09 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2022-01-21 14:41:09 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2022-01-21 14:41:11 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2022-01-21 14:41:12 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2022-01-21 14:41:12 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
-2022-01-21 14:41:12 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2022-01-21 14:41:12 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-2022-01-21 14:41:12 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2022-01-21 14:41:12 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2022-01-21 14:41:12 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
-2022-01-21 14:41:12 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
-2022-01-21 14:41:13 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
-2022-01-21 14:41:13 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
-2022-01-21 14:41:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
-2022-01-21 14:41:13 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1642747273573 with initial instances count: 0
-2022-01-21 14:41:13 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application SPRING-PLAYER-UPMS-SERVICE with eureka with status UP
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1642747273575, current=UP, previous=STARTING]
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_SPRING-PLAYER-UPMS-SERVICE/localhost:spring-player-upms-service:5050: registering service...
-2022-01-21 14:41:13 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
-2022-01-21 14:41:13 [INFO ] org.xnio - XNIO version 3.8.0.Final
-2022-01-21 14:41:13 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
-2022-01-21 14:41:13 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
-2022-01-21 14:41:13 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 5050 (http)
-2022-01-21 14:41:13 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 5050
-2022-01-21 14:41:13 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_SPRING-PLAYER-UPMS-SERVICE/localhost:spring-player-upms-service:5050 - registration status: 204
-2022-01-21 14:41:14 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
-2022-01-21 14:41:15 [INFO ] c.g.p.s.upms.UpmsApplication - Started UpmsApplication in 11.415 seconds (JVM running for 11.858)
-2022-01-21 14:41:21 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2022-01-21 14:41:21 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2022-01-21 14:41:21 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2022-01-21 14:41:21 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
-2022-01-21 14:41:21 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2022-01-21 14:41:21 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: false
-2022-01-21 14:41:21 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2022-01-21 14:41:21 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
-2022-01-21 14:41:45 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-21 14:41:45 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2022-01-21 14:41:45 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-2022-01-21 14:41:45 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2022-01-21 14:41:45 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2022-01-21 14:46:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 14:51:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 14:56:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:01:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:06:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:11:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:16:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:21:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:26:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:31:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:36:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:41:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:46:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:51:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 15:56:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:01:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:06:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:11:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:16:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:21:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:26:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:31:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:36:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:41:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:46:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:51:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 16:56:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:01:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:06:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:11:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:16:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:21:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:26:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:31:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:36:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:41:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:46:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:51:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 17:56:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:01:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:06:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:11:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:16:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:21:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:26:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:31:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:36:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:41:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:46:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:51:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 18:56:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 19:01:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 19:06:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 19:11:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 19:16:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 19:21:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2022-01-21 19:26:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 19:28:58 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-01-22 19:28:59 [INFO ] c.g.p.s.upms.UpmsApplication - No active profile set, falling back to default profiles: default
+2022-01-22 19:29:00 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-01-22 19:29:00 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-01-22 19:29:00 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2022-01-22 19:29:01 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-01-22 19:29:01 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=1d39ec0f-75e7-31e0-9790-b5f3cf5c9c17
+2022-01-22 19:29:01 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.RedisPubSubAutoConfiguration' of type [com.github.paganini2008.springplayer.redis.RedisPubSubAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-22 19:29:02 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-01-22 19:29:02 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-01-22 19:29:02 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2440 ms
+2022-01-22 19:29:02 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-01-22 19:29:02 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-01-22 19:29:02 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@34be065a
+2022-01-22 19:29:04 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-01-22 19:29:04 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-01-22 19:29:04 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-01-22 19:29:06 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-01-22 19:29:07 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-01-22 19:29:07 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-01-22 19:29:07 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-01-22 19:29:07 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-01-22 19:29:07 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-01-22 19:29:07 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-01-22 19:29:08 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-01-22 19:29:08 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-01-22 19:29:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-01-22 19:29:08 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1642850948556 with initial instances count: 0
+2022-01-22 19:29:08 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application SPRING-PLAYER-UPMS-SERVICE with eureka with status UP
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1642850948560, current=UP, previous=STARTING]
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_SPRING-PLAYER-UPMS-SERVICE/DESKTOP-JVEFRNA:spring-player-upms-service:5050: registering service...
+2022-01-22 19:29:08 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-01-22 19:29:08 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-01-22 19:29:08 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-01-22 19:29:08 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-01-22 19:29:08 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_SPRING-PLAYER-UPMS-SERVICE/DESKTOP-JVEFRNA:spring-player-upms-service:5050 - registration status: 204
+2022-01-22 19:29:08 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 5050 (http)
+2022-01-22 19:29:08 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 5050
+2022-01-22 19:29:10 [INFO ] c.g.p.s.upms.UpmsApplication - Started UpmsApplication in 12.625 seconds (JVM running for 13.319)
+2022-01-22 19:29:16 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-01-22 19:29:16 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-01-22 19:29:16 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-01-22 19:29:16 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-01-22 19:29:16 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-01-22 19:29:16 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2022-01-22 19:29:16 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-01-22 19:29:16 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-01-22 19:29:42 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-22 19:29:42 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-01-22 19:29:42 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2022-01-22 19:29:42 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-01-22 19:29:42 [INFO ] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-01-22 19:34:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 19:39:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 19:44:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 19:49:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 19:54:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 19:59:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 20:04:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-01-22 20:09:08 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
