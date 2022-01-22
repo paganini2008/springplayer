@@ -28,6 +28,11 @@ public abstract class BizException extends RuntimeException implements Exception
 	}
 
 	@Override
+	public String getMessage() {
+		return super.getMessage();
+	}
+
+	@Override
 	public ErrorCode getErrorCode() {
 		return errorCode;
 	}

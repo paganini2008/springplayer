@@ -1,0 +1,163 @@
+2022-01-21 15:29:45 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.github.paganini2008.springplayer.oauth.RestClientAccessDeniedHandler required a bean of type 'org.codehaus.jackson.map.ObjectMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.codehaus.jackson.map.ObjectMapper' in your configuration.
+
+2022-01-21 17:26:56 [ERROR] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServerConfig' defined in file [D:\data\spring-player\spring-player-midware\spring-player-oauth-service\target\classes\com\github\paganini2008\springplayer\oauth\config\AuthServerConfig.class]: Unsatisfied dependency expressed through constructor parameter 8; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.github.paganini2008.springplayer.i18n.api.RemoteI18nService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Method RemoteI18nService#getMessage(String,String,String) not annotated with HTTP method type (ex. GET, POST)
+Warnings:
+- 
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:799)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:228)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1208)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:402)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.github.paganini2008.springplayer.oauth.AuthServerApplication.main(AuthServerApplication.java:37)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.github.paganini2008.springplayer.i18n.api.RemoteI18nService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Method RemoteI18nService#getMessage(String,String,String) not annotated with HTTP method type (ex. GET, POST)
+Warnings:
+- 
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:176)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:101)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1828)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getObjectForBeanInstance(AbstractAutowireCapableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1532)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:886)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:790)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalStateException: Method RemoteI18nService#getMessage(String,String,String) not annotated with HTTP method type (ex. GET, POST)
+Warnings:
+- 
+	at feign.Util.checkState(Util.java:129)
+	at feign.Contract$BaseContract.parseAndValidateMetadata(Contract.java:100)
+	at org.springframework.cloud.openfeign.support.SpringMvcContract.parseAndValidateMetadata(SpringMvcContract.java:207)
+	at feign.Contract$BaseContract.parseAndValidateMetadata(Contract.java:62)
+	at feign.ReflectiveFeign$ParseHandlersByName.apply(ReflectiveFeign.java:151)
+	at feign.ReflectiveFeign.newInstance(ReflectiveFeign.java:49)
+	at feign.Feign$Builder.target(Feign.java:269)
+	at org.springframework.cloud.openfeign.HystrixTargeter.target(HystrixTargeter.java:38)
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.loadBalance(FeignClientFactoryBean.java:352)
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.getTarget(FeignClientFactoryBean.java:388)
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.getObject(FeignClientFactoryBean.java:361)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:169)
+	... 32 common frames omitted
+2022-01-21 17:31:02 [ERROR] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServerConfig' defined in file [D:\data\spring-player\spring-player-midware\spring-player-oauth-service\target\classes\com\github\paganini2008\springplayer\oauth\config\AuthServerConfig.class]: Unsatisfied dependency expressed through constructor parameter 8; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.github.paganini2008.springplayer.i18n.api.RemoteI18nService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Method has too many Body parameters: public abstract java.lang.String com.github.paganini2008.springplayer.i18n.api.RemoteI18nService.getMessage(java.lang.String,java.lang.String,java.lang.String)
+Warnings:
+- 
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:799)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:228)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1208)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:402)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.github.paganini2008.springplayer.oauth.AuthServerApplication.main(AuthServerApplication.java:37)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.github.paganini2008.springplayer.i18n.api.RemoteI18nService': FactoryBean threw exception on object creation; nested exception is java.lang.IllegalStateException: Method has too many Body parameters: public abstract java.lang.String com.github.paganini2008.springplayer.i18n.api.RemoteI18nService.getMessage(java.lang.String,java.lang.String,java.lang.String)
+Warnings:
+- 
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:176)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:101)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1828)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getObjectForBeanInstance(AbstractAutowireCapableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1532)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1270)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:886)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:790)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalStateException: Method has too many Body parameters: public abstract java.lang.String com.github.paganini2008.springplayer.i18n.api.RemoteI18nService.getMessage(java.lang.String,java.lang.String,java.lang.String)
+Warnings:
+- 
+	at feign.Util.checkState(Util.java:129)
+	at feign.Contract$BaseContract.parseAndValidateMetadata(Contract.java:127)
+	at org.springframework.cloud.openfeign.support.SpringMvcContract.parseAndValidateMetadata(SpringMvcContract.java:207)
+	at feign.Contract$BaseContract.parseAndValidateMetadata(Contract.java:62)
+	at feign.ReflectiveFeign$ParseHandlersByName.apply(ReflectiveFeign.java:151)
+	at feign.ReflectiveFeign.newInstance(ReflectiveFeign.java:49)
+	at feign.Feign$Builder.target(Feign.java:269)
+	at org.springframework.cloud.openfeign.HystrixTargeter.target(HystrixTargeter.java:38)
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.loadBalance(FeignClientFactoryBean.java:352)
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.getTarget(FeignClientFactoryBean.java:388)
+	at org.springframework.cloud.openfeign.FeignClientFactoryBean.getObject(FeignClientFactoryBean.java:361)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:169)
+	... 32 common frames omitted
+2022-01-21 18:33:28 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 8 of constructor in com.github.paganini2008.springplayer.oauth.config.AuthServerConfig required a bean of type 'com.github.paganini2008.springplayer.security.ErrorMessageSource' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.github.paganini2008.springplayer.security.ErrorMessageSource' in your configuration.
+
+2022-01-21 18:56:07 [ERROR] c.g.p.s.webmvc.GlobalErrorController - ErrorAttributes: {timestamp=Fri Jan 21 18:56:07 CST 2022, status=401, error=Unauthorized, message=, path=/oauth/check_token}
+2022-01-21 18:56:22 [ERROR] c.g.p.s.webmvc.GlobalErrorController - ErrorAttributes: {timestamp=Fri Jan 21 18:56:22 CST 2022, status=401, error=Unauthorized, message=, path=/oauth/check_token}
+2022-01-21 19:24:59 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 6 of constructor in com.github.paganini2008.springplayer.oauth.config.AuthServerConfig required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+

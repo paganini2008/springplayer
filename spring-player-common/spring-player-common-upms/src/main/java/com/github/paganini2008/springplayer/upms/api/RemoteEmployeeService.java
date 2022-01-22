@@ -15,7 +15,7 @@ import com.github.paganini2008.springplayer.upms.model.Employee;
  * @author Fred Feng
  * @version 1.0.0
  */
-@FeignClient(contextId = "remoteEmployeeService", value = "sp-upms-service", configuration = SpFeignConfig.class)
+@FeignClient(contextId = "remoteEmployeeService", value = "spring-player-upms-service", configuration = SpFeignConfig.class)
 public interface RemoteEmployeeService {
 
 	@PostMapping("/emp/find/{username}")

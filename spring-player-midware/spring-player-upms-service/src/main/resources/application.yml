@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: sp-upms-service
+    name: spring-player-upms-service
   redis:
     port: 6379
     host: localhost

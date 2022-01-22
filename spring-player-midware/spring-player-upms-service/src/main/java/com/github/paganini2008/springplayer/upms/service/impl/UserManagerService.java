@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.paganini2008.devtools.collection.CollectionUtils;
 import com.github.paganini2008.springplayer.common.SimpleErrorCode;
-import com.github.paganini2008.springplayer.upms.SpUpmsException;
+import com.github.paganini2008.springplayer.upms.UpmsException;
 import com.github.paganini2008.springplayer.upms.model.Dept;
 import com.github.paganini2008.springplayer.upms.model.Employee;
 import com.github.paganini2008.springplayer.upms.model.Enterprise;
@@ -63,7 +63,7 @@ public class UserManagerService {
 	public UserVO getUserInfo(String username) {
 		Employee employee = employeeService.findEmployeeByName(username);
 		if (employee == null) {
-			throw new SpUpmsException(new SimpleErrorCode("EMPLOYEE_NOT_FOUND", "10001"));
+			throw new UpmsException(new SimpleErrorCode("EMPLOYEE_NOT_FOUND", "10001"));
 		}
 		return getUserInfo(employee.getId());
 	}

@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
  * @version 1.0.0
  */
 public interface ExceptionDescriptor {
+	
+	String getMessage();
 
 	ErrorCode getErrorCode();
 	

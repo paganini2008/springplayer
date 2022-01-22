@@ -38,6 +38,9 @@
 		<module>../spring-player-common-upms</module>
 		<module>../spring-player-common-oauth</module>
 		<module>../spring-player-common-xxljob</module>
+		<module>../spring-player-common-apollo</module>
+		<module>../spring-player-common-email</module>
+		<module>../spring-player-common-dingtalk</module>
 	</modules>
 
 	<dependencyManagement>
@@ -129,6 +132,18 @@
 			<dependency>
 				<groupId>com.github.paganini2008.springplayer</groupId>
 				<artifactId>spring-player-common-validation</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-email</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-dingtalk</artifactId>
 				<version>${spring-player.version}</version>
 			</dependency>
 

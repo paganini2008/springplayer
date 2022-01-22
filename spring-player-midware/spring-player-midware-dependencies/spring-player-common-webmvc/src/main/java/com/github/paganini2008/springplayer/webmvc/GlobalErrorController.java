@@ -2,7 +2,6 @@ package com.github.paganini2008.springplayer.webmvc;
 
 import static com.github.paganini2008.springplayer.common.Constants.TIMESTAMP;
 
-import java.time.LocalDateTime;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +18,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.paganini2008.devtools.ExceptionUtils;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 
@@ -39,9 +37,6 @@ public class GlobalErrorController extends AbstractErrorController {
 	private static final String ERROR_PATH = "/error";
 
 	@Autowired
-	private ApiExceptionContext ctx;
-
-	@Autowired
 	public GlobalErrorController(ErrorAttributes errorAttributes) {
 		super(errorAttributes);
 	}
@@ -52,22 +47,21 @@ public class GlobalErrorController extends AbstractErrorController {
 	}
 
 	@RequestMapping(value = ERROR_PATH, produces = { MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity<ApiResult<Object>> error(HttpServletRequest request, HttpServletResponse response, Throwable e) {
-		if (e != null) {
-			log.error(e.getMessage(), e);
-			ctx.getExceptionTraces()
-					.add(new ThrowableInfo(request.getServletPath(), e.getMessage(), ExceptionUtils.toArray(e), LocalDateTime.now()));
+	public ResponseEntity<ApiResult<Object>> error(HttpServletRequest request, HttpServletResponse response) {
+		final Map<String, Object> errorAttributes = getErrorAttributes(request, ErrorAttributeOptions.of(Include.STACK_TRACE));
+		log.error("ErrorAttributes: " + errorAttributes.toString());
+		HttpStatus httpStatus = HttpStatus.valueOf(response.getStatus());
+		String message = (String) errorAttributes.get("message");
+		if (httpStatus.isError() && StringUtils.isBlank(message)) {
+			message = (String) errorAttributes.getOrDefault("error", "内部系统异常");
 		}
-
-		final Map<String, Object> body = getErrorAttributes(request, ErrorAttributeOptions.of(Include.STACK_TRACE));
-		log.error("ErrorAttributes: " + body.toString());
-		ApiResult<Object> result = ApiResult.failed("系统内部错误", e.getMessage());
-		result.setRequestPath(request.getServletPath());
+		ApiResult<Object> result = ApiResult.failed(message);
+		result.setRequestPath((String) errorAttributes.getOrDefault("path", request.getServletPath()));
 		if (StringUtils.isNotBlank(request.getHeader(TIMESTAMP))) {
 			long timestamp = Long.parseLong(request.getHeader(TIMESTAMP));
 			result.setElapsed(System.currentTimeMillis() - timestamp);
 		}
-		return new ResponseEntity<ApiResult<Object>>(result, HttpStatus.valueOf(response.getStatus()));
+		return new ResponseEntity<ApiResult<Object>>(result, httpStatus);
 	}
 
 }

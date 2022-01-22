@@ -1,0 +1,3 @@
+com.github.paganini2008.springplayer.feign.EnhancedFeignAutoConfiguration=\
+  com.github.paganini2008.springplayer.upms.api.RemoteEmployeeService,\
+  com.github.paganini2008.springplayer.upms.api.RemoteUserService

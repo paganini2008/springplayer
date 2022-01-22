@@ -15,7 +15,7 @@ import com.github.paganini2008.springplayer.upms.vo.UserVO;
  * @author Fred Feng
  * @version 1.0.0
  */
-@FeignClient(contextId = "remoteUserService", value = "sp-upms-service", configuration = SpFeignConfig.class)
+@FeignClient(contextId = "remoteUserService", value = "spring-player-upms-service", configuration = SpFeignConfig.class)
 public interface RemoteUserService {
 	
 	@PostMapping("/user/info/{username}")

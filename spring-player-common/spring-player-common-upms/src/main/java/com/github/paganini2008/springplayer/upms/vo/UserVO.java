@@ -17,6 +17,9 @@ public class UserVO {
 	private String username;
 	private String password;
 	private Boolean enabled;
+	private Boolean accountNonExpired = true;
+	private Boolean credentialsNonExpired = true;
+	private Boolean accountNonLocked = true;
 
 	private EnterpriseVO enterprise;
 	private DeptVO dept;
