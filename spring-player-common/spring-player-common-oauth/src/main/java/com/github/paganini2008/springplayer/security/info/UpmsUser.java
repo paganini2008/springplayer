@@ -10,18 +10,18 @@ import lombok.Setter;
 
 /**
  * 
- * CurrentUser
+ * UpmsUser
  *
  * @author Fred Feng
  * @version 1.0.0
  */
 @Getter
 @Setter
-public class CurrentUser extends User {
+public class UpmsUser extends User {
 
 	private static final long serialVersionUID = 9139995303145562034L;
 
-	public CurrentUser(UserInfo user, Collection<? extends GrantedAuthority> authorities) {
+	public UpmsUser(UserInfo user, Collection<? extends GrantedAuthority> authorities) {
 		super(user.getUsername(), user.getPassword(), user.getEnabled(), user.getAccountNonExpired(), user.getCredentialsNonExpired(),
 				user.getAccountNonLocked(), authorities);
 		this.id = user.getId();

@@ -9,7 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.github.paganini2008.springplayer.security.info.CurrentUser;
+import com.github.paganini2008.springplayer.security.info.UpmsUser;
 
 import lombok.experimental.UtilityClass;
 
@@ -27,15 +27,15 @@ public class SecurityUtils {
 		return SecurityContextHolder.getContext().getAuthentication();
 	}
 
-	public CurrentUser getUser(Authentication authentication) {
+	public UpmsUser getUser(Authentication authentication) {
 		Object principal = authentication.getPrincipal();
-		if (principal instanceof CurrentUser) {
-			return (CurrentUser) principal;
+		if (principal instanceof UpmsUser) {
+			return (UpmsUser) principal;
 		}
 		return null;
 	}
 
-	public CurrentUser currentUser() {
+	public UpmsUser currentUser() {
 		Authentication authentication = getAuthentication();
 		return getUser(authentication);
 	}

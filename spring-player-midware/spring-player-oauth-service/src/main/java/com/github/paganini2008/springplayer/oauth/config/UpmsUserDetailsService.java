@@ -17,7 +17,7 @@ import com.github.paganini2008.devtools.ArrayUtils;
 import com.github.paganini2008.devtools.beans.BeanUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.security.ErrorCodes;
-import com.github.paganini2008.springplayer.security.info.CurrentUser;
+import com.github.paganini2008.springplayer.security.info.UpmsUser;
 import com.github.paganini2008.springplayer.security.info.DeptInfo;
 import com.github.paganini2008.springplayer.security.info.OrgInfo;
 import com.github.paganini2008.springplayer.security.info.PermissionInfo;
@@ -57,7 +57,7 @@ public class UpmsUserDetailsService implements UserDetailsService {
 			Arrays.stream(userInfo.getPermissions()).forEach(permInfo -> authSet.add("PERM_" + permInfo.getCode().toUpperCase()));
 		}
 		Collection<? extends GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(authSet.toArray(new String[0]));
-		CurrentUser user = new CurrentUser(userInfo, authorities);
+		UpmsUser user = new UpmsUser(userInfo, authorities);
 		userDetailsChecker.check(user);
 		return user;
 	}
