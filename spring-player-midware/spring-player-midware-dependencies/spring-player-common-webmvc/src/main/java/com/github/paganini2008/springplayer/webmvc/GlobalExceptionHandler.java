@@ -18,6 +18,7 @@ import com.github.paganini2008.devtools.ExceptionUtils;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.BizException;
+import com.github.paganini2008.springplayer.i18n.I18nUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,13 +40,15 @@ public class GlobalExceptionHandler {
 
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler(BizException.class)
-	public ResponseEntity<ApiResult<?>> handleBizException(HttpServletRequest request, BizException e) throws Exception {
+	public ResponseEntity<ApiResult<?>> handleBizException(HttpServletRequest request, BizException e)
+			throws Exception {
 		if (e != null) {
 			log.error(e.getMessage(), e);
-			ctx.getExceptionTraces()
-					.add(new ThrowableInfo(request.getServletPath(), e.getMessage(), ExceptionUtils.toArray(e), LocalDateTime.now()));
+			ctx.getExceptionTraces().add(new ThrowableInfo(request.getServletPath(), e.getMessage(),
+					ExceptionUtils.toArray(e), LocalDateTime.now()));
 		}
-		ApiResult<Object> result = ApiResult.failed("系统内部错误", I18nUtils.getErrorMessage(e.getErrorCode()));
+		String lang = RequestHeaderContextHolder.getHeader("lang");
+		ApiResult<Object> result = ApiResult.failed("系统内部错误", I18nUtils.getErrorMessage(lang, e.getErrorCode()));
 		result.setRequestPath(request.getServletPath());
 		if (StringUtils.isNotBlank(request.getHeader(TIMESTAMP))) {
 			long timestamp = Long.parseLong(request.getHeader(TIMESTAMP));
@@ -59,8 +62,8 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<ApiResult<?>> handleException(HttpServletRequest request, Exception e) throws Exception {
 		if (e != null) {
 			log.error(e.getMessage(), e);
-			ctx.getExceptionTraces()
-					.add(new ThrowableInfo(request.getServletPath(), e.getMessage(), ExceptionUtils.toArray(e), LocalDateTime.now()));
+			ctx.getExceptionTraces().add(new ThrowableInfo(request.getServletPath(), e.getMessage(),
+					ExceptionUtils.toArray(e), LocalDateTime.now()));
 		}
 
 		ApiResult<Object> result = ApiResult.failed("系统内部错误: " + e.getMessage());

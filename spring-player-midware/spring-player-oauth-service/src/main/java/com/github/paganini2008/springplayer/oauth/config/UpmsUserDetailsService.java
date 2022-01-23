@@ -8,6 +8,7 @@ import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsChecker;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,6 @@ import com.github.paganini2008.devtools.ArrayUtils;
 import com.github.paganini2008.devtools.beans.BeanUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.security.ErrorCodes;
-import com.github.paganini2008.springplayer.security.OpenApiException;
 import com.github.paganini2008.springplayer.security.info.CurrentUser;
 import com.github.paganini2008.springplayer.security.info.DeptInfo;
 import com.github.paganini2008.springplayer.security.info.OrgInfo;
@@ -40,12 +40,13 @@ import lombok.RequiredArgsConstructor;
 public class UpmsUserDetailsService implements UserDetailsService {
 
 	private final RemoteUserService remoteUserService;
+	private final UserDetailsChecker userDetailsChecker;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		ApiResult<UserVO> result = remoteUserService.getUserInfo(username);
 		if (result == null || result.getData() == null) {
-			throw new OpenApiException(ErrorCodes.USER_NOT_FOUND);
+			throw new AuthServerException(ErrorCodes.USER_NOT_FOUND);
 		}
 		UserInfo userInfo = convertToUserInfo(result.getData());
 		Set<String> authSet = new HashSet<>();
@@ -56,7 +57,9 @@ public class UpmsUserDetailsService implements UserDetailsService {
 			Arrays.stream(userInfo.getPermissions()).forEach(permInfo -> authSet.add("PERM_" + permInfo.getCode().toUpperCase()));
 		}
 		Collection<? extends GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(authSet.toArray(new String[0]));
-		return new CurrentUser(userInfo, authorities);
+		CurrentUser user = new CurrentUser(userInfo, authorities);
+		userDetailsChecker.check(user);
+		return user;
 	}
 
 	private UserInfo convertToUserInfo(UserVO user) {

@@ -1,4 +1,4 @@
-package com.github.paganini2008.springplayer.webmvc;
+package com.github.paganini2008.springplayer.i18n;
 
 import java.util.Locale;
 
@@ -17,25 +17,26 @@ import com.github.paganini2008.springplayer.i18n.api.RemoteI18nService;
  */
 public abstract class I18nUtils {
 
-	private static final String BEAN_NAME = "remoteI18nService.FeignClientSpecification";
 	private static final String DEFAULT_LANGUAGE = Locale.getDefault().getLanguage();
 
-	public static String getErrorMessage(ErrorCode errorCode) {
-		String msg = getMessage(errorCode.getMessageKey());
+	public static String getErrorMessage(String lang, ErrorCode errorCode) {
+		String msg = getMessage(lang, errorCode.getMessageKey());
 		if (StringUtils.isBlank(msg)) {
 			msg = errorCode.getDefaultMessage();
 		}
 		return msg;
 	}
 
-	public static String getMessage(String code) {
+	public static String getMessage(String lang, String code) {
 		String applicationName = ApplicationContextUtils.getRequiredProperty("spring.application.name");
-		String lang = RequestHeaderContextHolder.getHeader("lang", DEFAULT_LANGUAGE);
 		return getMessage(applicationName, lang, code);
 	}
 
 	public static String getMessage(String project, String lang, String code) {
-		RemoteI18nService remoteI18nService = ApplicationContextUtils.getBean(BEAN_NAME);
+		if (StringUtils.isBlank(lang)) {
+			lang = DEFAULT_LANGUAGE;
+		}
+		RemoteI18nService remoteI18nService = ApplicationContextUtils.getBean(RemoteI18nService.class);
 		ApiResult<String> result = remoteI18nService.getMessage(project, lang, code);
 		return result.getData();
 	}

@@ -1,11 +1,15 @@
 
 package com.github.paganini2008.springplayer.oauth.config;
 
-import org.springframework.beans.factory.annotation.Value;
+import java.util.Arrays;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -13,11 +17,12 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.paganini2008.springplayer.security.ErrorMessageSource;
 import com.github.paganini2008.springplayer.security.FailureAuthenticationEntryPoint;
 
 import lombok.AllArgsConstructor;
@@ -35,17 +40,15 @@ import lombok.SneakyThrows;
 @EnableAuthorizationServer
 public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
-	private final AuthServerJdbcClientDetailsService clientDetailsService;
-
-	private final AuthenticationManager authenticationManagerBean;
+	private final AuthServerClientDetailsService clientDetailsService;
 
 	private final UpmsUserDetailsService userDetailsService;
+
+	private final AuthenticationManager authenticationManagerBean;
 
 	private final AuthorizationCodeServices authorizationCodeServices;
 
 	private final ObjectMapper objectMapper;
-
-	private final ErrorMessageSource errorMessageSource;
 
 	@Override
 	@SneakyThrows
@@ -55,17 +58,25 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
-		oauthServer.allowFormAuthenticationForClients()
-				.authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper, errorMessageSource))
-				.checkTokenAccess("isAuthenticated()");
+		oauthServer.passwordEncoder(passwordEncoder()).allowFormAuthenticationForClients()
+				.authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper)).checkTokenAccess("isAuthenticated()")
+				.tokenKeyAccess("permitAll()");
 	}
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
+		TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
+		enhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer(), jwtAccessTokenConverter()));
 		endpoints.allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE)
 				.authenticationManager(authenticationManagerBean).userDetailsService(userDetailsService)
-				.authorizationCodeServices(authorizationCodeServices).tokenStore(tokenStore()).accessTokenConverter(jwtAccessTokenConverter())
-				.tokenEnhancer(tokenEnhancer()).exceptionTranslator(new OpenApiWebResponseExceptionTranslator());
+				.authorizationCodeServices(authorizationCodeServices).tokenStore(tokenStore())
+				.accessTokenConverter(jwtAccessTokenConverter()).tokenEnhancer(enhancerChain)
+				.exceptionTranslator(new AuthServerExceptionTranslator());
+	}
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
 	}
 
 	@Bean
@@ -76,7 +87,8 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 	@Bean
 	public JwtAccessTokenConverter jwtAccessTokenConverter() {
 		JwtAccessTokenConverter accessTokenConverter = new JwtAccessTokenConverter();
-		accessTokenConverter.setSigningKey("123456");
+		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("oauth2-jwt.jks"), "123456".toCharArray());
+		accessTokenConverter.setKeyPair(keyStoreKeyFactory.getKeyPair("oauth2-jwt"));
 		return accessTokenConverter;
 	}
 

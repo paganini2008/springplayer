@@ -10,8 +10,6 @@ import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
-import com.github.paganini2008.springplayer.i18n.api.RemoteI18nService;
-
 /**
  * 
  * Oauth2ResourceServerConfig
@@ -36,11 +34,6 @@ public class Oauth2ResourceServerConfig {
 			}
 		});
 		return restTemplate;
-	}
-	
-	@Bean
-	public ErrorMessageSource errorMessageSource(RemoteI18nService remoteI18nService) {
-		return new ErrorMessageSource(remoteI18nService);
 	}
 
 }

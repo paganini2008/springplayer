@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.paganini2008.springplayer.common.ApiResult;
+import com.github.paganini2008.springplayer.i18n.I18nUtils;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +31,6 @@ import lombok.extern.slf4j.Slf4j;
 public class RestClientAccessDeniedHandler implements AccessDeniedHandler {
 
 	private final ObjectMapper objectMapper;
-	private final ErrorMessageSource errorMessageSource;
 
 	@Override
 	public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e)
@@ -40,9 +40,10 @@ public class RestClientAccessDeniedHandler implements AccessDeniedHandler {
 		}
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-		ApiResult<String> result = ApiResult.failed(errorMessageSource.getErrorMessage(ErrorCodes.ACCESS_DENIED));
+		String lang = request.getHeader("lang");
+		ApiResult<String> result = ApiResult.failed(I18nUtils.getErrorMessage(lang, ErrorCodes.ACCESS_DENIED));
 		result.setRequestPath(request.getServletPath());
-		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+		response.setStatus(HttpServletResponse.SC_FORBIDDEN);
 		response.getWriter().write(objectMapper.writeValueAsString(result));
 	}
 

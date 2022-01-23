@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.paganini2008.springplayer.common.ApiResult;
+import com.github.paganini2008.springplayer.common.ApplicationContextUtils;
 import com.github.paganini2008.springplayer.i18n.service.I18nMessageService;
 import com.github.paganini2008.springplayer.i18n.vo.I18nMessageVO;
 

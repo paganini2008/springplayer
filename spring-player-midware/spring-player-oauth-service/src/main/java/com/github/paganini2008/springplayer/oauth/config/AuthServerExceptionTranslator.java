@@ -18,16 +18,18 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 
 import com.github.paganini2008.springplayer.common.ErrorCode;
 import com.github.paganini2008.springplayer.security.ErrorCodes;
-import com.github.paganini2008.springplayer.security.OpenApiException;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 
- * OpenApiWebResponseExceptionTranslator
+ * AuthServerExceptionTranslator
  *
  * @author Fred Feng
  * @version 1.0.0
  */
-public class OpenApiWebResponseExceptionTranslator implements WebResponseExceptionTranslator<OAuth2Exception> {
+@Slf4j
+public class AuthServerExceptionTranslator implements WebResponseExceptionTranslator<OAuth2Exception> {
 
 	private ThrowableAnalyzer throwableAnalyzer = new DefaultThrowableAnalyzer();
 
@@ -37,7 +39,7 @@ public class OpenApiWebResponseExceptionTranslator implements WebResponseExcepti
 
 		Exception e = (AuthenticationException) throwableAnalyzer.getFirstThrowableOfType(AuthenticationException.class, causeChain);
 		if (e != null) {
-			return handleException(e, ErrorCodes.UNAUTHORIZED, 401);
+			return handleException(e, ErrorCodes.matches((AuthenticationException) e), 401);
 		}
 
 		e = (AccessDeniedException) throwableAnalyzer.getFirstThrowableOfType(AccessDeniedException.class, causeChain);
@@ -69,16 +71,22 @@ public class OpenApiWebResponseExceptionTranslator implements WebResponseExcepti
 	}
 
 	private ResponseEntity<OAuth2Exception> handleException(Exception e, ErrorCode errorCode, int statusCode) {
+		if (log.isErrorEnabled()) {
+			log.error(e.getMessage(), e);
+		}
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Cache-Control", "no-store");
 		headers.set("Pragma", "no-cache");
 		HttpStatus httpStatus = HttpStatus.valueOf(statusCode);
-		ResponseEntity<OAuth2Exception> response = new ResponseEntity<OAuth2Exception>(new OpenApiException(e.getMessage(), errorCode),
-				headers, httpStatus);
+		ResponseEntity<OAuth2Exception> response = new ResponseEntity<OAuth2Exception>(new AuthServerException(errorCode), headers,
+				httpStatus);
 		return response;
 	}
 
 	private ResponseEntity<OAuth2Exception> handleOAuth2Exception(OAuth2Exception e, ErrorCode errorCode) {
+		if (log.isErrorEnabled()) {
+			log.error(e.getMessage(), e);
+		}
 		int statusCode = e.getHttpErrorCode();
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Cache-Control", "no-store");
@@ -87,8 +95,8 @@ public class OpenApiWebResponseExceptionTranslator implements WebResponseExcepti
 			headers.set("WWW-Authenticate", String.format("%s %s", OAuth2AccessToken.BEARER_TYPE, e.getSummary()));
 		}
 		HttpStatus httpStatus = HttpStatus.valueOf(statusCode);
-		ResponseEntity<OAuth2Exception> response = new ResponseEntity<OAuth2Exception>(new OpenApiException(e.getMessage(), errorCode),
-				headers, httpStatus);
+		ResponseEntity<OAuth2Exception> response = new ResponseEntity<OAuth2Exception>(new AuthServerException(errorCode), headers,
+				httpStatus);
 		return response;
 
 	}

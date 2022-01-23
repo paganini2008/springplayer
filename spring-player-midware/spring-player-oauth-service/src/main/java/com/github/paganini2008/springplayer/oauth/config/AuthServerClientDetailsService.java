@@ -12,15 +12,15 @@ import com.github.paganini2008.springplayer.webmvc.RequestHeaderContextHolder;
 
 /**
  * 
- * AuthServerJdbcClientDetailsService
+ * AuthServerClientDetailsService
  *
  * @author Fred Feng
  * @version 1.0.0
  */
 @Service
-public class AuthServerJdbcClientDetailsService extends JdbcClientDetailsService{
+public class AuthServerClientDetailsService extends JdbcClientDetailsService{
 
-	public AuthServerJdbcClientDetailsService(DataSource dataSource) {
+	public AuthServerClientDetailsService(DataSource dataSource) {
 		super(dataSource);
 	}
 	

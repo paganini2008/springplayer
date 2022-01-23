@@ -8,11 +8,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsChecker;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import com.github.paganini2008.springplayer.i18n.api.RemoteI18nService;
-import com.github.paganini2008.springplayer.security.ErrorMessageSource;
 
 import lombok.SneakyThrows;
 
@@ -25,14 +23,14 @@ import lombok.SneakyThrows;
  */
 @Primary
 @Order(90)
-@Configuration(proxyBeanMethods = false)
+@Configuration
 public class AuthServerWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	@SneakyThrows
 	protected void configure(HttpSecurity http) {
 		http.csrf().disable().httpBasic().disable().cors().and().authorizeRequests()
-		.antMatchers("/oauth/**", "/actuator/**").permitAll().anyRequest().authenticated();
+				.antMatchers("/oauth/**", "/actuator/**").permitAll().anyRequest().authenticated();
 	}
 
 	@Override
@@ -46,16 +44,10 @@ public class AuthServerWebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public AuthenticationManager authenticationManagerBean() {
 		return super.authenticationManagerBean();
 	}
-
-
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-	}
 	
 	@Bean
-	public ErrorMessageSource errorMessageSource(RemoteI18nService remoteI18nService) {
-		return new ErrorMessageSource(remoteI18nService);
+	public UserDetailsChecker userStateChecker() {
+		return new UpmsUserStateChecker();
 	}
 
 	public static void main(String[] args) {

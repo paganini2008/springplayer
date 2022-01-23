@@ -77,6 +77,10 @@ public class ApplicationContextUtils implements ApplicationContextAware {
 		return getApplicationContext().getBean(name, requiredType);
 	}
 
+	public static String[] getBeanNames() {
+		return getApplicationContext().getBeanDefinitionNames();
+	}
+
 	public static <T> T autowireBean(T object) {
 		getBeanFactory().autowireBean(object);
 		return object;
