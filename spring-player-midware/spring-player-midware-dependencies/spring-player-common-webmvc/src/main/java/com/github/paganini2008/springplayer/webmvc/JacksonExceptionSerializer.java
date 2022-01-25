@@ -37,7 +37,7 @@ public class JacksonExceptionSerializer extends StdSerializer<ExceptionDescripto
 	}
 
 	private String getI18nMessage(ErrorCode errorCode) {
-		String lang = RequestHeaderContextHolder.getHeader("lang");
+		String lang = HttpHeadersContextHolder.getHeader("lang");
 		return I18nUtils.getErrorMessage(lang, errorCode);
 	}
 

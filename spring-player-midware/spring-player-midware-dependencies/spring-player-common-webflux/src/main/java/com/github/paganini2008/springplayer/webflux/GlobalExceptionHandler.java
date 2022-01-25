@@ -12,14 +12,15 @@ import com.github.paganini2008.devtools.ExceptionUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.ErrorCode;
 import com.github.paganini2008.springplayer.common.ExceptionDescriptor;
+import com.github.paganini2008.springplayer.i18n.I18nUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 
- * 全局异常处理器（Web异常）
+ * GlobalExceptionHandler
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 @Slf4j
@@ -50,20 +51,11 @@ public class GlobalExceptionHandler {
 		if (e instanceof ExceptionDescriptor) {
 			ExceptionDescriptor descriptor = (ExceptionDescriptor) e;
 			ErrorCode errorCode = descriptor.getErrorCode();
-			return ApiResult.failed(getI18nMessage(errorCode));
+			String lang = exchange.getRequest().getHeaders().getFirst("lang");
+			return ApiResult.failed(I18nUtils.getErrorMessage(lang, errorCode));
 		} else {
 			return ApiResult.failed(e.getMessage());
 		}
-	}
-
-	/**
-	 * 获取国际化消息
-	 * 
-	 * @param errorCode
-	 * @return
-	 */
-	protected String getI18nMessage(ErrorCode errorCode) {
-		return errorCode.getDefaultMessage();
 	}
 
 }

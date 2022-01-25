@@ -1,6 +1,6 @@
 package com.github.paganini2008.springplayer.security;
 
-import static com.github.paganini2008.springplayer.common.Constants.TIMESTAMP;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
 
 import java.io.PrintWriter;
 
@@ -45,8 +45,8 @@ public class FailureAuthenticationEntryPoint implements AuthenticationEntryPoint
 		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 		ApiResult<String> result = ApiResult.failed(e.getMessage());
 		result.setRequestPath(request.getServletPath());
-		if (StringUtils.isNotBlank(request.getHeader(TIMESTAMP))) {
-			long timestamp = Long.parseLong(request.getHeader(TIMESTAMP));
+		if (StringUtils.isNotBlank(request.getHeader(REQUEST_HEADER_TIMESTAMP))) {
+			long timestamp = Long.parseLong(request.getHeader(REQUEST_HEADER_TIMESTAMP));
 			result.setElapsed(System.currentTimeMillis() - timestamp);
 		}
 		ErrorCode errorCode = ErrorCodes.matches(e);

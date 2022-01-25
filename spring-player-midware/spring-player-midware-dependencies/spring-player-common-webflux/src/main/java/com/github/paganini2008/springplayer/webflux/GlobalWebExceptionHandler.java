@@ -1,6 +1,6 @@
 package com.github.paganini2008.springplayer.webflux;
 
-import static com.github.paganini2008.springplayer.common.Constants.TIMESTAMP;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
 
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -25,6 +25,7 @@ import com.github.paganini2008.devtools.ExceptionUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.ErrorCode;
 import com.github.paganini2008.springplayer.common.ExceptionDescriptor;
+import com.github.paganini2008.springplayer.i18n.I18nUtils;
 
 import reactor.core.publisher.Mono;
 
@@ -69,27 +70,18 @@ public class GlobalWebExceptionHandler extends DefaultErrorWebExceptionHandler {
 		if (e instanceof ExceptionDescriptor) {
 			ExceptionDescriptor descriptor = (ExceptionDescriptor) e;
 			ErrorCode errorCode = descriptor.getErrorCode();
-			result = ApiResult.failed(getI18nMessage(errorCode));
+			String lang = request.headers().firstHeader("lang");
+			result = ApiResult.failed(I18nUtils.getErrorMessage(lang, errorCode));
 		} else {
 			result = ApiResult.failed(e.getMessage());
 		}
 		result.setRequestPath(request.uri().getRawPath());
-		
-		if (StringUtils.isNotBlank(request.headers().firstHeader(TIMESTAMP))) {
-			long timestamp = Long.parseLong(request.headers().firstHeader(TIMESTAMP));
+
+		if (StringUtils.isNotBlank(request.headers().firstHeader(REQUEST_HEADER_TIMESTAMP))) {
+			long timestamp = Long.parseLong(request.headers().firstHeader(REQUEST_HEADER_TIMESTAMP));
 			result.setElapsed(System.currentTimeMillis() - timestamp);
 		}
 		return result;
-	}
-
-	/**
-	 * 获取国际化消息
-	 * 
-	 * @param errorCode
-	 * @return
-	 */
-	protected String getI18nMessage(ErrorCode errorCode) {
-		return errorCode.getDefaultMessage();
 	}
 
 }

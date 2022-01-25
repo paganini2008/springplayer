@@ -8,7 +8,7 @@ import org.springframework.security.oauth2.provider.client.JdbcClientDetailsServ
 import org.springframework.stereotype.Service;
 
 import com.github.paganini2008.springplayer.security.info.OauthConstants;
-import com.github.paganini2008.springplayer.webmvc.RequestHeaderContextHolder;
+import com.github.paganini2008.springplayer.webmvc.HttpHeadersContextHolder;
 
 /**
  * 
@@ -27,7 +27,7 @@ public class AuthServerClientDetailsService extends JdbcClientDetailsService{
 	@Override
 	@Cacheable(value = "oauth:client:details", key = "#clientId", unless = "#result == null")
 	public ClientDetails loadClientByClientId(String clientId) {
-		String sql = String.format(OauthConstants.DEFAULT_SELECT_STATEMENT, RequestHeaderContextHolder.getTenantId());
+		String sql = String.format(OauthConstants.DEFAULT_SELECT_STATEMENT, HttpHeadersContextHolder.getTenantId());
 		super.setSelectClientDetailsSql(sql);
 		return super.loadClientByClientId(clientId);
 	}

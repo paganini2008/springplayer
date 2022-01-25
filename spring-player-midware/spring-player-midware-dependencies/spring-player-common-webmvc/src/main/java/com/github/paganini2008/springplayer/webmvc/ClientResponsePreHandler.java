@@ -1,8 +1,7 @@
 package com.github.paganini2008.springplayer.webmvc;
 
-import static com.github.paganini2008.springplayer.common.Constants.TIMESTAMP;
-
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -10,11 +9,13 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;
+import org.springframework.http.server.ServletServerHttpResponse;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
+import com.github.paganini2008.springplayer.webmvc.monitor.ApiCallUtils;
 
 /**
  * 
@@ -35,14 +36,16 @@ public class ClientResponsePreHandler implements ResponseBodyAdvice<Object> {
 	public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType,
 			Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
 		if (body instanceof ApiResult) {
-			HttpServletRequest httpRequest = ((ServletServerHttpRequest) request).getServletRequest();
 			ApiResult<?> result = (ApiResult<?>) body;
-			if (StringUtils.isNotBlank(httpRequest.getHeader(TIMESTAMP))) {
-				long timestamp = Long.parseLong(httpRequest.getHeader(TIMESTAMP));
-				result.setElapsed(System.currentTimeMillis() - timestamp);
+			HttpServletRequest httpRequest = ((ServletServerHttpRequest) request).getServletRequest();
+			String timestamp = ApiCallUtils.currentTimestamp(httpRequest);
+			if (StringUtils.isNotBlank(timestamp)) {
+				result.setElapsed(System.currentTimeMillis() - Long.parseLong(timestamp));
 			}
 			result.setRequestPath(httpRequest.getServletPath());
 		}
+		HttpServletResponse httpResponse = ((ServletServerHttpResponse) response).getServletResponse();
+		ApiCallUtils.setApiHeaders(httpResponse);
 		return body;
 	}
 

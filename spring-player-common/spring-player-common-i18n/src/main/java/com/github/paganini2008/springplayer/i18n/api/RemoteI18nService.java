@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.feign.SpFeignConfig;
 
 /**
  * 
@@ -14,7 +13,7 @@ import com.github.paganini2008.springplayer.feign.SpFeignConfig;
  * @author Fred Feng
  * @version 1.0.0
  */
-@FeignClient(contextId = "remoteI18nService", value = "spring-player-i18n-service", configuration = SpFeignConfig.class)
+@FeignClient(contextId = "remoteI18nService", value = "spring-player-i18n-service")
 public interface RemoteI18nService {
 
 	@GetMapping("/i18n/message/{project}/{lang}/{code}")

@@ -1,1 +1,0 @@
-2022-01-23 14:37:48 [ERROR] c.g.p.s.webmvc.GlobalErrorController - ErrorAttributes: {timestamp=Sun Jan 23 14:37:48 CST 2022, status=404, error=Not Found, message=, path=/i18n/messages/beans}

@@ -1,6 +1,6 @@
 package com.github.paganini2008.springplayer.webmvc;
 
-import static com.github.paganini2008.springplayer.common.Constants.TIMESTAMP;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
 
 import java.util.Map;
 
@@ -57,8 +57,8 @@ public class GlobalErrorController extends AbstractErrorController {
 		}
 		ApiResult<Object> result = ApiResult.failed(message);
 		result.setRequestPath((String) errorAttributes.getOrDefault("path", request.getServletPath()));
-		if (StringUtils.isNotBlank(request.getHeader(TIMESTAMP))) {
-			long timestamp = Long.parseLong(request.getHeader(TIMESTAMP));
+		if (StringUtils.isNotBlank(request.getHeader(REQUEST_HEADER_TIMESTAMP))) {
+			long timestamp = Long.parseLong(request.getHeader(REQUEST_HEADER_TIMESTAMP));
 			result.setElapsed(System.currentTimeMillis() - timestamp);
 		}
 		return new ResponseEntity<ApiResult<Object>>(result, httpStatus);

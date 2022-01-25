@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.feign.SpFeignConfig;
 import com.github.paganini2008.springplayer.upms.vo.EmployeeVO;
 
 /**
@@ -15,7 +14,7 @@ import com.github.paganini2008.springplayer.upms.vo.EmployeeVO;
  * @author Fred Feng
  * @version 1.0.0
  */
-@FeignClient(contextId = "remoteEmployeeService", value = "spring-player-upms-service", configuration = SpFeignConfig.class)
+@FeignClient(contextId = "remoteEmployeeService", value = "spring-player-upms-service")
 public interface RemoteEmployeeService {
 
 	@PostMapping("/emp/find/{username}")

@@ -2,16 +2,25 @@ package com.github.paganini2008.springplayer.webmvc;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.Locale;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.github.paganini2008.devtools.StringUtils;
+
+import feign.Response;
 
 /**
  * 
@@ -23,11 +32,49 @@ import com.github.paganini2008.devtools.StringUtils;
 @SuppressWarnings("all")
 public abstract class WebUtils {
 
-	public static String getCurrentIpAddress() {
-		return getIpAddress(getRequest());
+	public static HttpHeaders copyHeaders(HttpServletRequest request) {
+		HttpHeaders headers = new HttpHeaders();
+		Collections.list(request.getHeaderNames()).forEach(headerName -> {
+			Enumeration<String> en = request.getHeaders(headerName);
+			headers.addAll(headerName, en != null ? Collections.list(en) : new ArrayList<>());
+		});
+		return headers;
 	}
 
-	public static String getIpAddress(HttpServletRequest request) {
+	public static HttpHeaders copyHeaders(HttpServletResponse response) {
+		HttpHeaders headers = new HttpHeaders();
+		response.getHeaderNames().forEach(headerName -> {
+			Collection<String> c = response.getHeaders(headerName);
+			headers.addAll(headerName, c != null ? new ArrayList<>(c) : new ArrayList<>());
+		});
+		return headers;
+	}
+
+	public static HttpHeaders copyHeaders(Response response) {
+		HttpHeaders headers = new HttpHeaders();
+		response.headers().entrySet().forEach(e -> {
+			headers.addAll(e.getKey(), e.getValue() != null ? new ArrayList<>(e.getValue()) : new ArrayList<>());
+		});
+		return headers;
+	}
+
+	public static String getLang(HttpServletRequest request) {
+		return getLang(request, Locale.getDefault().getLanguage());
+	}
+
+	public static String getLang(HttpServletRequest request, String defaultLang) {
+		String lang = request.getHeader("lang");
+		if (StringUtils.isBlank(lang)) {
+			lang = request.getHeader("Lang");
+		}
+		return lang;
+	}
+
+	public static String getIpAddr() {
+		return getIpAddr(getRequest());
+	}
+
+	public static String getIpAddr(HttpServletRequest request) {
 		String ip = request.getHeader("x-forwarded-for");
 		if (StringUtils.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
 			ip = request.getHeader("Proxy-Client-IP");
@@ -39,10 +86,6 @@ public abstract class WebUtils {
 			ip = request.getRemoteAddr();
 		}
 		return ip;
-	}
-
-	public static void main(String[] args) {
-		System.out.println(getHostUrl("https://d-linking.tech/login.html"));
 	}
 
 	public static String getHostUrl(String url) {
