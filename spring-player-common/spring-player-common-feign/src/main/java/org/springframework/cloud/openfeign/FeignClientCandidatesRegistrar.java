@@ -49,7 +49,7 @@ public class FeignClientCandidatesRegistrar implements ImportBeanDefinitionRegis
 	}
 
 	private void registerFeignClients(BeanDefinitionRegistry registry) {
-		List<String> feignClients = SpringFactoriesLoader.loadFactoryNames(getSpringFactoriesLoaderFactoryClass(), beanClassLoader);
+		List<String> feignClients = SpringFactoriesLoader.loadFactoryNames(FeignClientCandidatesAutoConfiguration.class, beanClassLoader);
 		if (feignClients.isEmpty()) {
 			return;
 		}
@@ -94,13 +94,8 @@ public class FeignClientCandidatesRegistrar implements ImportBeanDefinitionRegis
 			definition.setAutowireMode(AbstractBeanDefinition.AUTOWIRE_BY_TYPE);
 
 			AbstractBeanDefinition beanDefinition = definition.getBeanDefinition();
-
-			// alias
 			String alias = aliasBuilder.append("FeignClient").toString();
-
-			// has a default, won't be null
 			boolean primary = (Boolean) attributes.get("primary");
-
 			beanDefinition.setPrimary(primary);
 
 			String qualifier = getQualifier(attributes);
@@ -114,19 +109,8 @@ public class FeignClientCandidatesRegistrar implements ImportBeanDefinitionRegis
 		}
 	}
 
-	/**
-	 * Return the class used by {@link SpringFactoriesLoader} to load configuration
-	 * candidates.
-	 * 
-	 * @return the factory class
-	 */
-	private Class<?> getSpringFactoriesLoaderFactoryClass() {
-		return FeignClientCandidatesAutoConfiguration.class;
-	}
-
 	private void validate(Map<String, Object> attributes) {
 		AnnotationAttributes annotation = AnnotationAttributes.fromMap(attributes);
-		// This blows up if an aliased property is overspecified
 		FeignClientsRegistrar.validateFallback(annotation.getClass("fallback"));
 		FeignClientsRegistrar.validateFallbackFactory(annotation.getClass("fallbackFactory"));
 	}

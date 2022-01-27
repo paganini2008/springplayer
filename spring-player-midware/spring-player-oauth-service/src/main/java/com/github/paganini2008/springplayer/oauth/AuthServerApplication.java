@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.github.paganini2008.devtools.Env;
-import com.github.paganini2008.springplayer.feign.EnableEnhancedFeignClients;
+import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
 
 /**
  * 
@@ -17,7 +17,7 @@ import com.github.paganini2008.springplayer.feign.EnableEnhancedFeignClients;
  * @author Fred Feng
  * @version 1.0.0
  */
-@EnableEnhancedFeignClients
+@EnableFeignClientEndpoint
 @EnableEurekaClient
 @SpringBootApplication
 public class AuthServerApplication {

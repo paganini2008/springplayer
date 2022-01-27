@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
-import com.github.paganini2008.springplayer.feign.EnableEnhancedFeignClients;
+import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
 
 /**
  * 
@@ -25,7 +25,7 @@ import com.github.paganini2008.springplayer.feign.EnableEnhancedFeignClients;
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @EnableResourceServer
-@EnableEnhancedFeignClients
+@EnableFeignClientEndpoint
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Import({ Oauth2ResourceServerConfig.class })
 public @interface EnableOauth2ResourceServer {

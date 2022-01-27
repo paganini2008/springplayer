@@ -20,6 +20,15 @@
 			<artifactId>spring-player-common-data</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>dingding</groupId>
+			<artifactId>dingding</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/dingding-1.0.0.jar</systemPath>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -48,5 +57,15 @@
 				</executions>
 			</plugin>
 		</plugins>
+
+		<resources>
+			<resource>
+				<directory>lib</directory>
+				<targetPath>/BOOT-INF/lib/</targetPath>
+				<includes>
+					<include>**/*.jar</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
 </project>
