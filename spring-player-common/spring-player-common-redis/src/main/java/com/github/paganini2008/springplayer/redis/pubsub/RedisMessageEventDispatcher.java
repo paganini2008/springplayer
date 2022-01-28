@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.event.EventListener;
 
 import com.github.paganini2008.devtools.Observable;
@@ -19,7 +19,7 @@ import com.github.paganini2008.devtools.reflection.MethodUtils;
  * @author Fred Feng
  * @version 1.0.0
  */
-public class RedisMessageEventDispatcher implements DestructionAwareBeanPostProcessor {
+public class RedisMessageEventDispatcher implements BeanPostProcessor {
 
 	private final Observable repeableOp = Observable.repeatable();
 	private final Observable unrepeableOp = Observable.unrepeatable();
@@ -51,12 +51,6 @@ public class RedisMessageEventDispatcher implements DestructionAwareBeanPostProc
 		repeableOp.notifyObservers(event.getChannel(), args);
 		unrepeableOp.notifyObservers(event.getChannel(), args);
 
-	}
-
-	@Override
-	public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
-		repeableOp.clearObservers();
-		unrepeableOp.clearObservers();
 	}
 
 }

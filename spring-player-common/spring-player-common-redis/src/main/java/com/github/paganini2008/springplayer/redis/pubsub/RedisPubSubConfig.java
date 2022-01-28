@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
+import com.github.paganini2008.devtools.StringUtils;
 
 /**
  * 
@@ -30,8 +31,11 @@ import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator
 @Configuration(proxyBeanMethods = false)
 public class RedisPubSubConfig {
 
-	@Value("${springplayer.redis.pubsub.channel:pubsub}")
+	@Value("${springplayer.redis.pubsub.channel:}")
 	private String pubsubChannel;
+
+	@Value("${spring.application.name}")
+	private String applicationName;
 
 	@Bean
 	public RedisMessageEventPublisher redisMessageEventPublisher() {
@@ -67,7 +71,7 @@ public class RedisPubSubConfig {
 			MessageListenerAdapter messageListener) {
 		RedisMessageListenerContainer redisMessageListenerContainer = new RedisMessageListenerContainer();
 		redisMessageListenerContainer.setConnectionFactory(redisConnectionFactory);
-		redisMessageListenerContainer.addMessageListener(messageListener, new ChannelTopic(pubsubChannel));
+		redisMessageListenerContainer.addMessageListener(messageListener, new ChannelTopic(getChannel()));
 		return redisMessageListenerContainer;
 	}
 
@@ -80,7 +84,7 @@ public class RedisPubSubConfig {
 		jackson2JsonRedisSerializer.setObjectMapper(om);
 
 		PubSubRedisTemplate redisTemplate = new PubSubRedisTemplate();
-		redisTemplate.setPubsubChannel(pubsubChannel);
+		redisTemplate.setPubsubChannel(getChannel());
 		redisTemplate.setConnectionFactory(redisConnectionFactory);
 		StringRedisSerializer stringSerializer = new StringRedisSerializer();
 		redisTemplate.setKeySerializer(stringSerializer);
@@ -89,6 +93,10 @@ public class RedisPubSubConfig {
 		redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
 		redisTemplate.afterPropertiesSet();
 		return redisTemplate;
+	}
+
+	private String getChannel() {
+		return StringUtils.isNotBlank(pubsubChannel) ? pubsubChannel : applicationName;
 	}
 
 }

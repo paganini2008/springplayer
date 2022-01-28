@@ -28,7 +28,4 @@ public class RolePermission {
 	@TableField("perm_id")
 	private Long permissionId;
 	
-	@TableField("emp_id")
-	private Long employeeId;
-	
 }

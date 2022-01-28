@@ -14,5 +14,5 @@ import com.github.paganini2008.springplayer.upms.model.RolePermission;
  */
 public interface RolePermissionService extends IService<RolePermission> {
 
-	List<RolePermission> getByEmployeeId(Long empId);
+	List<RolePermission> getByRoleIds(Long ...roleIds);
 }

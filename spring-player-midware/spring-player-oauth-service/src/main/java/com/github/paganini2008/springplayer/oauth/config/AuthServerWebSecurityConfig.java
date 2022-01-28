@@ -12,6 +12,11 @@ import org.springframework.security.core.userdetails.UserDetailsChecker;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.paganini2008.springplayer.security.FailureAuthenticationEntryPoint;
+import com.github.paganini2008.springplayer.security.GlobalAccessDeniedHandler;
+
+import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 
 /**
@@ -24,13 +29,18 @@ import lombok.SneakyThrows;
 @Primary
 @Order(90)
 @Configuration
+@AllArgsConstructor
 public class AuthServerWebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+	private final ObjectMapper objectMapper;
 
 	@Override
 	@SneakyThrows
 	protected void configure(HttpSecurity http) {
-		http.csrf().disable().httpBasic().disable().cors().and().authorizeRequests()
-				.antMatchers("/oauth/**", "/actuator/**").permitAll().anyRequest().authenticated();
+		http.csrf().disable().httpBasic().disable().cors().and().authorizeRequests().antMatchers("/oauth/**", "/actuator/**").permitAll()
+				.anyRequest().authenticated().and().exceptionHandling()
+				.authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper))
+				.accessDeniedHandler(new GlobalAccessDeniedHandler(objectMapper));
 	}
 
 	@Override
@@ -44,7 +54,7 @@ public class AuthServerWebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public AuthenticationManager authenticationManagerBean() {
 		return super.authenticationManagerBean();
 	}
-	
+
 	@Bean
 	public UserDetailsChecker userStateChecker() {
 		return new UpmsUserStateChecker();

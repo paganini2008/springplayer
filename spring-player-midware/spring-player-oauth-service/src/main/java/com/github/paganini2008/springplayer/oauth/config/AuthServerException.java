@@ -21,7 +21,12 @@ public class AuthServerException extends OAuth2Exception implements ExceptionDes
 	private static final long serialVersionUID = 3123139368923934917L;
 
 	public AuthServerException(ErrorCode errorCode) {
-		super("ERROR-" + errorCode.getMessageCode());
+		super(String.format(MESSAGE_FORMAT, errorCode.getMessageCode(), errorCode.getMessageKey()));
+		this.errorCode = errorCode;
+	}
+
+	public AuthServerException(ErrorCode errorCode, Throwable e) {
+		super(String.format(MESSAGE_FORMAT, errorCode.getMessageCode(), errorCode.getMessageKey()), e);
 		this.errorCode = errorCode;
 	}
 

@@ -1,6 +1,7 @@
 package com.github.paganini2008.springplayer.webmvc;
 
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -44,6 +45,12 @@ public class CommonWebMvcConfiguration {
 		multipartResolver.setDefaultEncoding("UTF-8");
 		multipartResolver.setMaxUploadSize(DataSize.ofMegabytes(100).toBytes());
 		return multipartResolver;
+	}
+
+	@ConditionalOnMissingBean
+	@Bean
+	public MessageLocalization messageLocalization() {
+		return new I18nClientMessageLocalization();
 	}
 
 }

@@ -38,6 +38,7 @@ public class CallSpanPreIterceptor extends GenericFilterBean {
 		HttpHeadersContextHolder.addHeaderIfAbsent(REQUEST_HEADER_TRACE_ID, UUID.randomUUID().toString());
 		HttpHeadersContextHolder.addHeaderIfAbsent(REQUEST_HEADER_PARENT_SPAN, () -> String.valueOf(spanGen.getAndIncrement()));
 		HttpHeadersContextHolder.addHeaderIfAbsent(REQUEST_HEADER_SPAN, () -> String.valueOf(spanGen.getAndIncrement()));
+		
 		chain.doFilter(request, response);
 	}
 

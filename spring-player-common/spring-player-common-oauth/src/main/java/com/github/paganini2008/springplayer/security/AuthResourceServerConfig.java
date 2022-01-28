@@ -15,7 +15,6 @@ import org.springframework.security.oauth2.provider.authentication.TokenExtracto
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.jwk.JwkException;
-import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.util.FileCopyUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,7 +36,6 @@ public class AuthResourceServerConfig extends ResourceServerConfigurerAdapter {
 	private static final String PUBLIC_CERT = "public.cert";
 
 	private final TokenExtractor tokenExtractor;
-	private final AccessDeniedHandler accessDeniedHandler;
 	private final WhiteListProperties whiteListProperties;
 	private final ObjectMapper objectMapper;
 
@@ -45,17 +43,15 @@ public class AuthResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@SneakyThrows
 	public void configure(HttpSecurity httpSecurity) {
 		httpSecurity.headers().frameOptions().disable();
-		ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity
-				.authorizeRequests();
+		ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity.authorizeRequests();
 		whiteListProperties.getWhiteListUrls().forEach(url -> registry.antMatchers(url).permitAll());
 		registry.anyRequest().authenticated().and().csrf().disable();
 	}
 
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) {
-		resources.tokenStore(tokenStore())
-				.authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper))
-				.tokenExtractor(tokenExtractor).accessDeniedHandler(accessDeniedHandler);
+		resources.tokenStore(tokenStore()).authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper))
+				.tokenExtractor(tokenExtractor).accessDeniedHandler(new GlobalAccessDeniedHandler(objectMapper));
 	}
 
 	@Bean

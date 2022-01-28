@@ -1,5 +1,11 @@
 package com.github.paganini2008.springplayer.dingtalk;
 
+import com.github.paganini2008.springplayer.dingtalk.message.ActionCardMessage;
+import com.github.paganini2008.springplayer.dingtalk.message.FeedCardMessage;
+import com.github.paganini2008.springplayer.dingtalk.message.LinkMessage;
+import com.github.paganini2008.springplayer.dingtalk.message.MarkdownMessage;
+import com.github.paganini2008.springplayer.dingtalk.message.TextMessage;
+
 /**
  * 
  * DingTalkService
@@ -9,6 +15,14 @@ package com.github.paganini2008.springplayer.dingtalk;
  */
 public interface DingTalkService {
 
-	void sendTextMessage(DingTextMessage message) throws Exception;
+	boolean sendTextMessage(TextMessage message) throws Exception;
+	
+	boolean sendLinkMessage(LinkMessage message) throws Exception;
+	
+	boolean sendMarkdownMessage(MarkdownMessage message) throws Exception;
+	
+	boolean sendActionCardMessage(ActionCardMessage message) throws Exception;
+	
+	boolean sendFeedCardMessage(FeedCardMessage message) throws Exception;
 	
 }

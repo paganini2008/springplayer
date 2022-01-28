@@ -14,6 +14,8 @@ import com.github.paganini2008.springplayer.common.ErrorCode;
 import com.github.paganini2008.springplayer.common.ExceptionDescriptor;
 import com.github.paganini2008.springplayer.common.SimpleErrorCode;
 
+import feign.FeignException;
+
 /**
  * 
  * ErrorCodes
@@ -41,6 +43,13 @@ public abstract class ErrorCodes {
 	public static ErrorCode matches(AuthenticationException e) {
 		if (e instanceof ExceptionDescriptor) {
 			return ((ExceptionDescriptor) e).getErrorCode();
+		}
+		if (e.getCause() instanceof ExceptionDescriptor) {
+			return ((ExceptionDescriptor) e.getCause()).getErrorCode();
+		}
+		if (e.getCause() instanceof FeignException) {
+			FeignException fe = (FeignException) (e.getCause());
+			return ErrorCode.internalServerError(fe.contentUTF8());
 		}
 		if (e instanceof AccountExpiredException) {
 			return ACCOUNT_EXPIRED;

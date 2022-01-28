@@ -15,6 +15,7 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
 import feign.Feign;
+import feign.codec.ErrorDecoder;
 
 /**
  * 
@@ -29,7 +30,7 @@ import feign.Feign;
 @Import(FeignClientCandidatesRegistrar.class)
 @AutoConfigureAfter(EnableFeignClients.class)
 public class FeignClientCandidatesAutoConfiguration {
-
+	
 	@Bean
 	@ConditionalOnMissingBean
 	@ConditionalOnAvailableEndpoint
@@ -37,4 +38,8 @@ public class FeignClientCandidatesAutoConfiguration {
 		return new FeignClientEndpoint(context);
 	}
 
+	@Bean
+	public ErrorDecoder globalFeignErrorDecoder() {
+		return new GlobalFeignErrorDecoder();
+	}
 }

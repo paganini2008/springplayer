@@ -1,5 +1,6 @@
 package com.github.paganini2008.springplayer.upms.service.impl;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,13 +20,12 @@ import com.github.paganini2008.springplayer.upms.service.RolePermissionService;
  * @version 1.0.0
  */
 @Service
-public class RolePermissionServiceImpl extends ServiceImpl<RolePermissionMapper, RolePermission>
-		implements RolePermissionService {
+public class RolePermissionServiceImpl extends ServiceImpl<RolePermissionMapper, RolePermission> implements RolePermissionService {
 
 	@Override
-	public List<RolePermission> getByEmployeeId(Long empId) {
-		LambdaQueryWrapper<RolePermission> query = Wrappers.<RolePermission>lambdaQuery()
-				.eq(RolePermission::getEmployeeId, empId);
+	public List<RolePermission> getByRoleIds(Long... roleIds) {
+		LambdaQueryWrapper<RolePermission> query = Wrappers.<RolePermission>lambdaQuery().in(RolePermission::getRoleId,
+				Arrays.asList(roleIds));
 		return list(query);
 	}
 

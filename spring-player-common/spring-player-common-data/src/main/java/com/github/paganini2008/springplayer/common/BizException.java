@@ -9,20 +9,20 @@ import org.springframework.http.HttpStatus;
  * @author Fred Feng
  * @version 1.0.0
  */
-public abstract class BizException extends RuntimeException implements ExceptionDescriptor {
+public class BizException extends RuntimeException implements ExceptionDescriptor {
 
 	private static final long serialVersionUID = 1L;
 	private final ErrorCode errorCode;
 	private final HttpStatus httpStatus;
 
 	public BizException(ErrorCode errorCode, HttpStatus httpStatus) {
-		super("ERROR-" + errorCode.getMessageCode());
+		super(String.format(MESSAGE_FORMAT, errorCode.getMessageCode(), errorCode.getMessageKey()));
 		this.errorCode = errorCode;
 		this.httpStatus = httpStatus;
 	}
 
 	public BizException(ErrorCode errorCode, HttpStatus httpStatus, Throwable e) {
-		super("ERROR-" + errorCode.getMessageCode(), e);
+		super(String.format(MESSAGE_FORMAT, errorCode.getMessageCode(), errorCode.getMessageKey()), e);
 		this.errorCode = errorCode;
 		this.httpStatus = httpStatus;
 	}

@@ -3,16 +3,19 @@ package com.github.paganini2008.springplayer.security;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
 
 import java.io.PrintWriter;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.paganini2008.devtools.LocaleUtils;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.ErrorCode;
@@ -50,12 +53,23 @@ public class FailureAuthenticationEntryPoint implements AuthenticationEntryPoint
 			result.setElapsed(System.currentTimeMillis() - timestamp);
 		}
 		ErrorCode errorCode = ErrorCodes.matches(e);
-		String lang = request.getHeader("lang");
-		result.setMsg(I18nUtils.getErrorMessage(lang, errorCode));
+		String msg = getI18nMessage(request, errorCode);
+		result.setMsg(msg);
 
 		response.setStatus(HttpStatus.UNAUTHORIZED.value());
 		PrintWriter printWriter = response.getWriter();
 		printWriter.append(objectMapper.writeValueAsString(result));
+	}
+
+	private String getI18nMessage(HttpServletRequest request, ErrorCode errorCode) {
+		String lang = request.getHeader("lang");
+		Locale locale;
+		if (StringUtils.isNotBlank(lang)) {
+			locale = LocaleUtils.getLocale(lang);
+		} else {
+			locale = LocaleContextHolder.getLocale();
+		}
+		return I18nUtils.getErrorMessage(locale.getLanguage(), errorCode);
 	}
 
 }

@@ -7,8 +7,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.springframework.cloud.openfeign.FeignClientCandidatesRegistrar;
-import org.springframework.cloud.openfeign.FeignClientPackageScanningRegistrar;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.context.annotation.Import;
@@ -24,7 +22,7 @@ import org.springframework.context.annotation.Import;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @EnableFeignClients
-@Import({ FeignClientCandidatesRegistrar.class, FeignClientPackageScanningRegistrar.class })
+@Import({ FeignClientCandidatesAutoConfiguration.class, FeignClientPackageScanningAutoConfiguration.class })
 public @interface EnableFeignClientEndpoint {
 
 	/**

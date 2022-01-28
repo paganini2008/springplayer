@@ -7,6 +7,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import com.github.paganini2008.devtools.Env;
 
@@ -18,13 +19,14 @@ import com.github.paganini2008.devtools.Env;
  * @version 1.0.0
  */
 @MapperScan("com.github.paganini2008.springplayer.upms.mapper")
+@EnableFeignClients(basePackages = { "com.github.paganini2008.springplayer.i18n.api" })
 @EnableEurekaClient
 @SpringBootApplication
 public class UpmsApplication {
-	
+
 	static {
 		System.setProperty("spring.devtools.restart.enabled", "false");
-		
+
 		File logDir = FileUtils.getFile(FileUtils.getUserDirectory(), "logs", "spring-player-upms-service");
 		if (!logDir.exists()) {
 			logDir.mkdirs();
@@ -33,7 +35,7 @@ public class UpmsApplication {
 	}
 
 	public static void main(String[] args) {
-		
+
 		SpringApplication.run(UpmsApplication.class, args);
 		System.out.println("PID: " + Env.getPid());
 	}

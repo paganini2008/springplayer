@@ -18,7 +18,7 @@ public interface ErrorCode {
 	}
 
 	static ErrorCode internalServerError(String msg) {
-		return new SimpleErrorCode("INTERNAL_SERVER_ERROR", "90500", msg);
+		return new SimpleErrorCode("INTERNAL_SERVER_ERROR", "9999999", msg);
 	}
 
 }

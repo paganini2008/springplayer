@@ -1,4 +1,4 @@
-package com.github.paganini2008.springplayer.dingtalk;
+package com.github.paganini2008.springplayer.dingtalk.message;
 
 import java.util.Map;
 
@@ -8,7 +8,7 @@ import lombok.ToString;
 
 /**
  * 
- * DingTextMessage
+ * DingMessage
  *
  * @author Fred Feng
  * @version 1.0.0
@@ -16,10 +16,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class DingTextMessage {
+public abstract class DingMessage {
 
 	private String serviceUrl;
-	private String title;
 	private String template;
 	private Map<String, Object> variables;
 	private String[] mobiles;

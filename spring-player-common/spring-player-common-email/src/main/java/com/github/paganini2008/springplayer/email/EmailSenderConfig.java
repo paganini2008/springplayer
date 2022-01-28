@@ -3,10 +3,13 @@ package com.github.paganini2008.springplayer.email;
 import java.util.Properties;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.freemarker.FreeMarkerProperties;
 import org.springframework.boot.autoconfigure.mail.MailProperties;
 import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.thymeleaf.TemplateEngine;
@@ -29,6 +32,7 @@ import com.github.paganini2008.springplayer.email.template.ThymeleafEmailTemplat
  * @version 1.0.0
  */
 @Configuration(proxyBeanMethods = false)
+@EnableConfigurationProperties({ MailProperties.class, ThymeleafProperties.class, FreeMarkerProperties.class })
 public class EmailSenderConfig {
 
 	@ConditionalOnMissingBean(name = "textEmailTemplate")
@@ -55,6 +59,7 @@ public class EmailSenderConfig {
 		return new FreemarkerEmailTemplate();
 	}
 
+	@Primary
 	@Bean
 	public TemplateEngine templateEngine(ThymeleafProperties properties) {
 		SpringTemplateEngine engine = new SpringTemplateEngine();

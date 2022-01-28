@@ -1,5 +1,6 @@
 package com.github.paganini2008.springplayer.upms.service.impl;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.paganini2008.devtools.collection.CollectionUtils;
 import com.github.paganini2008.springplayer.common.SimpleErrorCode;
+import com.github.paganini2008.springplayer.upms.ErrorCodes;
 import com.github.paganini2008.springplayer.upms.UpmsException;
 import com.github.paganini2008.springplayer.upms.model.Dept;
 import com.github.paganini2008.springplayer.upms.model.Employee;
@@ -63,7 +65,7 @@ public class UserManagerService {
 	public UserVO getUserInfo(String username) {
 		Employee employee = employeeService.findEmployeeByName(username);
 		if (employee == null) {
-			throw new UpmsException(new SimpleErrorCode("EMPLOYEE_NOT_FOUND", "10001"));
+			throw new UpmsException(ErrorCodes.EMPLOYEE_NOT_FOUND);
 		}
 		return getUserInfo(employee.getId());
 	}
@@ -102,8 +104,8 @@ public class UserManagerService {
 				return roleVO;
 			}).toArray(l -> new RoleVO[l]));
 		}
-
-		List<RolePermission> rolePermissions = rolePermissionService.getByEmployeeId(employee.getId());
+		Long[] roleIds = Arrays.stream(user.getRoles()).map(r -> r.getId()).toArray(l -> new Long[l]);
+		List<RolePermission> rolePermissions = rolePermissionService.getByRoleIds(roleIds);
 		if (CollectionUtils.isNotEmpty(rolePermissions)) {
 			List<Long> permIds = rolePermissions.stream().map(rp -> rp.getPermissionId()).collect(Collectors.toList());
 			user.setPermissions(permIds.stream().map(pid -> {
