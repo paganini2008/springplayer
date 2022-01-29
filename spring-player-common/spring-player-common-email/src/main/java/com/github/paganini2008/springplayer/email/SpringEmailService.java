@@ -1,13 +1,13 @@
 package com.github.paganini2008.springplayer.email;
 
+import java.net.URL;
 import java.util.Date;
 
-import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -37,17 +37,17 @@ public class SpringEmailService implements JavaEmailService {
 	@Autowired
 	private EmailTemplate htmlEmailTemplate;
 
-	@Qualifier("mdEmailTemplate")
+	@Qualifier("markdownEmailTemplate")
 	@Autowired
-	private EmailTemplate mdEmailTemplate;
+	private EmailTemplate markdownEmailTemplate;
 
-	@Qualifier("ftlEmailTemplate")
+	@Qualifier("freemarkerEmailTemplate")
 	@Autowired
-	private EmailTemplate ftlEmailTemplate;
+	private EmailTemplate freemarkerEmailTemplate;
 
-	@Qualifier("thfEmailTemplate")
+	@Qualifier("thymeleafEmailTemplate")
 	@Autowired
-	private EmailTemplate thfEmailTemplate;
+	private EmailTemplate thymeleafEmailTemplate;
 
 	@Autowired
 	private JavaMailSender javaMailSender;
@@ -95,21 +95,21 @@ public class SpringEmailService implements JavaEmailService {
 			text = htmlEmailTemplate.loadContent(textEmail.getSubject(), textEmail.getTemplate(), textEmail.getVariables());
 			break;
 		case MARKDOWN:
-			text = mdEmailTemplate.loadContent(textEmail.getSubject(), textEmail.getTemplate(), textEmail.getVariables());
+			text = markdownEmailTemplate.loadContent(textEmail.getSubject(), textEmail.getTemplate(), textEmail.getVariables());
 			break;
 		case FREEMARKER:
-			text = ftlEmailTemplate.loadContent(textEmail.getSubject(), textEmail.getTemplate(), textEmail.getVariables());
+			text = freemarkerEmailTemplate.loadContent(textEmail.getSubject(), textEmail.getTemplate(), textEmail.getVariables());
 			break;
 		case THYMELEAF:
-			text = thfEmailTemplate.loadContent(textEmail.getSubject(), textEmail.getTemplate(), textEmail.getVariables());
+			text = thymeleafEmailTemplate.loadContent(textEmail.getSubject(), textEmail.getTemplate(), textEmail.getVariables());
 			break;
 		}
 
 		if (MapUtils.isNotEmpty(textEmail.getAttachments())) {
 			textEmail.getAttachments().entrySet().forEach(e -> {
 				try {
-					mimeMessageHelper.addAttachment(e.getKey(), new FileSystemResource(e.getValue()));
-				} catch (MessagingException ignored) {
+					mimeMessageHelper.addAttachment(e.getKey(), new UrlResource(new URL(e.getValue())));
+				} catch (Exception ignored) {
 				}
 			});
 		}

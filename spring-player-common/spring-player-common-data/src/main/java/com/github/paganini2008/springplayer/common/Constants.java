@@ -16,4 +16,9 @@ public abstract class Constants {
 	public static final String REQUEST_HEADER_SPAN = "__span__";
 	public static final String REQUEST_HEADER_PARENT_SPAN = "__parentSpan__";
 
+	public static final String REQUEST_PATH = "__requestPath__";
+
+	public static final String KAFKA_TOPIC_LOG_COLLECTOR = "LogCollector";
+	public static final String INDEX_NAME_LOG_COLLECTOR = "LogCollector";
+
 }

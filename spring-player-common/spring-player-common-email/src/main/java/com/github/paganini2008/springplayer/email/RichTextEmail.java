@@ -1,6 +1,5 @@
 package com.github.paganini2008.springplayer.email;
 
-import java.io.File;
 import java.util.Map;
 
 import lombok.Getter;
@@ -22,6 +21,6 @@ public class RichTextEmail extends TextEmail {
 	private static final long serialVersionUID = -939797093383746765L;
 	
 	private RichTextType richTextType = RichTextType.THYMELEAF;
-	private Map<String, File> attachments;
+	private Map<String, String> attachments;
 
 }
