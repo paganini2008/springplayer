@@ -7,6 +7,19 @@
 			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
+	
+	<appender name="applog" class="com.github.paganini2008.springplayer.logback.KafkaLoggingAppender">
+		<applicationName>spring-player-upms-service</applicationName>
+		<kafkaSettings>
+			bootstrap.servers=192.168.12.51:9092,192.168.12.52:9092,192.168.12.53:9092
+			retries=3
+			batch.size=16384
+			buffer.memory=33554432
+			acks=1
+			key.serializer=org.apache.kafka.common.serialization.StringSerializer
+			value.serializer=com.github.paganini2008.springplayer.logging.common.AppLogEntryJsonSerializer
+		</kafkaSettings>
+	</appender>
 
 	<appender name="INFO"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -55,6 +68,7 @@
 
 	<root level="info">
 		<appender-ref ref="STDOUT" />
+		<appender-ref ref="applog" />
 		<appender-ref ref="INFO" />
 		<appender-ref ref="ERROR" />
 	</root>

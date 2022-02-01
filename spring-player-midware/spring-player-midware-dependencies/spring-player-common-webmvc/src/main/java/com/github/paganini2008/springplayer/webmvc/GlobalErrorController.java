@@ -1,5 +1,7 @@
 package com.github.paganini2008.springplayer.webmvc;
 
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
+
 import java.util.Locale;
 import java.util.Map;
 
@@ -22,7 +24,7 @@ import com.github.paganini2008.devtools.LocaleUtils;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.ErrorCode;
-import com.github.paganini2008.springplayer.webmvc.monitor.ApiCallUtils;
+import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -73,7 +75,7 @@ public class GlobalErrorController extends AbstractErrorController {
 		
 		ApiResult<Object> result = ApiResult.failed(message);
 		result.setRequestPath((String) errorAttributes.getOrDefault("path", request.getServletPath()));
-		String timestamp = ApiCallUtils.currentTimestamp(request);
+		String timestamp = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TIMESTAMP);
 		if (StringUtils.isNotBlank(timestamp)) {
 			result.setElapsed(System.currentTimeMillis() - Long.parseLong(timestamp));
 		}
@@ -82,7 +84,7 @@ public class GlobalErrorController extends AbstractErrorController {
 
 	private String getErrorMessage(ErrorCode errorCode) {
 		Locale locale;
-		String lang = HttpHeadersContextHolder.getHeader("lang");
+		String lang = HttpRequestContextHolder.getHeader("lang");
 		if (StringUtils.isNotBlank(lang)) {
 			locale = LocaleUtils.getLocale(lang);
 		} else {

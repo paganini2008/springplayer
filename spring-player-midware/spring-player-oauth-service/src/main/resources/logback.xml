@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
 
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
 		<encoder charset="UTF-8">
-			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] %logger{36} - %msg%n</pattern>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] %logger{36} - %msg%n
+			</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
+	</appender>
+
+	<appender name="applog"
+		class="com.github.paganini2008.springplayer.logback.KafkaLoggingAppender">
+		<applicationName>spring-player-oauth-service</applicationName>
+		<kafkaSettings>
+			<![CDATA[
+			bootstrap.servers=192.168.12.51:9092,192.168.12.52:9092,192.168.12.53:9092
+			retries=3
+			batch.size=16384
+			buffer.memory=33554432
+			acks=1
+			key.serializer=org.apache.kafka.common.serialization.StringSerializer
+			value.serializer=com.github.paganini2008.springplayer.logging.common.AppLogEntryJsonSerializer
+			 ]]>
+		</kafkaSettings>
 	</appender>
 
 	<appender name="INFO"
@@ -13,10 +31,11 @@
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<level>ERROR</level>
 			<onMatch>DENY</onMatch>
-			<onMismatch>ACCEPT</onMismatch> 
+			<onMismatch>ACCEPT</onMismatch>
 		</filter>
 		<file>${LOG_BASE}/app-info.log</file>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>${LOG_BASE}/history/app-info.%d{yyyy-MM-dd}-%i.log
 			</fileNamePattern>
 			<maxHistory>10</maxHistory>
@@ -26,18 +45,20 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 		</rollingPolicy>
 		<encoder>
-			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] %logger{36} - %msg%n</pattern>
-			<charset>UTF-8</charset> 
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
 
 	<appender name="ERROR"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>ERROR</level>
-        </filter>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
 		<file>${LOG_BASE}/app-error.log</file>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>${LOG_BASE}/history/app-error.%d{yyyy-MM-dd}-%i.log
 			</fileNamePattern>
 			<maxHistory>10</maxHistory>
@@ -47,14 +68,16 @@
 			</timeBasedFileNamingAndTriggeringPolicy>
 		</rollingPolicy>
 		<encoder>
-			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] %logger{36} - %msg%n</pattern>
-			<charset>UTF-8</charset> 
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
 
 
 	<root level="info">
 		<appender-ref ref="STDOUT" />
+		<appender-ref ref="applog"/>
 		<appender-ref ref="INFO" />
 		<appender-ref ref="ERROR" />
 	</root>

@@ -1,5 +1,7 @@
 package com.github.paganini2008.springplayer.webmvc;
 
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
+
 import java.time.LocalDateTime;
 import java.util.Locale;
 
@@ -20,7 +22,7 @@ import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.BizException;
 import com.github.paganini2008.springplayer.common.ErrorCode;
-import com.github.paganini2008.springplayer.webmvc.monitor.ApiCallUtils;
+import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -55,7 +57,7 @@ public class GlobalExceptionHandler {
 		ApiResult<Object> result = ApiResult.failed(getErrorMessage(e.getErrorCode()));
 		result.setRequestPath(request.getServletPath());
 
-		String timestamp = ApiCallUtils.currentTimestamp(request);
+		String timestamp = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TIMESTAMP);
 		if (StringUtils.isNotBlank(timestamp)) {
 			result.setElapsed(System.currentTimeMillis() - Long.parseLong(timestamp));
 		}
@@ -64,7 +66,7 @@ public class GlobalExceptionHandler {
 
 	private String getErrorMessage(ErrorCode errorCode) {
 		Locale locale;
-		String lang = HttpHeadersContextHolder.getHeader("lang");
+		String lang = HttpRequestContextHolder.getHeader("lang");
 		if (StringUtils.isNotBlank(lang)) {
 			locale = LocaleUtils.getLocale(lang);
 		} else {
@@ -84,7 +86,7 @@ public class GlobalExceptionHandler {
 
 		ApiResult<Object> result = ApiResult.failed("系统内部错误: " + e.getMessage());
 		result.setRequestPath(request.getServletPath());
-		String timestamp = ApiCallUtils.currentTimestamp(request);
+		String timestamp = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TIMESTAMP);
 		if (StringUtils.isNotBlank(timestamp)) {
 			result.setElapsed(System.currentTimeMillis() - Long.parseLong(timestamp));
 		}

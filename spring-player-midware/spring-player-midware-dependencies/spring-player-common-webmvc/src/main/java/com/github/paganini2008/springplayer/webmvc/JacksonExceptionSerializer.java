@@ -1,5 +1,7 @@
 package com.github.paganini2008.springplayer.webmvc;
 
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
+
 import java.util.Locale;
 
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -12,7 +14,7 @@ import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ErrorCode;
 import com.github.paganini2008.springplayer.common.ExceptionDescriptor;
 import com.github.paganini2008.springplayer.i18n.I18nUtils;
-import com.github.paganini2008.springplayer.webmvc.monitor.ApiCallUtils;
+import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 import lombok.SneakyThrows;
 
@@ -39,7 +41,7 @@ public class JacksonExceptionSerializer extends StdSerializer<ExceptionDescripto
 		gen.writeStringField("msg", getI18nMessage(e.getErrorCode()));
 		gen.writeStringField("data", null);
 		gen.writeStringField("requestPath", "");
-		String timestamp = ApiCallUtils.currentTimestamp();
+		String timestamp = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TIMESTAMP);
 		long elapsed = 0;
 		if (StringUtils.isNotBlank(timestamp)) {
 			elapsed = System.currentTimeMillis() - Long.parseLong(timestamp);
@@ -49,7 +51,7 @@ public class JacksonExceptionSerializer extends StdSerializer<ExceptionDescripto
 	}
 
 	private String getI18nMessage(ErrorCode errorCode) {
-		String lang = HttpHeadersContextHolder.getHeader("lang");
+		String lang = HttpRequestContextHolder.getHeader("lang");
 		Locale locale;
 		if (StringUtils.isNotBlank(lang)) {
 			locale = LocaleUtils.getLocale(lang);

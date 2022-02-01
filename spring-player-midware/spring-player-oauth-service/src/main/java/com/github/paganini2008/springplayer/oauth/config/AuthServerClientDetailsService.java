@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.paganini2008.springplayer.security.ErrorCodes;
 import com.github.paganini2008.springplayer.security.info.OauthConstants;
-import com.github.paganini2008.springplayer.webmvc.HttpHeadersContextHolder;
+import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,7 +32,7 @@ public class AuthServerClientDetailsService extends JdbcClientDetailsService {
 	@Override
 	@Cacheable(value = "oauth:client:details", key = "#clientId", unless = "#result == null")
 	public ClientDetails loadClientByClientId(String clientId) {
-		String sql = String.format(OauthConstants.DEFAULT_SELECT_STATEMENT, HttpHeadersContextHolder.getTenantId());
+		String sql = String.format(OauthConstants.DEFAULT_SELECT_STATEMENT, HttpRequestContextHolder.getTenantId());
 		super.setSelectClientDetailsSql(sql);
 		try {
 			return super.loadClientByClientId(clientId);

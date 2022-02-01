@@ -3,6 +3,7 @@ package com.github.paganini2008.springplayer.webmvc;
 import org.springframework.stereotype.Component;
 
 import com.github.paganini2008.devtools.StringUtils;
+import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -19,7 +20,7 @@ public class Oauth2RequestInterceptor implements RequestInterceptor {
 
 	@Override
 	public void apply(RequestTemplate template) {
-		String auth = HttpHeadersContextHolder.getHeader("Authorization");
+		String auth = HttpRequestContextHolder.getHeader("Authorization");
 		if (StringUtils.isNotBlank(auth)) {
 			template.header("Authorization", auth);
 		}
