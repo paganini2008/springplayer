@@ -38,20 +38,14 @@ import org.springframework.web.reactive.result.view.ViewResolver;
 @EnableConfigurationProperties({ ServerProperties.class, ResourceProperties.class })
 public class GlobalWebExceptionHanderConfig {
 
-	private final ServerProperties serverProperties;
-
-	public GlobalWebExceptionHanderConfig(ServerProperties serverProperties) {
-		this.serverProperties = serverProperties;
-	}
-
 	@Primary
 	@Bean
 	@Order(-50)
 	public ErrorWebExceptionHandler errorWebExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties,
-			ObjectProvider<ViewResolver> viewResolvers, ServerCodecConfigurer serverCodecConfigurer, ApplicationContext applicationContext,
-			ApiExceptionContext apiExceptionContext) {
+			ServerProperties serverProperties, ObjectProvider<ViewResolver> viewResolvers, ServerCodecConfigurer serverCodecConfigurer,
+			ApplicationContext applicationContext, ApiExceptionContext apiExceptionContext) {
 		GlobalWebExceptionHandler exceptionHandler = new GlobalWebExceptionHandler(errorAttributes, resourceProperties,
-				this.serverProperties.getError(), applicationContext, apiExceptionContext);
+				serverProperties.getError(), applicationContext, apiExceptionContext);
 		exceptionHandler.setViewResolvers(viewResolvers.orderedStream().collect(Collectors.toList()));
 		exceptionHandler.setMessageWriters(serverCodecConfigurer.getWriters());
 		exceptionHandler.setMessageReaders(serverCodecConfigurer.getReaders());
@@ -61,7 +55,7 @@ public class GlobalWebExceptionHanderConfig {
 	@Bean
 	@ConditionalOnMissingBean(value = ErrorAttributes.class, search = SearchStrategy.CURRENT)
 	public DefaultErrorAttributes errorAttributes() {
-		return new DefaultErrorAttributes();
+		return new GlobalErrorAttributes();
 	}
 
 }

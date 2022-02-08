@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono;
 @Component
 public class ReactiveRequestContextHolder implements WebFilter {
 	
-	static final String REQUEST_CONTEXT_KEY = ServerHttpRequest.class.getName();
+	public static final String REQUEST_CONTEXT_KEY = ServerHttpRequest.class.getName();
 
 	public static Mono<ServerHttpRequest> getRequest() {
 		return Mono.subscriberContext().map(ctx -> ctx.get(REQUEST_CONTEXT_KEY));
@@ -27,7 +27,7 @@ public class ReactiveRequestContextHolder implements WebFilter {
 	@Override
 	public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
 		ServerHttpRequest request = exchange.getRequest();
-		return chain.filter(exchange).subscriberContext(ctx -> ctx.put(chain, request));
+		return chain.filter(exchange).subscriberContext(ctx -> ctx.put(REQUEST_CONTEXT_KEY, request));
 	}
 
 }

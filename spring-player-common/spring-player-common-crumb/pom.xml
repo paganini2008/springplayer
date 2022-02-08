@@ -40,12 +40,13 @@
 
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
-			<artifactId>spring-player-common-data</artifactId>
+			<artifactId>spring-player-common-web</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
-			<artifactId>spring-player-common-web</artifactId>
+			<artifactId>spring-player-common-data</artifactId>
 		</dependency>
 
 		<dependency>

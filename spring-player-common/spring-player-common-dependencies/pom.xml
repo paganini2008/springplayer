@@ -44,6 +44,7 @@
 		<module>../spring-player-common-email</module>
 		<module>../spring-player-common-dingtalk</module>
 		<module>../spring-player-common-swagger</module>
+		<module>../spring-player-common-sysinfo</module>
 	</modules>
 
 	<dependencyManagement>
@@ -177,6 +178,18 @@
 			<dependency>
 				<groupId>com.github.paganini2008.springplayer</groupId>
 				<artifactId>spring-player-common-web</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-gateway</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-sysinfo</artifactId>
 				<version>${spring-player.version}</version>
 			</dependency>
 

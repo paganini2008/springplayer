@@ -14,7 +14,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.github.paganini2008.springplayer.crumb.ApiCallUtils;
+import com.github.paganini2008.springplayer.crumb.webmvc.ApiCallUtils;
 import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 /**

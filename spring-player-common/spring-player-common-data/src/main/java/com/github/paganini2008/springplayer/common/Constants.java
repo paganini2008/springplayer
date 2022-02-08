@@ -20,5 +20,8 @@ public abstract class Constants {
 
 	public static final String KAFKA_TOPIC_APPLOG = "applog";
 	public static final String INDEX_NAME_LOG_COLLECTOR = "LogCollector";
+	
+	public static final String SENTINEL_GATEWAY_RULE = "rule";
+	public static final String SENTINEL_GATEWAY_RULE_API = "api";
 
 }

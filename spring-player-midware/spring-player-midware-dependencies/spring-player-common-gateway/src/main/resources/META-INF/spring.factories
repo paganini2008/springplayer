@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.github.paganini2008.springplayer.gateway.route.GatewayRouteManagementConfig,\
+  com.github.paganini2008.springplayer.gateway.sentinel.GatewaySentinelConfig,\
+  com.github.paganini2008.springplayer.gateway.version.GatewayApiVersionConfig

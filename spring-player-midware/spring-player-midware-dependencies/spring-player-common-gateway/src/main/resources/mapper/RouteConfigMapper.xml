@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.paganini2008.springplayer.gateway.route.mapper.RouteConfigMapper">
+
+  <resultMap id="BaseResultMap" type="com.github.paganini2008.springplayer.gateway.route.model.RouteConfig">
+    <id column="id" jdbcType="NUMERIC" property="id" />
+    <result column="service_id" jdbcType="VARCHAR" property="serviceId" />
+    <result column="groupName" jdbcType="VARCHAR" property="groupName" />
+    <result column="env" jdbcType="VARCHAR" property="env" />
+    <result column="rule" jdbcType="CLOB" property="rule" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.github.paganini2008.springplayer.gateway.route.model.RouteConfig" useGeneratedKeys="false">
+    INSERT INTO sys_route (
+        ID
+      , service_id
+      , group_name
+      , env
+      , rule
+      , create_time
+      , update_time
+    )
+    VALUES( 
+        #{id,jdbcType=NUMERIC}
+      , #{serviceId,jdbcType=VARCHAR}
+      , #{groupName,jdbcType=VARCHAR}
+      , #{env,jdbcType=VARCHAR}
+      , #{rule,jdbcType=CLOB}
+      , #{createTime,jdbcType=TIMESTAMP}
+      , #{updateTime,jdbcType=TIMESTAMP}
+    )
+  </insert>
+  
+  <select id="getServiceIds" parameterType="java.lang.String" resultType="java.lang.String">
+    SELECT service_id FROM sys_route WHERE env=#{env,jdbcType=VARCHAR}
+  </select>
+
+</mapper>

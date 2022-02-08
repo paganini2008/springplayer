@@ -1,0 +1,82 @@
+server:
+  port: 6000
+
+spring:
+  application:
+    name: spring-player-gateway-service
+  cloud:
+    sentinel:
+      rule:
+        store: redis
+      transport:
+        dashboard: 192.168.1.203:30669
+        heartbeat-interval-ms: 3000
+        eager: true
+    gateway:
+      httpclient:
+        connect-timeout: 5000
+        pool:
+          max-idle-time: 10000
+          max-connections: 1000
+          acquire-timeout: 60000
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useSSL=false
+    username: fengy
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 1
+      idle-timeout: 180000
+      maximum-pool-size: 20
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  redis:
+    port: 6379
+    host: localhost
+    password: 123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka
+    fetch-registry: true
+    registry-fetch-interval-seconds: 60
+  instance:
+    lease-renewal-interval-in-seconds: 4
+    lease-expiration-duration-in-seconds: 12
+    
+management:
+  endpoint:
+    gateway:
+      enabled: true
+    health:
+      show-details: always
+  server:
+    port: 8070
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+          
+info:
+  app:
+    name: spring-player-gateway-service
+  company:
+    name: JMS
+  build:
+    artifactId: spring-player-gateway-service
+    version: 1.0.0
+        
+      
+
+
+      
+
+
+      
+      
+      
+    
+

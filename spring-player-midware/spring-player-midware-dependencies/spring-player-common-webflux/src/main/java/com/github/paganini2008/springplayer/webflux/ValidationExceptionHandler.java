@@ -15,6 +15,8 @@ import com.github.paganini2008.devtools.collection.CollectionUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.i18n.I18nUtils;
 
+import reactor.core.publisher.Mono;
+
 /**
  * 
  * ValidationExceptionHandler
@@ -28,14 +30,16 @@ public class ValidationExceptionHandler {
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(WebExchangeBindException.class)
-	public ApiResult<?> handleException(WebExchangeBindException exception) {
+	public Mono<ApiResult<?>> handleException(WebExchangeBindException exception) {
 		List<FieldError> fieldErrors = exception.getFieldErrors();
 		if (CollectionUtils.isEmpty(fieldErrors)) {
-			return ApiResult.failed();
+			return Mono.just(ApiResult.failed());
 		}
-		String lang = RequestHeaderContextHolder.getHeader("lang");
-		String message = fieldErrors.get(0).getDefaultMessage();
-		return ApiResult.failed(getI18nMessage(lang, message));
+		return ReactiveRequestContextHolder.getRequest().flatMap(r -> {
+			String lang = r.getHeaders().getFirst("lang");
+			String message = fieldErrors.get(0).getDefaultMessage();
+			return Mono.just(ApiResult.failed(getI18nMessage(lang, message)));
+		});
 	}
 
 	private String getI18nMessage(String lang, String repr) {

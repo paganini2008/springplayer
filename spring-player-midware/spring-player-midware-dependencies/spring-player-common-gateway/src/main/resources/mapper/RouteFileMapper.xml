@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.paganini2008.springplayer.gateway.route.mapper.RouteFileMapper">
+
+  <resultMap id="BaseResultMap" type="com.github.paganini2008.springplayer.gateway.route.model.RouteFile">
+    <id column="id" jdbcType="NUMERIC" property="id" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+    <result column="env" jdbcType="VARCHAR" property="env" />
+    <result column="content" jdbcType="CLOB" property="content" />
+    <result column="format" jdbcType="CLOB" property="format" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.github.paganini2008.springplayer.gateway.route.model.RouteFile" useGeneratedKeys="false">
+    INSERT INTO sys_route_file (
+        ID
+      , file_name
+      , env
+      , content
+      , format
+      , create_time
+      , update_time
+    )
+    VALUES( 
+        #{id,jdbcType=NUMERIC}
+      , #{fileName,jdbcType=VARCHAR}
+      , #{env,jdbcType=VARCHAR}
+      , #{content,jdbcType=CLOB}
+      , #{format,jdbcType=VARCHAR}
+      , #{createTime,jdbcType=TIMESTAMP}
+      , #{updateTime,jdbcType=TIMESTAMP}
+    )
+  </insert>
+  
+  <select id="getFileNames" parameterType="java.lang.String" resultType="java.lang.String">
+    SELECT DISTINCT file_name FROM sys_route_file WHERE env=#{env,jdbcType=VARCHAR}
+  </select>
+ 
+</mapper>

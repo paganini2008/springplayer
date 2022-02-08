@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.github.paganini2008.devtools.StringUtils;
 
 /**
  * 
@@ -29,12 +30,15 @@ public abstract class JacksonUtils {
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 		mapper.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
-		
+
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
-        mapper.registerModule(javaTimeModule);
+		mapper.registerModule(javaTimeModule);
 	}
 
 	public static byte[] toJsonStringBytes(Object object) {
+		if (object == null) {
+			return "".getBytes();
+		}
 		try {
 			return mapper.writeValueAsBytes(object);
 		} catch (JsonProcessingException e) {
@@ -43,6 +47,9 @@ public abstract class JacksonUtils {
 	}
 
 	public static String toJsonString(Object object) {
+		if (object == null) {
+			return "";
+		}
 		try {
 			return mapper.writeValueAsString(object);
 		} catch (JsonProcessingException e) {
@@ -51,6 +58,9 @@ public abstract class JacksonUtils {
 	}
 
 	public static <T> T parseJson(byte[] bytes, Class<T> requiredType) {
+		if (bytes == null) {
+			return null;
+		}
 		try {
 			return mapper.readValue(bytes, requiredType);
 		} catch (IOException e) {
@@ -59,6 +69,9 @@ public abstract class JacksonUtils {
 	}
 
 	public static <T> T parseJson(String json, TypeReference<T> typeReference) {
+		if (StringUtils.isBlank(json)) {
+			return null;
+		}
 		try {
 			return mapper.readValue(json, typeReference);
 		} catch (IOException e) {
@@ -67,6 +80,9 @@ public abstract class JacksonUtils {
 	}
 
 	public static <T> T parseJson(String json, Class<T> requiredType) {
+		if (StringUtils.isBlank(json)) {
+			return null;
+		}
 		try {
 			return mapper.readValue(json, requiredType);
 		} catch (IOException e) {
@@ -75,7 +91,7 @@ public abstract class JacksonUtils {
 	}
 
 	public static void main(String[] args) throws Exception {
-		
+
 	}
 
 }
