@@ -7,9 +7,9 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import com.github.paganini2008.devtools.Env;
+import com.github.paganini2008.springplayer.security.EnableOauth2ResourceServer;
 
 /**
  * 
@@ -19,7 +19,7 @@ import com.github.paganini2008.devtools.Env;
  * @version 1.0.0
  */
 @MapperScan("com.github.paganini2008.springplayer.upms.mapper")
-@EnableFeignClients(basePackages = { "com.github.paganini2008.springplayer.i18n.api" })
+@EnableOauth2ResourceServer
 @EnableEurekaClient
 @SpringBootApplication
 public class UpmsApplication {

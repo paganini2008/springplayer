@@ -1,4 +1,4 @@
-package com.github.paganini2008.springplayer.crumb;
+package com.github.paganini2008.springplayer.monitor;
 
 /**
  * 
@@ -10,7 +10,9 @@ package com.github.paganini2008.springplayer.crumb;
 public interface TpsUpdater {
 
 	void increment();
-	
+
 	int get();
-	
+
+	void set();
+
 }

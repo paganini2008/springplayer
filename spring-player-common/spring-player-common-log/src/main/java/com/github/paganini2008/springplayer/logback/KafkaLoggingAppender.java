@@ -1,7 +1,7 @@
 package com.github.paganini2008.springplayer.logback;
 
 import static com.github.paganini2008.springplayer.common.Constants.KAFKA_TOPIC_APPLOG;
-import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_SPAN;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_SPAN_ID;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TRACE_ID;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_PATH;
 
@@ -103,7 +103,7 @@ public class KafkaLoggingAppender extends UnsynchronizedAppenderBase<ILoggingEve
 			return;
 		}
 		String traceId = mdc.get(REQUEST_HEADER_TRACE_ID);
-		int span = Integer.parseInt(mdc.get(REQUEST_HEADER_SPAN));
+		int span = Integer.parseInt(mdc.get(REQUEST_HEADER_SPAN_ID));
 		String requestPath = mdc.get(REQUEST_PATH);
 		
 		AppLogEntry logEntry = new AppLogEntry();

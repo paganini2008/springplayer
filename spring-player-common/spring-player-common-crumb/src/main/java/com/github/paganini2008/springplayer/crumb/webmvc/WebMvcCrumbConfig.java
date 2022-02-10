@@ -15,14 +15,14 @@ import feign.codec.Decoder;
 
 /**
  * 
- * WebCrumbConfig
+ * WebMvcCrumbConfig
  *
  * @author Fred Feng
  * @version 1.0.0
  */
-@ComponentScan("com.github.paganini2008.springplayer.crumb")
+@ComponentScan("com.github.paganini2008.springplayer.crumb.webmvc")
 @Configuration(proxyBeanMethods = false)
-public class WebCrumbConfig {
+public class WebMvcCrumbConfig {
 
 	@Bean
 	public RedisAtomicLong spanGen(RedisConnectionFactory connectionFactory) {
@@ -31,7 +31,7 @@ public class WebCrumbConfig {
 
 	@Bean
 	public Decoder remoteCallSpanPostDecoder(ObjectFactory<HttpMessageConverters> messageConverters, ObjectMapper objectMapper) {
-		return new RemoteCallSpanPostDecoder(new SpringDecoder(messageConverters), objectMapper);
+		return new RpcSpanPostHandler(new SpringDecoder(messageConverters), objectMapper);
 	}
 
 }

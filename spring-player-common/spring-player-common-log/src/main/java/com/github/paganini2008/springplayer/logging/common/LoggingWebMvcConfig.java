@@ -1,6 +1,6 @@
 package com.github.paganini2008.springplayer.logging.common;
 
-import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_SPAN;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_SPAN_ID;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TRACE_ID;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_PATH;
 
@@ -14,7 +14,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.github.paganini2008.springplayer.crumb.webmvc.ApiCallUtils;
 import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 /**
@@ -41,9 +40,9 @@ public class LoggingWebMvcConfig implements WebMvcConfigurer {
 
 		@Override
 		public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-			MDC.put(REQUEST_HEADER_TRACE_ID, ApiCallUtils.currentTraceId(request));
-			MDC.put(REQUEST_HEADER_SPAN, ApiCallUtils.currentSpan(request));
-			MDC.put(REQUEST_PATH, HttpRequestContextHolder.getPath());
+			MDC.put(REQUEST_HEADER_TRACE_ID, HttpRequestContextHolder.getHeader(REQUEST_HEADER_TRACE_ID));
+			MDC.put(REQUEST_HEADER_SPAN_ID, HttpRequestContextHolder.getHeader(REQUEST_HEADER_SPAN_ID));
+			MDC.put(REQUEST_PATH, request.getServletPath());
 			return true;
 		}
 

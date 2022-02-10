@@ -1,21 +1,19 @@
-package com.github.paganini2008.springplayer.crumb.webmvc;
+package com.github.paganini2008.springplayer.monitor;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.Supplier;
 
 import com.github.paganini2008.devtools.collection.MapUtils;
-import com.github.paganini2008.springplayer.crumb.ConcurrencyUpdater;
-import com.github.paganini2008.springplayer.crumb.SimpleConcurrencyUpdater;
 
 /**
  * 
- * RequestConcurrencyHolder
+ * RequestConcurrencyContextHolder
  *
  * @author Fred Feng
  * @version 1.0.0
  */
-public class RequestConcurrencyHolder {
+public class RequestConcurrencyContextHolder {
 
 	private static final ConcurrentMap<String, ConcurrencyUpdater> cache = new ConcurrentHashMap<>();
 

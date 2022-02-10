@@ -1,4 +1,4 @@
-package com.github.paganini2008.springplayer.crumb;
+package com.github.paganini2008.springplayer.monitor;
 
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.support.atomic.RedisAtomicLong;
@@ -30,7 +30,9 @@ public class RedisConcurrencyUpdater implements ConcurrencyUpdater {
 
 	@Override
 	public void decrement() {
-		counter.decrementAndGet();
+		if (get() > 0) {
+			counter.decrementAndGet();
+		}
 	}
 
 	@Override

@@ -1,9 +1,9 @@
 package com.github.paganini2008.springplayer.crumb.webmvc;
 
-import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_PARENT_SPAN;
-import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_SPAN;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_PARENT_SPAN_ID;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_SPAN_ID;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
-import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TRACE;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TRACES;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TRACE_ID;
 import static com.github.paganini2008.springplayer.web.HttpRequestContextHolder.getHeader;
 
@@ -36,20 +36,20 @@ public abstract class ApiCallUtils {
 		return getHeader(REQUEST_HEADER_TRACE_ID);
 	}
 
-	public static String currentSpan(HttpServletRequest request) {
-		String spanId = request.getHeader(REQUEST_HEADER_SPAN);
+	public static String currentSpanId(HttpServletRequest request) {
+		String spanId = request.getHeader(REQUEST_HEADER_SPAN_ID);
 		if (StringUtils.isBlank(spanId)) {
-			spanId = currentSpan();
+			spanId = currentSpanId();
 		}
 		return spanId;
 	}
 
-	public static String currentSpan() {
-		return getHeader(REQUEST_HEADER_SPAN);
+	public static String currentSpanId() {
+		return getHeader(REQUEST_HEADER_SPAN_ID);
 	}
 
-	public static String currentParentSpan() {
-		return getHeader(REQUEST_HEADER_PARENT_SPAN);
+	public static String currentParentSpanId() {
+		return getHeader(REQUEST_HEADER_PARENT_SPAN_ID);
 	}
 
 	public static String currentTimestamp(HttpServletRequest request) {
@@ -68,19 +68,19 @@ public abstract class ApiCallUtils {
 		httpHeaders.set(REQUEST_HEADER_TIMESTAMP, currentTimestamp());
 		httpHeaders.set(REQUEST_HEADER_TIMESTAMP, currentTimestamp());
 		httpHeaders.set(REQUEST_HEADER_TRACE_ID, currentTraceId());
-		httpHeaders.set(REQUEST_HEADER_SPAN, currentSpan());
-		httpHeaders.set(REQUEST_HEADER_PARENT_SPAN, currentParentSpan());
-		String traces = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TRACE);
-		httpHeaders.set(REQUEST_HEADER_TRACE, traces);
+		httpHeaders.set(REQUEST_HEADER_SPAN_ID, currentSpanId());
+		httpHeaders.set(REQUEST_HEADER_PARENT_SPAN_ID, currentParentSpanId());
+		String traces = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TRACES);
+		httpHeaders.set(REQUEST_HEADER_TRACES, traces);
 	}
 
 	public static void setApiHeaders(HttpServletResponse response) {
 		response.setHeader(REQUEST_HEADER_TIMESTAMP, currentTimestamp());
 		response.setHeader(REQUEST_HEADER_TRACE_ID, currentTraceId());
-		response.setHeader(REQUEST_HEADER_SPAN, currentSpan());
-		response.setHeader(REQUEST_HEADER_PARENT_SPAN, currentParentSpan());
-		String traces = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TRACE);
-		response.setHeader(REQUEST_HEADER_TRACE, traces);
+		response.setHeader(REQUEST_HEADER_SPAN_ID, currentSpanId());
+		response.setHeader(REQUEST_HEADER_PARENT_SPAN_ID, currentParentSpanId());
+		String traces = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TRACES);
+		response.setHeader(REQUEST_HEADER_TRACES, traces);
 	}
 
 }

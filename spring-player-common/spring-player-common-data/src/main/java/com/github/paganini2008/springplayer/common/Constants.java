@@ -11,10 +11,10 @@ public abstract class Constants {
 
 	public static final String TENANT_ID = "__tenantId__";
 	public static final String REQUEST_HEADER_TIMESTAMP = "__timestamp__";
-	public static final String REQUEST_HEADER_TRACE = "__traces__";
+	public static final String REQUEST_HEADER_TRACES = "__traces__";
 	public static final String REQUEST_HEADER_TRACE_ID = "__traceId__";
-	public static final String REQUEST_HEADER_SPAN = "__span__";
-	public static final String REQUEST_HEADER_PARENT_SPAN = "__parentSpan__";
+	public static final String REQUEST_HEADER_SPAN_ID = "__spanId__";
+	public static final String REQUEST_HEADER_PARENT_SPAN_ID = "__parentSpanId__";
 
 	public static final String REQUEST_PATH = "__requestPath__";
 

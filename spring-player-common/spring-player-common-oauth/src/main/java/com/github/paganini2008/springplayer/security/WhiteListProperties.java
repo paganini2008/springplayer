@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -19,6 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 
@@ -27,9 +27,9 @@ import lombok.Setter;
  * @author Fred Feng
  * @version 1.0.0
  */
+@Slf4j
 @Configuration
 @RequiredArgsConstructor
-@ConditionalOnExpression("!'${security.oauth2.client.white-list}'.isEmpty()")
 @ConfigurationProperties(prefix = "security.oauth2.client")
 public class WhiteListProperties implements InitializingBean {
 
@@ -57,6 +57,7 @@ public class WhiteListProperties implements InitializingBean {
 			Optional.ofNullable(controller).ifPresent(c -> info.getPatternsCondition().getPatterns()
 					.forEach(url -> whiteListUrls.add(url.replaceAll(PATH_VARS_PATTERN, "*"))));
 		});
+		log.info("White List Urls: {}", whiteListUrls);
 
 	}
 

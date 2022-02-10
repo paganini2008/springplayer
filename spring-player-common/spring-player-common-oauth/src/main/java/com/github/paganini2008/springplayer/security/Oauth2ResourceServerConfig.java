@@ -2,6 +2,7 @@ package com.github.paganini2008.springplayer.security;
 
 import java.io.IOException;
 
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
  * @version 1.0.0
  */
 @ComponentScan("com.github.paganini2008.springplayer.security")
+@EnableConfigurationProperties(WhiteListProperties.class)
 @Configuration
 public class Oauth2ResourceServerConfig {
 

@@ -53,6 +53,7 @@ public class FeignClientCandidatesRegistrar implements ImportBeanDefinitionRegis
 		if (feignClients.isEmpty()) {
 			return;
 		}
+		final String currentApplicationName = environment.getRequiredProperty("spring.application.name");
 		for (String className : feignClients) {
 			Class<?> clazz;
 			try {
@@ -69,13 +70,21 @@ public class FeignClientCandidatesRegistrar implements ImportBeanDefinitionRegis
 			if (registry.containsBeanDefinition(className) || registry.containsBeanDefinition(possibleBeanName)) {
 				continue;
 			}
-			registerClientConfiguration(registry, getClientName(attributes), attributes.get("configuration"));
+			String clientName = getClientName(attributes);
+			if(currentApplicationName.equals(clientName)) {
+				continue;
+			}
+			String name = getName(attributes);
+			if (currentApplicationName.equals(name)) {
+				continue;
+			}
+			
+			registerClientConfiguration(registry, clientName, attributes.get("configuration"));
 
 			validate(attributes);
 			BeanDefinitionBuilder definition = BeanDefinitionBuilder.genericBeanDefinition(FeignClientFactoryBean.class);
 			definition.addPropertyValue("url", getUrl(attributes));
 			definition.addPropertyValue("path", getPath(attributes));
-			String name = getName(attributes);
 			definition.addPropertyValue("name", name);
 
 			StringBuilder aliasBuilder = new StringBuilder(18);

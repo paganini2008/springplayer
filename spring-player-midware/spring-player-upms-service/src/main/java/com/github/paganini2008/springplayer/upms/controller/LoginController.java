@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.paganini2008.springplayer.common.ApiResult;
+import com.github.paganini2008.springplayer.security.WhiteList;
 import com.github.paganini2008.springplayer.upms.service.impl.UserManagerService;
 import com.github.paganini2008.springplayer.upms.vo.UserVO;
 
@@ -17,6 +18,7 @@ import com.github.paganini2008.springplayer.upms.vo.UserVO;
  * @author Fred Feng
  * @version 1.0.0
  */
+@WhiteList
 @RequestMapping("/user")
 @RestController
 public class LoginController {

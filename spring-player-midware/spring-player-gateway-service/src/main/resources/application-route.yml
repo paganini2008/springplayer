@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: weather-api
+          uri: http://www.weather.com.cn
+          predicates:
+            - Path=/weather/**
+          filters:
+            - StripPrefix=1
+        - id: spring-player-upms-service
+          uri: lb://spring-player-upms-service
+          predicates:
+            - Path=/upms/**
+          filters:
+            - StripPrefix=1

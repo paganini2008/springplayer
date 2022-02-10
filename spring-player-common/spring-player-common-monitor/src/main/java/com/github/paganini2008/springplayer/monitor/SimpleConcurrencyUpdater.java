@@ -1,4 +1,4 @@
-package com.github.paganini2008.springplayer.crumb;
+package com.github.paganini2008.springplayer.monitor;
 
 import java.util.concurrent.atomic.LongAdder;
 
@@ -29,7 +29,9 @@ public class SimpleConcurrencyUpdater implements ConcurrencyUpdater {
 
 	@Override
 	public void decrement() {
-		counter.decrement();
+		if (get() > 0) {
+			counter.decrement();
+		}
 	}
 
 	@Override

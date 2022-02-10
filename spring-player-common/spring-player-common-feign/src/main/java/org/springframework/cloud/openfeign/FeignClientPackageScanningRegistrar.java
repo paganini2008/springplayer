@@ -11,7 +11,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.SpringFactoriesLoader;
 import org.springframework.core.type.AnnotationMetadata;
+import org.springframework.util.CollectionUtils;
 
+import com.github.paganini2008.springplayer.feign.FeignClientCandidatesExcludedAutoConfiguration;
 import com.github.paganini2008.springplayer.feign.FeignClientPackageScanningAutoConfiguration;
 
 import lombok.Getter;
@@ -56,6 +58,11 @@ public class FeignClientPackageScanningRegistrar
 		}
 		classPathBeanDefinitionScanner.setEnvironment(environment);
 		classPathBeanDefinitionScanner.setBeanClassLoader(beanClassLoader);
+		List<String> excludedClassNames = SpringFactoriesLoader.loadFactoryNames(FeignClientCandidatesExcludedAutoConfiguration.class,
+				beanClassLoader);
+		if (!CollectionUtils.isEmpty(excludedClassNames)) {
+			classPathBeanDefinitionScanner.addExcludeFilter(new ClassNameTypeFilter(excludedClassNames));
+		}
 		classPathBeanDefinitionScanner.scan(packageNames.toArray(new String[0]));
 	}
 

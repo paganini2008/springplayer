@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: spring-player-gateway-service
+  profiles:
+    active: route
   cloud:
     sentinel:
       rule:
