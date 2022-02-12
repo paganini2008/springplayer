@@ -45,6 +45,7 @@
 		<module>../spring-player-common-dingtalk</module>
 		<module>../spring-player-common-swagger</module>
 		<module>../spring-player-common-sysinfo</module>
+		<module>../spring-player-common-vm</module>
 		<module>../spring-player-common-monitor</module>
 	</modules>
 

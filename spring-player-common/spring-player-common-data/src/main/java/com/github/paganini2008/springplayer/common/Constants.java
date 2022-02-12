@@ -9,6 +9,9 @@ package com.github.paganini2008.springplayer.common;
  */
 public abstract class Constants {
 
+	public static final int SERVER_PORT_START_WITH = 50000;
+	public static final int SERVER_PORT_END_WITH = 60000;
+
 	public static final String TENANT_ID = "__tenantId__";
 	public static final String REQUEST_HEADER_TIMESTAMP = "__timestamp__";
 	public static final String REQUEST_HEADER_TRACES = "__traces__";
@@ -20,7 +23,7 @@ public abstract class Constants {
 
 	public static final String KAFKA_TOPIC_APPLOG = "applog";
 	public static final String INDEX_NAME_LOG_COLLECTOR = "LogCollector";
-	
+
 	public static final String SENTINEL_GATEWAY_RULE = "rule";
 	public static final String SENTINEL_GATEWAY_RULE_API = "api";
 

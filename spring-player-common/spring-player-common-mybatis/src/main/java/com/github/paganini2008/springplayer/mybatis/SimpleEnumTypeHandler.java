@@ -13,9 +13,9 @@ import com.github.paganini2008.devtools.enums.EnumUtils;
 
 /**
  * 
- * GenericEnumTypeHandler
+ * SimpleEnumTypeHandler
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class SimpleEnumTypeHandler<E extends EnumConstant> extends BaseTypeHandler<E> {
