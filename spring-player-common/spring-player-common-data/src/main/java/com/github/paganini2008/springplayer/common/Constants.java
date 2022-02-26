@@ -9,6 +9,8 @@ package com.github.paganini2008.springplayer.common;
  */
 public abstract class Constants {
 
+	public static final String VERSION = "1.0.0-RELEASE";
+
 	public static final int SERVER_PORT_START_WITH = 50000;
 	public static final int SERVER_PORT_END_WITH = 60000;
 

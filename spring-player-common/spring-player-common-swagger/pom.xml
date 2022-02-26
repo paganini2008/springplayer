@@ -13,12 +13,54 @@
 	<artifactId>spring-player-common-swagger</artifactId>
 	<packaging>jar</packaging>
 
+	<properties>
+		<swagger.fox.version>2.9.2</swagger.fox.version>
+		<knife4j.version>2.0.4</knife4j.version>
+	</properties>
+
 	<dependencies>
+
+		<dependency>
+			<groupId>com.github.paganini2008.springplayer</groupId>
+			<artifactId>spring-player-common-data</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>io.springfox</groupId>
-			<artifactId>springfox-boot-starter</artifactId>
-			<version>3.0.0</version>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.fox.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.fox.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>knife4j-micro-spring-boot-starter</artifactId>
+			<version>${knife4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>knife4j-spring-ui</artifactId>
+			<version>${knife4j.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

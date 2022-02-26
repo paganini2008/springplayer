@@ -9,6 +9,10 @@
 	</parent>
 	<artifactId>spring-player-gateway-service</artifactId>
 
+	<properties>
+		<swagger.fox.version>2.9.2</swagger.fox.version>
+	</properties>
+
 	<dependencies>
 
 		<dependency>
@@ -32,8 +36,18 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.github.paganini2008.springplayer</groupId>
+			<artifactId>spring-player-common-log</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.paganini2008.springplayer</groupId>
+			<artifactId>spring-player-common-swagger</artifactId>
 		</dependency>
 
 		<dependency>

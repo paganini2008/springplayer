@@ -1,9 +1,15 @@
 package com.github.paganini2008.springplayer.monitor.crumb;
 
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_SPAN_ID;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TRACE_ID;
+import static com.github.paganini2008.springplayer.common.Constants.REQUEST_PATH;
+
+import org.slf4j.MDC;
 import org.springframework.http.HttpStatus;
 
 import com.github.paganini2008.devtools.ArrayUtils;
 import com.github.paganini2008.springplayer.common.JacksonUtils;
+import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -46,6 +52,9 @@ public class ThresholdTraceStore implements TraceStore {
 
 	@Override
 	public void trace(SpanTree spanTree) {
+		MDC.put(REQUEST_HEADER_TRACE_ID, spanTree.getSpan().getTraceId());
+		MDC.put(REQUEST_HEADER_SPAN_ID, String.valueOf(spanTree.getSpan().getSpanId()));
+		MDC.put(REQUEST_PATH, spanTree.getSpan().getPath());
 		log.info(JacksonUtils.toJsonString(spanTree));
 	}
 

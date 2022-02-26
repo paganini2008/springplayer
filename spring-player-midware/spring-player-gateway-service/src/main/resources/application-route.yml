@@ -14,3 +14,9 @@ spring:
             - Path=/upms/**
           filters:
             - StripPrefix=1
+        - id: spring-player-oauth-service
+          uri: lb://spring-player-oauth-service
+          predicates:
+            - Path=/security/**
+          filters:
+            - StripPrefix=1

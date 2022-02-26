@@ -8,7 +8,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.method.HandlerMethod;
@@ -28,7 +27,6 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0.0
  */
 @Slf4j
-@Configuration
 @RequiredArgsConstructor
 @ConfigurationProperties(prefix = "security.oauth2.client")
 public class WhiteListProperties implements InitializingBean {

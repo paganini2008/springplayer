@@ -88,8 +88,9 @@ public class GatewayCrumbFilter implements GlobalFilter {
 				payload.setConcurrents(RequestConcurrencyContextHolder.get(payload.getPath()).get());
 
 				List<String> traces = response.getHeaders().remove(REQUEST_HEADER_TRACES);
-				if (CollectionUtils.isNotEmpty(traces)) {
-					List<Span> spans = StringUtils.split(traces.get(0), ";").stream().map(str -> JacksonUtils.parseJson(str, Span.class))
+				if (CollectionUtils.isNotEmpty(traces) && StringUtils.isNotBlank(traces.get(0))) {
+					String trace = traces.get(0);
+					List<Span> spans = StringUtils.split(trace, ";").stream().map(str -> JacksonUtils.parseJson(str, Span.class))
 							.collect(Collectors.toList());
 					spans.add(payload);
 					SpanTree spanTree = SpanTree.load(spans);
@@ -97,7 +98,7 @@ public class GatewayCrumbFilter implements GlobalFilter {
 						traceStore.trace(spanTree);
 					}
 				}
-				
+
 				response.getHeaders().remove(REQUEST_HEADER_TRACE_ID);
 				response.getHeaders().remove(REQUEST_HEADER_PARENT_SPAN_ID);
 				response.getHeaders().remove(REQUEST_HEADER_SPAN_ID);

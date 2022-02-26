@@ -1,0 +1,90 @@
+2022-02-25 18:32:30 [INFO ] o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [192.168.12.51:9092, 192.168.12.52:9092, 192.168.12.53:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class com.github.paganini2008.springplayer.logging.common.AppLogEntryJsonSerializer
+
+2022-02-25 18:32:30 [INFO ] o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2022-02-25 18:32:30 [INFO ] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2022-02-25 18:32:30 [INFO ] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1645785149964
+2022-02-25 18:32:31 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-25 18:32:31 [INFO ] org.apache.kafka.clients.Metadata - [Producer clientId=producer-2] Cluster ID: xGjWBV0RSnCwUEu0TkFx1Q
+2022-02-25 18:32:33 [INFO ] c.g.p.s.channel.ChannelApplication - No active profile set, falling back to default profiles: default
+2022-02-25 18:32:33 [INFO ] org.apache.kafka.clients.Metadata - [Producer clientId=producer-3] Cluster ID: xGjWBV0RSnCwUEu0TkFx1Q
+2022-02-25 18:32:33 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-25 18:32:33 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-25 18:32:34 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2022-02-25 18:32:34 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-25 18:32:34 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=2233004a-95bd-346e-8b8b-40e959d6a012
+2022-02-25 18:32:34 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-25 18:32:34 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-25 18:32:34 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-25 18:32:35 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-25 18:32:35 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1912 ms
+2022-02-25 18:32:35 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-25 18:32:35 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-25 18:32:35 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@69ed5ea2
+2022-02-25 18:32:36 [WARN ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'channelManagerController': Unsatisfied dependency expressed through field 'channelManagerService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'channelManagerService': Unsatisfied dependency expressed through field 'idGenerator'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.github.paganini2008.springplayer.id.IdGenerator' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2022-02-25 18:32:36 [INFO ] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.

@@ -1,0 +1,1222 @@
+2022-02-17 16:19:49 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-17 16:19:51 [INFO ] c.g.p.s.m.MessengerApplication - The following profiles are active: email
+2022-02-17 16:19:53 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-17 16:19:53 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-17 16:19:53 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2022-02-17 16:19:53 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-17 16:19:53 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.github.paganini2008.springplayer.messenger]' package. Please check your configuration.
+2022-02-17 16:19:53 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=69b8aa18-553b-3fe5-9a59-e061ab82aced
+2022-02-17 16:19:53 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:19:53 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:19:54 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-17 16:19:54 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-17 16:19:54 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2805 ms
+2022-02-17 16:19:54 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:19:54 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:19:54 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@19ad75e5
+2022-02-17 16:19:57 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:19:57 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-17 16:19:58 [INFO ] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-17 16:19:58 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:19:58 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:19:58 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-17 16:20:00 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:20:00 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-02-17 16:20:00 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-02-17 16:20:00 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-02-17 16:20:00 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-02-17 16:20:00 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-02-17 16:20:00 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-02-17 16:20:00 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-02-17 16:20:00 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-02-17 16:20:01 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-02-17 16:20:01 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1645086001372 with initial instances count: 3
+2022-02-17 16:20:01 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application YL-PLATFORM-MESSAGING-SERVICE with eureka with status UP
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1645086001375, current=UP, previous=STARTING]
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:53551: registering service...
+2022-02-17 16:20:01 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-02-17 16:20:01 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-02-17 16:20:01 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:53551 - registration status: 204
+2022-02-17 16:20:01 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-02-17 16:20:01 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-02-17 16:20:01 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 53551 (http)
+2022-02-17 16:20:01 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 53551
+2022-02-17 16:20:02 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:20:02 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-17 16:20:02 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-17 16:20:02 [INFO ] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-17 16:20:02 [INFO ] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: sendMessageUsingPOST_1
+2022-02-17 16:20:03 [INFO ] c.g.p.s.m.MessengerApplication - Started MessengerApplication in 14.682 seconds (JVM running for 15.269)
+2022-02-17 16:20:18 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 16:20:18 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-17 16:20:18 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2022-02-17 16:20:18 [WARN ] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.github.paganini2008.springplayer.webmvc.GlobalExceptionHandler#handleException(HttpServletRequest, Exception)
+java.lang.NullPointerException: null
+	at com.github.paganini2008.springplayer.crumb.webmvc.SpanPostHandler.beforeBodyWrite(SpanPostHandler.java:58)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.processBody(RequestResponseBodyAdviceChain.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.beforeBodyWrite(RequestResponseBodyAdviceChain.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:268)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:419)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:202)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 16:20:18 [WARN ] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.github.paganini2008.springplayer.webmvc.GlobalExceptionHandler#handleException(HttpServletRequest, Exception)
+java.lang.NullPointerException: null
+	at com.github.paganini2008.springplayer.crumb.webmvc.SpanPostHandler.beforeBodyWrite(SpanPostHandler.java:58)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.processBody(RequestResponseBodyAdviceChain.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.beforeBodyWrite(RequestResponseBodyAdviceChain.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:268)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:419)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:202)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 16:21:08 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-17 16:21:10 [INFO ] c.g.p.s.m.MessengerApplication - The following profiles are active: email
+2022-02-17 16:21:12 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-17 16:21:12 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-17 16:21:12 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+2022-02-17 16:21:12 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-17 16:21:13 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.github.paganini2008.springplayer.messenger]' package. Please check your configuration.
+2022-02-17 16:21:13 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=69b8aa18-553b-3fe5-9a59-e061ab82aced
+2022-02-17 16:21:13 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:21:13 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:21:14 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-17 16:21:14 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-17 16:21:14 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3412 ms
+2022-02-17 16:21:14 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:21:14 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:21:14 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@688d619c
+2022-02-17 16:21:18 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:21:18 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-17 16:21:18 [INFO ] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-17 16:21:18 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:21:18 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:21:18 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-17 16:21:20 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:21:20 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-02-17 16:21:20 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-02-17 16:21:20 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-02-17 16:21:20 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-02-17 16:21:21 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-02-17 16:21:21 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-02-17 16:21:21 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-02-17 16:21:21 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-02-17 16:21:21 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-02-17 16:21:21 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1645086081975 with initial instances count: 4
+2022-02-17 16:21:21 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application YL-PLATFORM-MESSAGING-SERVICE with eureka with status UP
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1645086081978, current=UP, previous=STARTING]
+2022-02-17 16:21:21 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:58434: registering service...
+2022-02-17 16:21:21 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-02-17 16:21:22 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:58434 - registration status: 204
+2022-02-17 16:21:22 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-02-17 16:21:22 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-02-17 16:21:22 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-02-17 16:21:22 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 58434 (http)
+2022-02-17 16:21:22 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 58434
+2022-02-17 16:21:23 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:21:23 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-17 16:21:23 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-17 16:21:23 [INFO ] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-17 16:21:23 [INFO ] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: sendMessageUsingPOST_1
+2022-02-17 16:21:23 [INFO ] c.g.p.s.m.MessengerApplication - Started MessengerApplication in 16.458 seconds (JVM running for 17.354)
+2022-02-17 16:21:58 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 16:21:58 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-17 16:21:58 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2022-02-17 16:21:59 [WARN ] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.github.paganini2008.springplayer.webmvc.GlobalExceptionHandler#handleException(HttpServletRequest, Exception)
+java.lang.NullPointerException: null
+	at com.github.paganini2008.springplayer.crumb.webmvc.SpanPostHandler.beforeBodyWrite(SpanPostHandler.java:58)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.processBody(RequestResponseBodyAdviceChain.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.beforeBodyWrite(RequestResponseBodyAdviceChain.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:268)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:419)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:202)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 16:21:59 [WARN ] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.github.paganini2008.springplayer.webmvc.GlobalExceptionHandler#handleException(HttpServletRequest, Exception)
+java.lang.NullPointerException: null
+	at com.github.paganini2008.springplayer.crumb.webmvc.SpanPostHandler.beforeBodyWrite(SpanPostHandler.java:58)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.processBody(RequestResponseBodyAdviceChain.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.beforeBodyWrite(RequestResponseBodyAdviceChain.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:268)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:419)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:202)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 16:23:13 [WARN ] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.github.paganini2008.springplayer.webmvc.GlobalExceptionHandler#handleException(HttpServletRequest, Exception)
+java.lang.NullPointerException: null
+	at com.github.paganini2008.springplayer.crumb.webmvc.SpanPostHandler.beforeBodyWrite(SpanPostHandler.java:58)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.processBody(RequestResponseBodyAdviceChain.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.beforeBodyWrite(RequestResponseBodyAdviceChain.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:268)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:419)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:202)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 16:23:20 [WARN ] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.github.paganini2008.springplayer.webmvc.GlobalExceptionHandler#handleException(HttpServletRequest, Exception)
+java.lang.NullPointerException: null
+	at com.github.paganini2008.springplayer.crumb.webmvc.SpanPostHandler.beforeBodyWrite(SpanPostHandler.java:58)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.processBody(RequestResponseBodyAdviceChain.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.beforeBodyWrite(RequestResponseBodyAdviceChain.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:268)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:419)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:202)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 16:23:38 [WARN ] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.github.paganini2008.springplayer.webmvc.GlobalExceptionHandler#handleException(HttpServletRequest, Exception)
+java.lang.NullPointerException: null
+	at com.github.paganini2008.springplayer.crumb.webmvc.SpanPostHandler.beforeBodyWrite(SpanPostHandler.java:58)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.processBody(RequestResponseBodyAdviceChain.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.beforeBodyWrite(RequestResponseBodyAdviceChain.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:268)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:419)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:202)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 16:23:38 [WARN ] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Failure in @ExceptionHandler com.github.paganini2008.springplayer.webmvc.GlobalExceptionHandler#handleException(HttpServletRequest, Exception)
+java.lang.NullPointerException: null
+	at com.github.paganini2008.springplayer.crumb.webmvc.SpanPostHandler.beforeBodyWrite(SpanPostHandler.java:58)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.processBody(RequestResponseBodyAdviceChain.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyAdviceChain.beforeBodyWrite(RequestResponseBodyAdviceChain.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:268)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:251)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchToPath(ServletInitialHandler.java:186)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:501)
+	at io.undertow.servlet.spec.RequestDispatcherImpl.error(RequestDispatcherImpl.java:419)
+	at io.undertow.servlet.spec.HttpServletResponseImpl.doErrorDispatch(HttpServletResponseImpl.java:202)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 16:26:21 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 16:29:39 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-17 16:29:41 [INFO ] c.g.p.s.m.MessengerApplication - The following profiles are active: email
+2022-02-17 16:29:43 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-17 16:29:43 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-17 16:29:43 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
+2022-02-17 16:29:43 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-17 16:29:43 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.github.paganini2008.springplayer.messenger]' package. Please check your configuration.
+2022-02-17 16:29:43 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=69b8aa18-553b-3fe5-9a59-e061ab82aced
+2022-02-17 16:29:43 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:29:44 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:29:44 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-17 16:29:44 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-17 16:29:44 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3418 ms
+2022-02-17 16:29:45 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:29:45 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:29:45 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@591e5fd4
+2022-02-17 16:29:48 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:29:48 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-17 16:29:49 [INFO ] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-17 16:29:49 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:29:49 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:29:49 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-17 16:29:51 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:29:51 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-02-17 16:29:51 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-02-17 16:29:51 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-02-17 16:29:51 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-02-17 16:29:51 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-02-17 16:29:51 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-02-17 16:29:51 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-02-17 16:29:51 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-02-17 16:29:52 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-02-17 16:29:52 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1645086592676 with initial instances count: 3
+2022-02-17 16:29:52 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application YL-PLATFORM-MESSAGING-SERVICE with eureka with status UP
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1645086592680, current=UP, previous=STARTING]
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:52399: registering service...
+2022-02-17 16:29:52 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-02-17 16:29:52 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:52399 - registration status: 204
+2022-02-17 16:29:52 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-02-17 16:29:52 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-02-17 16:29:52 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-02-17 16:29:52 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 52399 (http)
+2022-02-17 16:29:52 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 52399
+2022-02-17 16:29:53 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:29:54 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-17 16:29:54 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-17 16:29:54 [INFO ] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-17 16:29:54 [INFO ] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: sendMessageUsingPOST_1
+2022-02-17 16:29:54 [INFO ] c.g.p.s.m.MessengerApplication - Started MessengerApplication in 16.587 seconds (JVM running for 17.448)
+2022-02-17 16:30:10 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 16:30:10 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-17 16:30:10 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2022-02-17 16:34:52 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 16:45:45 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-17 16:45:47 [INFO ] c.g.p.s.m.MessengerApplication - The following profiles are active: email
+2022-02-17 16:45:48 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-17 16:45:48 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-17 16:45:48 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2022-02-17 16:45:49 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-17 16:45:49 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.github.paganini2008.springplayer.messenger]' package. Please check your configuration.
+2022-02-17 16:45:49 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=df01047b-c52b-3998-8a96-67cb2e7f04c0
+2022-02-17 16:45:49 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:45:49 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:45:50 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-17 16:45:50 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-17 16:45:50 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3241 ms
+2022-02-17 16:45:50 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:45:50 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:45:50 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@30bbe83
+2022-02-17 16:45:54 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:45:54 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-17 16:45:54 [INFO ] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-17 16:45:54 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:45:54 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:45:54 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-17 16:45:56 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:45:56 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-02-17 16:45:56 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-02-17 16:45:56 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-02-17 16:45:56 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-02-17 16:45:56 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-02-17 16:45:56 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-02-17 16:45:57 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-02-17 16:45:57 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-02-17 16:45:57 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-02-17 16:45:57 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1645087557874 with initial instances count: 3
+2022-02-17 16:45:57 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application YL-PLATFORM-MESSAGING-SERVICE with eureka with status UP
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1645087557877, current=UP, previous=STARTING]
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:54690: registering service...
+2022-02-17 16:45:57 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-02-17 16:45:57 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-02-17 16:45:57 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:54690 - registration status: 204
+2022-02-17 16:45:57 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-02-17 16:45:58 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-02-17 16:45:58 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 54690 (http)
+2022-02-17 16:45:58 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 54690
+2022-02-17 16:45:59 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:45:59 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-17 16:45:59 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-17 16:45:59 [INFO ] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-17 16:45:59 [INFO ] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: sendMessageUsingPOST_1
+2022-02-17 16:45:59 [INFO ] c.g.p.s.m.MessengerApplication - Started MessengerApplication in 16.011 seconds (JVM running for 16.874)
+2022-02-17 16:46:11 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 16:46:11 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-17 16:46:11 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2022-02-17 16:50:18 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-17 16:50:20 [INFO ] c.g.p.s.m.MessengerApplication - The following profiles are active: email
+2022-02-17 16:50:22 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-17 16:50:22 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-17 16:50:22 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2022-02-17 16:50:22 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-17 16:50:22 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.github.paganini2008.springplayer.messenger]' package. Please check your configuration.
+2022-02-17 16:50:22 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=df01047b-c52b-3998-8a96-67cb2e7f04c0
+2022-02-17 16:50:22 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:50:22 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 16:50:23 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-17 16:50:23 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-17 16:50:23 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2811 ms
+2022-02-17 16:50:23 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:50:23 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:50:23 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@9690008
+2022-02-17 16:50:26 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:50:26 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-17 16:50:27 [INFO ] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-17 16:50:27 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 16:50:27 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 16:50:27 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-17 16:50:29 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:50:29 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-02-17 16:50:29 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-02-17 16:50:29 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-02-17 16:50:29 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-02-17 16:50:29 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-02-17 16:50:29 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-02-17 16:50:29 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-02-17 16:50:29 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-02-17 16:50:30 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-02-17 16:50:30 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1645087830338 with initial instances count: 3
+2022-02-17 16:50:30 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application YL-PLATFORM-MESSAGING-SERVICE with eureka with status UP
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1645087830341, current=UP, previous=STARTING]
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:53936: registering service...
+2022-02-17 16:50:30 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-02-17 16:50:30 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-02-17 16:50:30 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:53936 - registration status: 204
+2022-02-17 16:50:30 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-02-17 16:50:30 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-02-17 16:50:30 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 53936 (http)
+2022-02-17 16:50:30 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 53936
+2022-02-17 16:50:31 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 16:50:31 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-17 16:50:31 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-17 16:50:31 [INFO ] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-17 16:50:31 [INFO ] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: sendMessageUsingPOST_1
+2022-02-17 16:50:32 [INFO ] c.g.p.s.m.MessengerApplication - Started MessengerApplication in 14.56 seconds (JVM running for 15.173)
+2022-02-17 16:50:41 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 16:50:41 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-17 16:50:41 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2022-02-17 17:10:08 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-17 17:10:10 [INFO ] c.g.p.s.m.MessengerApplication - The following profiles are active: email
+2022-02-17 17:10:12 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-17 17:10:12 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-17 17:10:12 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2022-02-17 17:10:12 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-17 17:10:12 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.github.paganini2008.springplayer.messenger]' package. Please check your configuration.
+2022-02-17 17:10:12 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=78e1cf88-f7f1-384e-b971-990795a45a17
+2022-02-17 17:10:12 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:10:13 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@35145874' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:10:13 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:10:13 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:10:13 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-17 17:10:13 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-17 17:10:13 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3099 ms
+2022-02-17 17:10:13 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 17:10:13 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 17:10:13 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@51d8f2f2
+2022-02-17 17:10:15 [INFO ] c.g.p.s.security.WhiteListProperties - White List Urls: []
+2022-02-17 17:10:16 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:10:16 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-17 17:10:17 [INFO ] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-17 17:10:17 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 17:10:17 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 17:10:17 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-17 17:10:18 [INFO ] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fabd2ccb-3021-472e-9300-75ae9ccb2d3a
+
+2022-02-17 17:10:18 [INFO ] o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b3639a1, org.springframework.security.web.context.SecurityContextPersistenceFilter@4044f07b, org.springframework.security.web.header.HeaderWriterFilter@17fd9fbb, org.springframework.security.web.authentication.logout.LogoutFilter@1e7245da, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@3054551f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c190662, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6dd0d9a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59df8444, org.springframework.security.web.session.SessionManagementFilter@5411a529, org.springframework.security.web.access.ExceptionTranslationFilter@1a2d8488, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7ddf7e77]
+2022-02-17 17:10:19 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:10:19 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-02-17 17:10:19 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-02-17 17:10:20 [WARN ] o.s.c.s.o.SpringCloudSecurityAutoConfiguration - All Spring Cloud Security modules and starters are deprecated. They will be moved to individual projects in the next major release.
+2022-02-17 17:10:20 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-02-17 17:10:20 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-02-17 17:10:20 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-02-17 17:10:20 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-02-17 17:10:20 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-02-17 17:10:20 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-02-17 17:10:20 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:10:20 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-02-17 17:10:20 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-02-17 17:10:20 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-02-17 17:10:20 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-02-17 17:10:20 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-02-17 17:10:20 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-02-17 17:10:20 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-02-17 17:10:21 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-02-17 17:10:21 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-02-17 17:10:21 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-17 17:10:21 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1645089021092 with initial instances count: 3
+2022-02-17 17:10:21 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application YL-PLATFORM-MESSAGING-SERVICE with eureka with status UP
+2022-02-17 17:10:21 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1645089021102, current=UP, previous=STARTING]
+2022-02-17 17:10:21 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:58779: registering service...
+2022-02-17 17:10:21 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-02-17 17:10:21 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:58779 - registration status: 204
+2022-02-17 17:10:21 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-02-17 17:10:21 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-02-17 17:10:21 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-02-17 17:10:21 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 58779 (http)
+2022-02-17 17:10:21 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 58779
+2022-02-17 17:10:22 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:10:22 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-17 17:10:22 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-17 17:10:22 [INFO ] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-17 17:10:22 [INFO ] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: sendMessageUsingPOST_1
+2022-02-17 17:10:22 [INFO ] c.g.p.s.m.MessengerApplication - Started MessengerApplication in 15.622 seconds (JVM running for 16.222)
+2022-02-17 17:12:59 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-17 17:13:01 [INFO ] c.g.p.s.m.MessengerApplication - The following profiles are active: email
+2022-02-17 17:13:03 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-17 17:13:03 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-17 17:13:03 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 Redis repository interfaces.
+2022-02-17 17:13:03 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-17 17:13:03 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.github.paganini2008.springplayer.messenger]' package. Please check your configuration.
+2022-02-17 17:13:03 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=78e1cf88-f7f1-384e-b971-990795a45a17
+2022-02-17 17:13:03 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:13:04 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@cf10c92' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:13:04 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:13:04 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:13:04 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-17 17:13:04 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-17 17:13:04 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3667 ms
+2022-02-17 17:13:05 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 17:13:05 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 17:13:05 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7612116b
+2022-02-17 17:13:07 [INFO ] c.g.p.s.security.WhiteListProperties - White List Urls: []
+2022-02-17 17:13:08 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:13:09 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-17 17:13:09 [INFO ] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-17 17:13:09 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 17:13:09 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 17:13:09 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-17 17:13:10 [INFO ] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: dc3bda2b-5477-46af-ba46-275c13a1cc29
+
+2022-02-17 17:13:11 [INFO ] o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33dc36d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@66a74cba, org.springframework.security.web.header.HeaderWriterFilter@53d87c9, org.springframework.security.web.authentication.logout.LogoutFilter@1afd9827, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@67b7b892, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52fe7c0f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@502356ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3afca969, org.springframework.security.web.session.SessionManagementFilter@1f9df722, org.springframework.security.web.access.ExceptionTranslationFilter@53872179, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@285cf30a]
+2022-02-17 17:13:12 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:13:12 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-02-17 17:13:12 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-02-17 17:13:12 [WARN ] o.s.c.s.o.SpringCloudSecurityAutoConfiguration - All Spring Cloud Security modules and starters are deprecated. They will be moved to individual projects in the next major release.
+2022-02-17 17:13:12 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-02-17 17:13:12 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-02-17 17:13:12 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-02-17 17:13:12 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-02-17 17:13:13 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-02-17 17:13:13 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-02-17 17:13:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-02-17 17:13:13 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1645089193851 with initial instances count: 3
+2022-02-17 17:13:13 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application YL-PLATFORM-MESSAGING-SERVICE with eureka with status UP
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1645089193855, current=UP, previous=STARTING]
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:58131: registering service...
+2022-02-17 17:13:13 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-02-17 17:13:13 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-02-17 17:13:13 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:58131 - registration status: 204
+2022-02-17 17:13:13 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-02-17 17:13:14 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-02-17 17:13:14 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 58131 (http)
+2022-02-17 17:13:14 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 58131
+2022-02-17 17:13:15 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:13:15 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-17 17:13:15 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-17 17:13:15 [INFO ] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-17 17:13:15 [INFO ] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: sendMessageUsingPOST_1
+2022-02-17 17:13:15 [INFO ] c.g.p.s.m.MessengerApplication - Started MessengerApplication in 17.937 seconds (JVM running for 18.833)
+2022-02-17 17:13:37 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 17:13:37 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-17 17:13:37 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2022-02-17 17:13:37 [WARN ] c.g.p.s.s.FailureAuthenticationEntryPoint - Full authentication is required to access this resource
+org.springframework.security.authentication.InsufficientAuthenticationException: Full authentication is required to access this resource
+	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:189)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:140)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:97)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.github.paganini2008.springplayer.web.HttpRequestContextHolder.doFilter(HttpRequestContextHolder.java:128)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:111)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1423)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 17:13:37 [INFO ] o.s.c.o.FeignClientFactoryBean - For 'spring-player-i18n-service' URL not provided. Will try picking an instance via load-balancing.
+2022-02-17 17:13:38 [INFO ] c.n.config.ChainedDynamicProperty - Flipping property: spring-player-i18n-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-02-17 17:13:38 [INFO ] c.n.u.c.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-spring-player-i18n-service
+2022-02-17 17:13:38 [INFO ] c.n.loadbalancer.BaseLoadBalancer - Client: spring-player-i18n-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=spring-player-i18n-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-02-17 17:13:38 [INFO ] c.n.l.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2022-02-17 17:13:38 [INFO ] c.n.config.ChainedDynamicProperty - Flipping property: spring-player-i18n-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-02-17 17:13:38 [INFO ] c.n.l.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client spring-player-i18n-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=spring-player-i18n-service,current list of Servers=[localhost:5300],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:5300;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@42ad1c91
+2022-02-17 17:13:39 [WARN ] c.g.p.s.s.FailureAuthenticationEntryPoint - Full authentication is required to access this resource
+org.springframework.security.authentication.InsufficientAuthenticationException: Full authentication is required to access this resource
+	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:189)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:140)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:97)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.github.paganini2008.springplayer.web.HttpRequestContextHolder.doFilter(HttpRequestContextHolder.java:128)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:111)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:390)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:836)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at java.lang.Thread.run(Thread.java:748)
+2022-02-17 17:13:39 [INFO ] c.n.config.ChainedDynamicProperty - Flipping property: spring-player-i18n-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-02-17 17:17:02 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-02-17 17:17:04 [INFO ] c.g.p.s.m.MessengerApplication - The following profiles are active: email
+2022-02-17 17:17:05 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-17 17:17:05 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-17 17:17:05 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2022-02-17 17:17:05 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-02-17 17:17:05 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.github.paganini2008.springplayer.messenger]' package. Please check your configuration.
+2022-02-17 17:17:06 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=df01047b-c52b-3998-8a96-67cb2e7f04c0
+2022-02-17 17:17:06 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:17:06 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-17 17:17:06 [WARN ] io.undertow.websockets.jsr - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-02-17 17:17:06 [INFO ] io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2022-02-17 17:17:06 [INFO ] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2764 ms
+2022-02-17 17:17:07 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 17:17:07 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 17:17:07 [INFO ] c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@9690008
+2022-02-17 17:17:10 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:17:10 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-17 17:17:10 [INFO ] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-17 17:17:10 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-02-17 17:17:10 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-02-17 17:17:10 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-17 17:17:12 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:17:12 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-02-17 17:17:12 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-02-17 17:17:12 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-02-17 17:17:12 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-02-17 17:17:12 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-02-17 17:17:12 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-02-17 17:17:13 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-02-17 17:17:13 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-02-17 17:17:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 4
+2022-02-17 17:17:13 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1645089433739 with initial instances count: 3
+2022-02-17 17:17:13 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application YL-PLATFORM-MESSAGING-SERVICE with eureka with status UP
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1645089433743, current=UP, previous=STARTING]
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:53597: registering service...
+2022-02-17 17:17:13 [INFO ] io.undertow - starting server: Undertow - 2.1.7.Final
+2022-02-17 17:17:13 [INFO ] org.xnio - XNIO version 3.8.0.Final
+2022-02-17 17:17:13 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_YL-PLATFORM-MESSAGING-SERVICE/localhost:yl-platform-messaging-service:53597 - registration status: 204
+2022-02-17 17:17:13 [INFO ] org.xnio.nio - XNIO NIO Implementation Version 3.8.0.Final
+2022-02-17 17:17:13 [INFO ] org.jboss.threads - JBoss Threads version 3.1.0.Final
+2022-02-17 17:17:13 [INFO ] o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port(s) 53597 (http)
+2022-02-17 17:17:13 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 53597
+2022-02-17 17:17:15 [INFO ] o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2022-02-17 17:17:15 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-17 17:17:15 [INFO ] s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-17 17:17:15 [INFO ] s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-17 17:17:15 [INFO ] s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: sendMessageUsingPOST_1
+2022-02-17 17:17:15 [INFO ] c.g.p.s.m.MessengerApplication - Started MessengerApplication in 14.473 seconds (JVM running for 15.057)
+2022-02-17 17:17:29 [INFO ] io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 17:17:29 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-17 17:17:29 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2022-02-17 17:22:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:27:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:32:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:37:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:42:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:47:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:52:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 17:57:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 18:02:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 18:07:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 18:12:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 18:17:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 18:22:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 18:27:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-02-17 18:32:13 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

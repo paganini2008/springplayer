@@ -30,7 +30,7 @@ public class WebMvcEndpoint {
 		return ApiResult.ok(StringUtils.isNotBlank(q) ? "pong: " + q : "pong");
 	}
 
-	@GetMapping("/latest/throwables")
+	@GetMapping("/sys/latest/throwables")
 	public ApiResult<List<ThrowableInfo>> getLatestThrowables() {
 		List<ThrowableInfo> list = new ArrayList<>(exceptionContext.getExceptionTraces());
 		Collections.sort(list);

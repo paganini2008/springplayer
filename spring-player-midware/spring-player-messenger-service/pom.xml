@@ -30,7 +30,7 @@
 			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-log</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-amqp</artifactId>
@@ -47,10 +47,15 @@
 			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-email</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-dingtalk</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.paganini2008.springplayer</groupId>
+			<artifactId>spring-player-common-swagger</artifactId>
 		</dependency>
 
 		<dependency>

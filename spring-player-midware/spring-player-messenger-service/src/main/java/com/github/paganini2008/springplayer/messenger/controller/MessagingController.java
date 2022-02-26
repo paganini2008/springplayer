@@ -3,10 +3,8 @@ package com.github.paganini2008.springplayer.messenger.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +22,9 @@ import com.github.paganini2008.springplayer.messenger.entity.EmailEntity;
 import com.github.paganini2008.springplayer.messenger.entity.MessagingEntity;
 import com.github.paganini2008.springplayer.messenger.service.MessagingService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 /**
  * 
  * MessagingController
@@ -31,6 +32,7 @@ import com.github.paganini2008.springplayer.messenger.service.MessagingService;
  * @author Fred Feng
  * @version 1.0.0
  */
+@Api(tags = "消息发送")
 @Validated
 @RestController
 @RequestMapping("/messaging")
@@ -39,20 +41,17 @@ public class MessagingController {
 	@Autowired
 	private MessagingService messagingService;
 
-	@GetMapping("/echo")
-	public ApiResult<String> echo(@RequestParam("q") String q) {
-		return ApiResult.ok(q);
-	}
-
+	@ApiOperation(value = "发送消息", notes = "发送消息")
 	@PostMapping("/send")
 	public ApiResult<String> sendMessage(@Validated @RequestBody MessagingEntity messagingEntity) {
 		messagingService.sendMessage(messagingEntity);
 		return ApiResult.ok("发送成功");
 	}
 
-	@PostMapping("/send2")
+	@ApiOperation(value = "上传模板并发送消息", notes = "上传模板并发送消息")
+	@PostMapping("/sendWithTemplate")
 	public ApiResult<String> sendMessage(@Validated @ModelAttribute MessagingEntity messagingEntity,
-			@RequestParam("file") MultipartFile file) throws Exception {
+			@RequestParam("template") MultipartFile file) throws Exception {
 		if (file.isEmpty()) {
 			throw new BizException(ErrorCodes.TEMPLATE_UPLOAD_FAILED, HttpStatus.BAD_REQUEST);
 		}

@@ -9,7 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.github.paganini2008.devtools.Env;
-import com.github.paganini2008.springplayer.security.EnableOauth2ResourceServer;
+import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
+import com.github.paganini2008.springplayer.security.EnableResourceServerSecurity;
 
 /**
  * 
@@ -19,7 +20,8 @@ import com.github.paganini2008.springplayer.security.EnableOauth2ResourceServer;
  * @version 1.0.0
  */
 @MapperScan("com.github.paganini2008.springplayer.upms.mapper")
-@EnableOauth2ResourceServer
+@EnableResourceServerSecurity
+@EnableFeignClientEndpoint
 @EnableEurekaClient
 @SpringBootApplication
 public class UpmsApplication {

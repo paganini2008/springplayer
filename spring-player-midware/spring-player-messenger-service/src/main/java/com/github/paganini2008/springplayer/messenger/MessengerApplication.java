@@ -1,8 +1,9 @@
 package com.github.paganini2008.springplayer.messenger;
 
-import java.io.File;
+import static com.github.paganini2008.springplayer.common.Constants.SERVER_PORT_END_WITH;
+import static com.github.paganini2008.springplayer.common.Constants.SERVER_PORT_START_WITH;
 
-import static com.github.paganini2008.springplayer.common.Constants.*;
+import java.io.File;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +13,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import com.github.paganini2008.devtools.io.FileUtils;
 import com.github.paganini2008.devtools.net.NetUtils;
 import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
+import com.github.paganini2008.springplayer.swagger.EnableSwaggerResource;
 
 /**
  * 
@@ -20,6 +22,7 @@ import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
  * @author Fred Feng
  * @version 1.0.0
  */
+@EnableSwaggerResource
 @EnableFeignClientEndpoint
 @EnableAsync
 @EnableDiscoveryClient

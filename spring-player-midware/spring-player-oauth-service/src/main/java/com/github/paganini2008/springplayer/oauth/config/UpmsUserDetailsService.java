@@ -46,7 +46,7 @@ public class UpmsUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		ApiResult<UserVO> result = remoteUserService.getUserInfo(username);
 		if (result == null || result.getData() == null) {
-			throw new AuthServerException(ErrorCodes.USER_NOT_FOUND);
+			throw new OAuth2ServerException(ErrorCodes.USER_NOT_FOUND);
 		}
 		UserInfo userInfo = convertToUserInfo(result.getData());
 		Set<String> authSet = new HashSet<>();

@@ -42,6 +42,7 @@ public class TemplateManagerService {
 		}
 		template.setName(dto.getName());
 		template.setContent(dto.getContent());
+		template.setFormat(dto.getFormat());
 		template.setUpdateTime(LocalDateTime.now());
 		templateService.saveOrUpdate(template);
 		return template.getId();

@@ -1,0 +1,18 @@
+2022-02-25 18:32:36 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field idGenerator in com.github.paganini2008.springplayer.channel.service.ChannelManagerService required a bean of type 'com.github.paganini2008.springplayer.id.IdGenerator' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.github.paganini2008.springplayer.id.IdGenerator' in your configuration.
+

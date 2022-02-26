@@ -45,6 +45,9 @@ public class HttpRequestContextHolder extends GenericFilterBean {
 
 	public static String getHeader(String headerName, String defaultValue) {
 		HttpHeaders httpHeaders = getHeaders();
+		if (httpHeaders == null) {
+			return defaultValue;
+		}
 		String headerValue = httpHeaders.getFirst(headerName);
 		if (StringUtils.isBlank(headerValue)) {
 			headerValue = defaultValue;

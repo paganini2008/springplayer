@@ -35,7 +35,7 @@ public class GlobalFeignErrorDecoder extends ErrorDecoder.Default {
 				result = JacksonUtils.parseJson(responseBody, ApiResult.class);
 			} catch (RuntimeException ignored) {
 			}
-			return new BizException(ErrorCode.internalServerError(result != null ? result.getMsg() : responseBody),
+			return new BizException(ErrorCode.feignClientError(result != null ? result.getMsg() : responseBody),
 					HttpStatus.valueOf(fe.status()), fe);
 		}
 		return e;
