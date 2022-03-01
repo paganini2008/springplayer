@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
  * @author Fred Feng
  * @version 1.0.0
  */
-@ConditionalOnProperty(name = "yl.platform.messaging.store", havingValue = "amqp")
+@ConditionalOnProperty(name = "spring.player.platform.messaging.store", havingValue = "amqp")
 @ConditionalOnClass(RabbitTemplate.class)
 @Configuration(proxyBeanMethods = false)
 public class RabbitMessagingConfig {

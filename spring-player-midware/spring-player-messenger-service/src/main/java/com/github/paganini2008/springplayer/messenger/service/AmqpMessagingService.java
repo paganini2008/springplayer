@@ -37,7 +37,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @SuppressWarnings("all")
 @Slf4j
-@ConditionalOnProperty(name = "yl.platform.messaging.store", havingValue = "amqp")
+@ConditionalOnProperty(name = "spring.player.platform.messaging.store", havingValue = "amqp")
 @ConditionalOnClass(RabbitTemplate.class)
 @Service
 public class AmqpMessagingService implements MessagingService {

@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0.0
  */
 @Slf4j
-@ConditionalOnProperty(name = "yl.platform.messaging.store", havingValue = "redis", matchIfMissing = true)
+@ConditionalOnProperty(name = "spring.player.platform.messaging.store", havingValue = "redis", matchIfMissing = true)
 @Service
 public class RedisMessagingService implements MessagingService {
 

@@ -52,7 +52,7 @@ public class GatewayConfig {
 		taskExecutor.setCorePoolSize(nThreads);
 		taskExecutor.setMaxPoolSize(200);
 		taskExecutor.setWaitForTasksToCompleteOnShutdown(true);
-		taskExecutor.setThreadNamePrefix("yl-platform-gateway-threads-");
+		taskExecutor.setThreadNamePrefix("spring-player-gateway-threads-");
 		return taskExecutor;
 	}
 

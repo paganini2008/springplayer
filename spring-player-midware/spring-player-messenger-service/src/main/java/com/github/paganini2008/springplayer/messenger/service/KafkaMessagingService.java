@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0.0
  */
 @Slf4j
-@ConditionalOnProperty(name = "yl.platform.messaging.store", havingValue = "kafka")
+@ConditionalOnProperty(name = "spring.player.platform.messaging.store", havingValue = "kafka")
 @ConditionalOnClass(KafkaTemplate.class)
 @Service
 public class KafkaMessagingService implements MessagingService {
