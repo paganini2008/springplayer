@@ -1,5 +1,7 @@
 package com.github.paganini2008.springplayer.redis.pubsub;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * 
  * RedisPubSubService
@@ -12,5 +14,9 @@ public interface RedisPubSubService {
 	void convertAndUnicast(String channel, Object message);
 
 	void convertAndMulticast(String channel, Object message);
+
+	void convertAndUnicast(String channel, Object message, long delay, TimeUnit timeUnit);
+
+	void convertAndMulticast(String channel, Object message, long delay, TimeUnit timeUnit);
 
 }

@@ -1,5 +1,7 @@
 package com.github.paganini2008.springplayer.redis.pubsub;
 
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.data.redis.core.RedisTemplate;
 
 /**
@@ -11,21 +13,41 @@ import org.springframework.data.redis.core.RedisTemplate;
  */
 public class PubSubRedisTemplate extends RedisTemplate<String, Object> {
 
+	private String keyNamespace;
 	private String pubsubChannel;
+
+	public void setKeyNamespace(String keyNamespace) {
+		this.keyNamespace = keyNamespace;
+	}
 
 	public void setPubsubChannel(String pubsubChannel) {
 		this.pubsubChannel = pubsubChannel;
 	}
 
+	String keyFor(String channel) {
+		return keyNamespace + ":" + channel;
+	}
+
 	public void convertAndUnicast(String channel, Object message) {
-		opsForList().leftPush(channel, message);
-		RedisMessageEntity messageEntity = new RedisMessageEntity(channel, null);
-		super.convertAndSend(pubsubChannel, messageEntity);
+		String key = keyFor(channel);
+		opsForList().leftPush(key, new RedisMessageEntity(channel, PubSubMode.UNICAST, message));
+		super.convertAndSend(pubsubChannel, new RedisMessageEntity(channel, PubSubMode.UNICAST, null));
 	}
 
 	public void convertAndMulticast(String channel, Object message) {
-		RedisMessageEntity messageEntity = new RedisMessageEntity(channel, message);
-		super.convertAndSend(pubsubChannel, messageEntity);
+		super.convertAndSend(pubsubChannel, new RedisMessageEntity(channel, PubSubMode.MULTICAST, message));
+	}
+
+	public void convertAndUnicast(String channel, Object message, long delay, TimeUnit timeUnit) {
+		String key = keyFor(channel);
+		opsForList().leftPush(key + "__", new RedisMessageEntity(channel, PubSubMode.UNICAST, message));
+		opsForValue().set(key, new RedisMessageEntity(channel, PubSubMode.UNICAST, null), delay, timeUnit);
+	}
+
+	public void convertAndMulticast(String channel, Object message, long delay, TimeUnit timeUnit) {
+		String key = keyFor(channel);
+		opsForValue().set(key + "__", new RedisMessageEntity(channel, PubSubMode.MULTICAST, message));
+		opsForValue().set(key, new RedisMessageEntity(channel, PubSubMode.MULTICAST, null), delay, timeUnit);
 	}
 
 }

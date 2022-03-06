@@ -50,7 +50,6 @@ public class RedisMessageEventDispatcher implements BeanPostProcessor {
 		Object[] args = new Object[] { event.getChannel(), event.getMessage() };
 		repeableOp.notifyObservers(event.getChannel(), args);
 		unrepeableOp.notifyObservers(event.getChannel(), args);
-
 	}
 
 }

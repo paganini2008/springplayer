@@ -16,7 +16,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 import com.github.paganini2008.springplayer.gateway.utils.JdbcInitializer;
 import com.github.paganini2008.springplayer.id.IdGenerator;
-import com.github.paganini2008.springplayer.id.RedisGlobalIdGenerator;
+import com.github.paganini2008.springplayer.id.RedisIdGenerator;
 
 /**
  * 
@@ -50,7 +50,7 @@ public class GatewayRouteManagementConfig {
 
 	@Bean
 	public IdGenerator idGenerator(RedisConnectionFactory connectionFactory) {
-		return new RedisGlobalIdGenerator(connectionFactory);
+		return new RedisIdGenerator(connectionFactory);
 	}
 
 	@Bean("routeManagementJdbcInitializer")

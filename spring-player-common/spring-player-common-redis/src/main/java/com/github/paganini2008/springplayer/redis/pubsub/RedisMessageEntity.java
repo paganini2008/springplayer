@@ -17,13 +17,15 @@ import lombok.ToString;
 public class RedisMessageEntity {
 
 	private String channel;
+	private PubSubMode mode;
 	private Object message;
 
 	public RedisMessageEntity() {
 	}
 
-	public RedisMessageEntity(String channel,  Object message) {
+	public RedisMessageEntity(String channel, PubSubMode mode, Object message) {
 		this.channel = channel;
+		this.mode = mode;
 		this.message = message;
 	}
 

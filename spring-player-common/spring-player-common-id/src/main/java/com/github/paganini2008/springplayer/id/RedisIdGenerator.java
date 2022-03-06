@@ -13,12 +13,12 @@ import com.github.paganini2008.devtools.collection.LruMap;
 
 /**
  * 
- * RedisGlobalIdGenerator
+ * RedisIdGenerator
  *
  * @author Fred Feng
  * @version 1.0.0
  */
-public class RedisGlobalIdGenerator implements IdGenerator {
+public class RedisIdGenerator implements IdGenerator {
 
 	private static final String defaultDatePattern = "yyyyMMddHHmmss";
 	private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern(defaultDatePattern);
@@ -26,16 +26,16 @@ public class RedisGlobalIdGenerator implements IdGenerator {
 
 	private final String keyPrefix;
 	private final RedisConnectionFactory connectionFactory;
-	private final Map<String, Supplier<RedisAtomicLong>> cache;
+	private final Map<String, ThreadSafeSupplier> cache;
 
-	public RedisGlobalIdGenerator(RedisConnectionFactory connectionFactory) {
+	public RedisIdGenerator(RedisConnectionFactory connectionFactory) {
 		this("id:", connectionFactory);
 	}
 
-	public RedisGlobalIdGenerator(String keyPrefix, RedisConnectionFactory connectionFactory) {
+	public RedisIdGenerator(String keyPrefix, RedisConnectionFactory connectionFactory) {
 		this.keyPrefix = keyPrefix;
 		this.connectionFactory = connectionFactory;
-		this.cache = new LruMap<String, Supplier<RedisAtomicLong>>(10);
+		this.cache = new LruMap<String, ThreadSafeSupplier>(2);
 	}
 
 	private volatile long latestId;
@@ -50,12 +50,12 @@ public class RedisGlobalIdGenerator implements IdGenerator {
 		final String timestamp = LocalDateTime.now().format(dtf);
 		Supplier<RedisAtomicLong> counter = cache.get(timestamp);
 		if (counter == null) {
-			cache.putIfAbsent(timestamp, () -> {
+			cache.putIfAbsent(timestamp, new ThreadSafeSupplier(() -> {
 				String coutnerName = keyPrefix + ":" + timestamp;
 				RedisAtomicLong l = new RedisAtomicLong(coutnerName, connectionFactory);
 				l.expire(60, TimeUnit.SECONDS);
 				return l;
-			});
+			}));
 			counter = cache.get(timestamp);
 		}
 		long ticket = counter.get().incrementAndGet();
@@ -67,16 +67,16 @@ public class RedisGlobalIdGenerator implements IdGenerator {
 
 	/**
 	 * 
-	 * CounterSupplier
+	 * ThreadSafeSupplier
 	 *
-	 * @author Feng Yan
+	 * @author Fred Feng
 	 * @version 1.0.0
 	 */
-	class CounterSupplier implements Supplier<RedisAtomicLong> {
+	static class ThreadSafeSupplier implements Supplier<RedisAtomicLong> {
 
 		private final Supplier<RedisAtomicLong> supplier;
 
-		CounterSupplier(Supplier<RedisAtomicLong> supplier) {
+		ThreadSafeSupplier(Supplier<RedisAtomicLong> supplier) {
 			this.supplier = supplier;
 		}
 

@@ -12,15 +12,11 @@ import cn.hutool.core.util.IdUtil;
  */
 public class SnowFlakeIdGenerator implements IdGenerator {
 
-	public SnowFlakeIdGenerator() {
-		this(0, 0);
-	}
-
 	public SnowFlakeIdGenerator(long workerId, long datacenterId) {
 		this.snowflake = IdUtil.createSnowflake(workerId, datacenterId);
 	}
 
-	private final Snowflake snowflake;
+	private Snowflake snowflake;
 	private volatile long latestId;
 
 	@Override

@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.listener.ChannelTopic;
+import org.springframework.data.redis.listener.KeyExpirationEventMessageListener;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
@@ -31,8 +32,11 @@ import com.github.paganini2008.devtools.StringUtils;
 @Configuration(proxyBeanMethods = false)
 public class RedisPubSubConfig {
 
-	@Value("${springplayer.redis.pubsub.channel:}")
+	@Value("${spring.application.redis.pubsub.channel:}")
 	private String pubsubChannel;
+
+	@Value("${spring.application.redis.pubsub.keyNamespace:pubsub}")
+	private String keyNamespace;
 
 	@Value("${spring.application.name}")
 	private String applicationName;
@@ -50,6 +54,14 @@ public class RedisPubSubConfig {
 	@Bean
 	public RedisPubSubService redisPubSubService(PubSubRedisTemplate pubSubRedisTemplate) {
 		return new RedisPubSubServiceImpl(pubSubRedisTemplate);
+	}
+
+	@Bean
+	public KeyExpirationEventMessageListener keyExpirationEventMessageListener(
+			RedisMessageListenerContainer redisMessageListenerContainer) {
+		KeyExpirationEventMessageListener listener = new KeyExpirationEventMessageListener(redisMessageListenerContainer);
+		listener.setKeyspaceNotificationsConfigParameter("Ex");
+		return listener;
 	}
 
 	@Bean
@@ -85,6 +97,8 @@ public class RedisPubSubConfig {
 
 		PubSubRedisTemplate redisTemplate = new PubSubRedisTemplate();
 		redisTemplate.setPubsubChannel(getChannel());
+		redisTemplate.setKeyNamespace(keyNamespace);
+
 		redisTemplate.setConnectionFactory(redisConnectionFactory);
 		StringRedisSerializer stringSerializer = new StringRedisSerializer();
 		redisTemplate.setKeySerializer(stringSerializer);
@@ -95,7 +109,7 @@ public class RedisPubSubConfig {
 		return redisTemplate;
 	}
 
-	private String getChannel() {
+	String getChannel() {
 		return StringUtils.isNotBlank(pubsubChannel) ? pubsubChannel : applicationName;
 	}
 
