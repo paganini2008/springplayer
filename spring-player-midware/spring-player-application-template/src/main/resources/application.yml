@@ -1,0 +1,29 @@
+server:
+  port: 18080
+
+spring:
+  application:
+    name: yl-platform-application-template
+  redis:
+    port: 6379
+    host: localhost
+    password: 123456
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useSSL=false
+    username: fengy
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 1
+      idle-timeout: 180000
+      maximum-pool-size: 20
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka
+
+

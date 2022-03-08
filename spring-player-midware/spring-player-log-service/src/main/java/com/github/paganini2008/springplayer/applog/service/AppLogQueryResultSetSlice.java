@@ -10,7 +10,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.applog.entity.AppLog;
-import com.github.paganini2008.springplayer.es.MatchAllResultSetSlice;
+import com.github.paganini2008.springplayer.common.es.MatchAllResultSetSlice;
 
 /**
  * 

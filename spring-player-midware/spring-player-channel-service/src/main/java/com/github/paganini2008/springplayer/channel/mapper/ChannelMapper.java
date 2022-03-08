@@ -3,7 +3,7 @@ package com.github.paganini2008.springplayer.channel.mapper;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.github.paganini2008.springplayer.channel.model.Channel;
-import com.github.paganini2008.springplayer.mybatis.EntityMapper;
+import com.github.paganini2008.springplayer.common.mybatis.EntityMapper;
 
 /**
  * 

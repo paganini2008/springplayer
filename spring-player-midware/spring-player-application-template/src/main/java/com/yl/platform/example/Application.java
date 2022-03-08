@@ -1,0 +1,40 @@
+package com.yl.platform.example;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
+
+/**
+ * 
+ * Application
+ *
+ * @author Fred Feng
+ * @version 1.0.0
+ */
+@RestController
+@MapperScan("com.yl.platform.example.*.mapper")
+@EnableFeignClientEndpoint
+@EnableAsync
+@EnableDiscoveryClient
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		// final int port = NetUtils.getRandomPort(SERVER_PORT_START_WITH,
+		// SERVER_PORT_END_WITH);
+		int port = 9092;
+		System.setProperty("server.port", String.valueOf(port));
+		SpringApplication.run(Application.class, args);
+	}
+
+	@GetMapping("/")
+	public String helloWorld() {
+		return "Hello World";
+	}
+}

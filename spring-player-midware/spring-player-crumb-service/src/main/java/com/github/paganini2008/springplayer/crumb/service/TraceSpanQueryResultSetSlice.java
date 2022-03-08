@@ -8,8 +8,8 @@ import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 
 import com.github.paganini2008.devtools.StringUtils;
+import com.github.paganini2008.springplayer.common.es.MatchAllResultSetSlice;
 import com.github.paganini2008.springplayer.crumb.entity.TraceSpan;
-import com.github.paganini2008.springplayer.es.MatchAllResultSetSlice;
 
 /**
  * 

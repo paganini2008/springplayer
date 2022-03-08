@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.paganini2008.springplayer.channel.mapper.ChannelMapper;
 import com.github.paganini2008.springplayer.channel.model.Channel;
-import com.github.paganini2008.springplayer.mybatis.PageableIServiceImpl;
+import com.github.paganini2008.springplayer.common.mybatis.PageableIServiceImpl;
 
 /**
  * 
