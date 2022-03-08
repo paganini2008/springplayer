@@ -51,8 +51,8 @@ public class RedisIdGenerator implements IdGenerator {
 		Supplier<RedisAtomicLong> counter = cache.get(timestamp);
 		if (counter == null) {
 			cache.putIfAbsent(timestamp, new ThreadSafeSupplier(() -> {
-				String coutnerName = keyPrefix + ":" + timestamp;
-				RedisAtomicLong l = new RedisAtomicLong(coutnerName, connectionFactory);
+				String counterName = keyPrefix + ":" + timestamp;
+				RedisAtomicLong l = new RedisAtomicLong(counterName, connectionFactory);
 				l.expire(60, TimeUnit.SECONDS);
 				return l;
 			}));

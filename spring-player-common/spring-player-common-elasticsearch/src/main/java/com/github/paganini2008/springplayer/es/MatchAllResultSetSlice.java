@@ -6,14 +6,14 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 
 /**
  * 
- * MatchAllQueryResultSetSlice
+ * MatchAllResultSetSlice
  *
  * @author Fred Feng
  * @version 1.0.0
  */
-public class MatchAllQueryResultSetSlice<T> extends AbstractQueryResultSetSlice<T> {
+public class MatchAllResultSetSlice<T> extends AbstractQueryResultSetSlice<T> {
 
-	public MatchAllQueryResultSetSlice(ElasticsearchRestTemplate elasticsearchTemplate, Class<T> entityClass) {
+	public MatchAllResultSetSlice(ElasticsearchRestTemplate elasticsearchTemplate, Class<T> entityClass) {
 		super(elasticsearchTemplate, entityClass);
 	}
 

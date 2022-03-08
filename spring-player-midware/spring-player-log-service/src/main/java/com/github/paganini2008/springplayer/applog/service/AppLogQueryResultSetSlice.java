@@ -10,7 +10,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.applog.entity.AppLog;
-import com.github.paganini2008.springplayer.es.MatchAllQueryResultSetSlice;
+import com.github.paganini2008.springplayer.es.MatchAllResultSetSlice;
 
 /**
  * 
@@ -19,7 +19,7 @@ import com.github.paganini2008.springplayer.es.MatchAllQueryResultSetSlice;
  * @author Fred Feng
  * @version 1.0.0
  */
-public class AppLogQueryResultSetSlice extends MatchAllQueryResultSetSlice<AppLog> {
+public class AppLogQueryResultSetSlice extends MatchAllResultSetSlice<AppLog> {
 
 	public AppLogQueryResultSetSlice(ElasticsearchRestTemplate elasticsearchTemplate, SearchFilterQuery query) {
 		super(elasticsearchTemplate, AppLog.class);

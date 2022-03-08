@@ -6,7 +6,6 @@ import java.util.List;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
-import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.SearchHit;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 
@@ -15,18 +14,18 @@ import com.github.paganini2008.devtools.collection.CollectionUtils;
 
 /**
  * 
- * KeywordQueryResultSetSlice
+ * KeywordForwardOnlyResultSetSlice
  *
  * @author Fred Feng
  * @version 1.0.0
  */
-public class KeywordQueryResultSetSlice<T> extends AbstractQueryResultSetSlice<T> {
+public class ForwardOnlyKeywordResultSetSlice<T> extends ForwardOnlyResultSetSlice<T>{
 
 	private final String keyword;
 	private final QueryClause queryClause;
 	private final String[] searchFields;
 
-	public KeywordQueryResultSetSlice(ElasticsearchRestTemplate elasticsearchTemplate, String keyword, QueryClause queryClause,
+	public ForwardOnlyKeywordResultSetSlice(EnhancedElasticsearchRestTemplate elasticsearchTemplate, String keyword, QueryClause queryClause,
 			String[] searchFields, Class<T> entityClass) {
 		super(elasticsearchTemplate, entityClass);
 		this.keyword = keyword;
@@ -46,6 +45,7 @@ public class KeywordQueryResultSetSlice<T> extends AbstractQueryResultSetSlice<T
 						.toArray(l -> new HighlightBuilder.Field[l]))
 				.withHighlightBuilder(new HighlightBuilder().preTags("<font class=\"keyword\">").postTags("</font>")
 						.fragmentSize(Integer.MAX_VALUE).numOfFragments(3));
+		
 	}
 
 	@Override
@@ -63,4 +63,5 @@ public class KeywordQueryResultSetSlice<T> extends AbstractQueryResultSetSlice<T
 		}
 		return result;
 	}
+
 }

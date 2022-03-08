@@ -9,6 +9,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 
 import com.github.paganini2008.devtools.CharsetUtils;
+import com.github.paganini2008.devtools.RandomUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,6 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SnowFlakeIdGeneratorFactory implements IdGeneratorFactory, ApplicationListener<RedisKeyExpiredEvent> {
 
+	private static final int DEFAULT_EXPIRATION_TIME = 60;
 	private static final int MAX_SLOT = 31;
 	private static final int MAX_CLUSTER_NODES = MAX_SLOT * MAX_SLOT;
 	private static final String KEY_PATTERN = "%s:snowflake:app:%s:%s";
@@ -42,15 +44,18 @@ public class SnowFlakeIdGeneratorFactory implements IdGeneratorFactory, Applicat
 	private long datacenterId;
 	private long workerId;
 
+	private int sizeOfNamespace() {
+		return redisTemplate.keys(namespace + ":snowflake:app:*").size();
+	}
+
 	@Override
 	public IdGenerator getObject() {
-		int length = redisTemplate.keys(namespace + ":snowflake:app:*").size();
-		if (length >= MAX_CLUSTER_NODES) {
-			throw new IllegalStateException();
-		}
 		String key;
 		long workerId, datacenterId;
 		do {
+			if (sizeOfNamespace() >= MAX_CLUSTER_NODES) {
+				throw new IllegalStateException("Exceeding max cluster nodes: " + MAX_CLUSTER_NODES);
+			}
 			workerId = workerIdGen.getAndIncrement();
 			if (workerId >= MAX_SLOT) {
 				workerIdGen.set(0);
@@ -63,7 +68,8 @@ public class SnowFlakeIdGeneratorFactory implements IdGeneratorFactory, Applicat
 			key = String.format(KEY_PATTERN, namespace, datacenterId, workerId);
 		} while (redisTemplate.hasKey(key));
 
-		redisTemplate.opsForValue().set(key, String.valueOf(System.currentTimeMillis()), 60, TimeUnit.SECONDS);
+		redisTemplate.opsForValue().set(key, String.valueOf(System.currentTimeMillis()),
+				DEFAULT_EXPIRATION_TIME + RandomUtils.randomInt(0, 10), TimeUnit.SECONDS);
 		if (log.isInfoEnabled()) {
 			log.info("Register datacenterId: {}, workerId: {}", datacenterId, workerId);
 		}
@@ -82,9 +88,13 @@ public class SnowFlakeIdGeneratorFactory implements IdGeneratorFactory, Applicat
 		String expiredKey = new String(event.getSource(), CharsetUtils.UTF_8);
 		String key = String.format(KEY_PATTERN, namespace, datacenterId, workerId);
 		if (key.equals(expiredKey)) {
-			redisTemplate.opsForValue().set(key, String.valueOf(System.currentTimeMillis()), 60, TimeUnit.SECONDS);
+			if (redisTemplate.hasKey(key)) {
+				log.warn("Notice that datacenterId '{}' and workerId '{}' has been used currently.", datacenterId, workerId);
+			}
+			redisTemplate.opsForValue().set(key, String.valueOf(System.currentTimeMillis()),
+					DEFAULT_EXPIRATION_TIME + RandomUtils.randomInt(0, 10), TimeUnit.SECONDS);
 			if (log.isInfoEnabled()) {
-				log.info("Renew datacenterId: {}, workerId: {}", datacenterId, workerId);
+				log.info("Renew datacenterId '{}', workerId '{}'", datacenterId, workerId);
 			}
 		}
 	}

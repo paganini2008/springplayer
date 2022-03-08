@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 
 import com.github.paganini2008.springplayer.id.IdGenerator;
-import com.github.paganini2008.springplayer.id.RedisGlobalIdGenerator;
+import com.github.paganini2008.springplayer.id.RedisIdGenerator;
 
 /**
  * 
@@ -19,7 +19,7 @@ public class AppLogConfig {
 
 	@Bean
 	public IdGenerator idGenerator(RedisConnectionFactory redisConnectionFactory) {
-		return new RedisGlobalIdGenerator(redisConnectionFactory);
+		return new RedisIdGenerator(redisConnectionFactory);
 	}
 
 }

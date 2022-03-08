@@ -10,7 +10,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.applog.entity.AppLog;
-import com.github.paganini2008.springplayer.es.KeywordQueryResultSetSlice;
+import com.github.paganini2008.springplayer.es.KeywordResultSetSlice;
 import com.github.paganini2008.springplayer.es.QueryClause;
 
 /**
@@ -20,7 +20,7 @@ import com.github.paganini2008.springplayer.es.QueryClause;
  * @author Fred Feng
  * @version 1.0.0
  */
-public class AppLogKeywordQueryResultSetSlice extends KeywordQueryResultSetSlice<AppLog> {
+public class AppLogKeywordQueryResultSetSlice extends KeywordResultSetSlice<AppLog> {
 
 	private static final String[] DEFAULT_SEARCH_FIELDS = { "message", "error" };
 

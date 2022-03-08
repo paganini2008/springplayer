@@ -9,7 +9,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.crumb.entity.TraceSpan;
-import com.github.paganini2008.springplayer.es.MatchAllQueryResultSetSlice;
+import com.github.paganini2008.springplayer.es.MatchAllResultSetSlice;
 
 /**
  * 
@@ -18,7 +18,7 @@ import com.github.paganini2008.springplayer.es.MatchAllQueryResultSetSlice;
  * @author Fred Feng
  * @version 1.0.0
  */
-public class TraceSpanQueryResultSetSlice extends MatchAllQueryResultSetSlice<TraceSpan> {
+public class TraceSpanQueryResultSetSlice extends MatchAllResultSetSlice<TraceSpan> {
 
 	public TraceSpanQueryResultSetSlice(ElasticsearchRestTemplate elasticsearchTemplate, SearchFilterQuery query) {
 		super(elasticsearchTemplate, TraceSpan.class);
