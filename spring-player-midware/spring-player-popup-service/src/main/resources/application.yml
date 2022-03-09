@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: yl-platform-popup-service
+    name: spring-player-popup-service
   redis:
     port: 6379
     host: localhost
