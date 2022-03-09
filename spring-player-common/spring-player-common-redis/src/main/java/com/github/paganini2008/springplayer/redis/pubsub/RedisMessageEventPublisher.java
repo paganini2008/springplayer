@@ -1,12 +1,11 @@
 package com.github.paganini2008.springplayer.redis.pubsub;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.redis.connection.DataType;
 import org.springframework.data.redis.core.RedisKeyExpiredEvent;
+import org.springframework.data.redis.core.RedisOperations;
 
 import com.github.paganini2008.devtools.CharsetUtils;
 
@@ -19,16 +18,18 @@ import com.github.paganini2008.devtools.CharsetUtils;
  */
 public class RedisMessageEventPublisher implements ApplicationEventPublisherAware {
 
+	private final String keyNamespace;
+	private final RedisOperations<String, Object> redisTemplate;
+
+	public RedisMessageEventPublisher(String keyNamespace, RedisOperations<String, Object> redisTemplate) {
+		this.keyNamespace = keyNamespace;
+		this.redisTemplate = redisTemplate;
+	}
+
 	private ApplicationEventPublisher applicationEventPublisher;
 
-	@Autowired
-	private PubSubRedisTemplate redisTemplate;
-
-	@Value("${spring.application.redis.pubsub.keyNamespace:pubsub}")
-	private String keyNamespace;
-
 	public void doPubSub(RedisMessageEntity data) {
-		String key = redisTemplate.keyFor(data.getChannel());
+		String key = keyNamespace + ":" + data.getChannel();
 		DataType dataType = redisTemplate.type(key);
 		if (dataType == null) {
 			return;
@@ -36,7 +37,7 @@ public class RedisMessageEventPublisher implements ApplicationEventPublisherAwar
 		RedisMessageEntity messageEntity = null;
 		if (dataType == DataType.LIST) {
 			messageEntity = (RedisMessageEntity) redisTemplate.opsForList().leftPop(key);
-		} else if (dataType == DataType.STRING) {
+		} else if (dataType == DataType.NONE) {
 			messageEntity = data;
 		}
 		if (messageEntity != null) {
@@ -67,6 +68,7 @@ public class RedisMessageEventPublisher implements ApplicationEventPublisherAwar
 			messageEntity = (RedisMessageEntity) redisTemplate.opsForValue().get(key);
 			redisTemplate.delete(key);
 		}
+		
 		if (messageEntity != null) {
 			applicationEventPublisher.publishEvent(new RedisMessageEvent(this, messageEntity.getChannel(), messageEntity.getMessage()));
 		}

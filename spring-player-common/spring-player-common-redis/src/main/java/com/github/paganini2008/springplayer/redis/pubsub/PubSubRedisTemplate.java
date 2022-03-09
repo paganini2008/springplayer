@@ -13,18 +13,16 @@ import org.springframework.data.redis.core.RedisTemplate;
  */
 public class PubSubRedisTemplate extends RedisTemplate<String, Object> {
 
-	private String keyNamespace;
-	private String pubsubChannel;
+	private final String keyNamespace;
+	private final String pubsubChannel;
 
-	public void setKeyNamespace(String keyNamespace) {
+	public PubSubRedisTemplate(String keyNamespace, String pubsubChannel) {
+		super();
 		this.keyNamespace = keyNamespace;
-	}
-
-	public void setPubsubChannel(String pubsubChannel) {
 		this.pubsubChannel = pubsubChannel;
 	}
 
-	String keyFor(String channel) {
+	private String keyFor(String channel) {
 		return keyNamespace + ":" + channel;
 	}
 

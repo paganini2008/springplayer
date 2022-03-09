@@ -24,6 +24,7 @@ public enum PubSubMode implements EnumConstant {
 		this.repr = repr;
 	}
 
+	@Override
 	@JsonValue
 	public int getValue() {
 		return value;
