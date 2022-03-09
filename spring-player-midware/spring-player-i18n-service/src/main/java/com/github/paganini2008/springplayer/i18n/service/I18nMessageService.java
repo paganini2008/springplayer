@@ -3,8 +3,8 @@ package com.github.paganini2008.springplayer.i18n.service;
 import java.util.List;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.github.paganini2008.springplayer.common.i18n.vo.I18nMessageVO;
 import com.github.paganini2008.springplayer.i18n.model.I18nMessage;
-import com.github.paganini2008.springplayer.i18n.vo.I18nMessageVO;
 
 /**
  * 

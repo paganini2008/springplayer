@@ -9,10 +9,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.paganini2008.devtools.beans.BeanUtils;
+import com.github.paganini2008.springplayer.common.i18n.vo.I18nMessageVO;
 import com.github.paganini2008.springplayer.i18n.mapper.I18nMessageMapper;
 import com.github.paganini2008.springplayer.i18n.model.I18nMessage;
 import com.github.paganini2008.springplayer.i18n.service.I18nMessageService;
-import com.github.paganini2008.springplayer.i18n.vo.I18nMessageVO;
 
 /**
  * 

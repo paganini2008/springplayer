@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 
-import com.github.paganini2008.springplayer.id.IdGenerator;
-import com.github.paganini2008.springplayer.id.RedisGlobalIdGenerator;
+import com.github.paganini2008.springplayer.common.id.IdGenerator;
+import com.github.paganini2008.springplayer.common.id.RedisIdGenerator;
 import com.github.paganini2008.springplayer.sentinel.utils.JdbcInitializer;
 
 /**
@@ -22,7 +22,7 @@ public class SentinelRuleConfig {
 	
 	@Bean
 	public IdGenerator idGenerator(RedisConnectionFactory connectionFactory) {
-		return new RedisGlobalIdGenerator(connectionFactory);
+		return new RedisIdGenerator(connectionFactory);
 	}
 
 	@Bean("sentinelRuleJdbcInitializer")

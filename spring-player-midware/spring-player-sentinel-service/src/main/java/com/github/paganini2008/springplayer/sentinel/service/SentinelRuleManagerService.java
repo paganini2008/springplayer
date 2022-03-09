@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.paganini2008.devtools.StringUtils;
-import com.github.paganini2008.springplayer.id.IdGenerator;
+import com.github.paganini2008.springplayer.common.id.IdGenerator;
 import com.github.paganini2008.springplayer.sentinel.model.SentinelRule;
 import com.github.paganini2008.springplayer.sentinel.pojo.SentinelRuleDTO;
 
