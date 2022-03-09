@@ -8,8 +8,8 @@ import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.stereotype.Service;
 
-import com.github.paganini2008.springplayer.security.ErrorCodes;
-import com.github.paganini2008.springplayer.security.info.OauthConstants;
+import com.github.paganini2008.springplayer.common.oauth.ErrorCodes;
+import com.github.paganini2008.springplayer.common.oauth.info.OauthConstants;
 import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
 
 import lombok.extern.slf4j.Slf4j;

@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSub;
+import com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSubService;
 import com.github.paganini2008.springplayer.messenger.entity.MessagingEntity;
-import com.github.paganini2008.springplayer.redis.pubsub.RedisPubSub;
-import com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubService;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

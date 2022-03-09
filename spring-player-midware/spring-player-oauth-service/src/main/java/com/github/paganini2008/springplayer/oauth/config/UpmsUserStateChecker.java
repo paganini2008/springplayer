@@ -4,7 +4,7 @@ package com.github.paganini2008.springplayer.oauth.config;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsChecker;
 
-import com.github.paganini2008.springplayer.security.ErrorCodes;
+import com.github.paganini2008.springplayer.common.oauth.ErrorCodes;
 
 /**
  * 

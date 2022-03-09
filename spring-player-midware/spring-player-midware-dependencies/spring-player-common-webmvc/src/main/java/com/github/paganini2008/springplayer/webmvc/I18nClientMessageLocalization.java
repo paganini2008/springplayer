@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import com.github.paganini2008.devtools.ArrayUtils;
 import com.github.paganini2008.devtools.StringUtils;
-import com.github.paganini2008.springplayer.i18n.I18nUtils;
+import com.github.paganini2008.springplayer.common.i18n.I18nUtils;
 
 /**
  * 

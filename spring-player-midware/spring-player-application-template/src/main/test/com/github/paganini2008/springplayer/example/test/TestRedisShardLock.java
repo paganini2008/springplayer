@@ -16,8 +16,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.github.paganini2008.devtools.multithreads.ThreadUtils;
 import com.github.paganini2008.devtools.net.NetUtils;
+import com.github.paganini2008.springplayer.common.redis.lock.RedisSharedLock;
 import com.github.paganini2008.springplayer.example.Application;
-import com.github.paganini2008.springplayer.redis.lock.RedisSharedLock;
 
 import lombok.extern.slf4j.Slf4j;
 

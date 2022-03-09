@@ -25,7 +25,7 @@ import com.github.paganini2008.devtools.ExceptionUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.ErrorCode;
 import com.github.paganini2008.springplayer.common.ExceptionDescriptor;
-import com.github.paganini2008.springplayer.i18n.I18nUtils;
+import com.github.paganini2008.springplayer.common.i18n.I18nUtils;
 
 import reactor.core.publisher.Mono;
 

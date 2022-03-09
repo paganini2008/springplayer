@@ -22,9 +22,9 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.paganini2008.devtools.collection.CollectionUtils;
 import com.github.paganini2008.springplayer.common.JacksonUtils;
+import com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSubService;
 import com.github.paganini2008.springplayer.gateway.route.model.RouteConfig;
 import com.github.paganini2008.springplayer.gateway.route.pojo.RouteConfigDTO;
-import com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubService;
 
 import lombok.extern.slf4j.Slf4j;
 

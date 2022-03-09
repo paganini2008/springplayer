@@ -17,7 +17,7 @@ import org.springframework.security.web.util.ThrowableAnalyzer;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 
 import com.github.paganini2008.springplayer.common.ErrorCode;
-import com.github.paganini2008.springplayer.security.ErrorCodes;
+import com.github.paganini2008.springplayer.common.oauth.ErrorCodes;
 
 import lombok.extern.slf4j.Slf4j;
 

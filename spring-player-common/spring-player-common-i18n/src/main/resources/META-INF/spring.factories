@@ -1,2 +1,2 @@
 com.github.paganini2008.springplayer.feign.FeignClientCandidatesAutoConfiguration=\
-  com.github.paganini2008.springplayer.i18n.api.RemoteI18nService
+  com.github.paganini2008.springplayer.common.i18n.api.RemoteI18nService

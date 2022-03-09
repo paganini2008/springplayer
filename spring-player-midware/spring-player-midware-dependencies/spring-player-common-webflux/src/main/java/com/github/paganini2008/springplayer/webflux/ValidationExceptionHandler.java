@@ -13,7 +13,7 @@ import org.springframework.web.bind.support.WebExchangeBindException;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.devtools.collection.CollectionUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.i18n.I18nUtils;
+import com.github.paganini2008.springplayer.common.i18n.I18nUtils;
 
 import reactor.core.publisher.Mono;
 

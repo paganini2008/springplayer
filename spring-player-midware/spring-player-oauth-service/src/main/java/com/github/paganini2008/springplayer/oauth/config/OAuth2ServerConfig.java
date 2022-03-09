@@ -23,7 +23,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.paganini2008.springplayer.security.FailureAuthenticationEntryPoint;
+import com.github.paganini2008.springplayer.common.oauth.FailureAuthenticationEntryPoint;
 
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;

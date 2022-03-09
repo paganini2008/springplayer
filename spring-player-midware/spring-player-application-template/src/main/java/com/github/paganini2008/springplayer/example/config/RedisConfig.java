@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 
-import com.github.paganini2008.springplayer.redis.lock.RedisSharedLock;
+import com.github.paganini2008.springplayer.common.redis.lock.RedisSharedLock;
 
 @Configuration
 public class RedisConfig {

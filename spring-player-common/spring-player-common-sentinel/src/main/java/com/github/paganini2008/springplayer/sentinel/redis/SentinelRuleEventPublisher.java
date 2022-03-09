@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 
 import com.github.paganini2008.springplayer.common.JacksonUtils;
-import com.github.paganini2008.springplayer.redis.pubsub.RedisPubSub;
+import com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSub;
 
 import lombok.extern.slf4j.Slf4j;
 

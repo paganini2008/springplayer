@@ -13,8 +13,8 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.paganini2008.springplayer.security.FailureAuthenticationEntryPoint;
-import com.github.paganini2008.springplayer.security.GlobalAccessDeniedHandler;
+import com.github.paganini2008.springplayer.common.oauth.FailureAuthenticationEntryPoint;
+import com.github.paganini2008.springplayer.common.oauth.GlobalAccessDeniedHandler;
 
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;

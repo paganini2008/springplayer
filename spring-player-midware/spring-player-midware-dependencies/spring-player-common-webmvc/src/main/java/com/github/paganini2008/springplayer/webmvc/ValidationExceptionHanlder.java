@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.i18n.I18nUtils;
+import com.github.paganini2008.springplayer.common.i18n.I18nUtils;
 import com.github.paganini2008.springplayer.web.WebUtils;
 
 import lombok.extern.slf4j.Slf4j;

@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.github.paganini2008.devtools.collection.MapUtils;
-import com.github.paganini2008.springplayer.redis.pubsub.RedisPubSub;
+import com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSub;
 
 /**
  * 

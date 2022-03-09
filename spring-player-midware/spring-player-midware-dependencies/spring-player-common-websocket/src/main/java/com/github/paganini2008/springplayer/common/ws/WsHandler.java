@@ -3,7 +3,7 @@ package com.github.paganini2008.springplayer.common.ws;
 import static com.github.paganini2008.springplayer.common.ws.WsContants.DEFAULT_BOARDCAST_NAME;
 
 import com.github.paganini2008.springplayer.common.ApplicationContextUtils;
-import com.github.paganini2008.springplayer.redis.pubsub.RedisPubSubService;
+import com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSubService;
 
 /**
  * 

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.security.WhiteList;
+import com.github.paganini2008.springplayer.common.oauth.WhiteList;
 import com.github.paganini2008.springplayer.upms.service.impl.UserManagerService;
 import com.github.paganini2008.springplayer.upms.vo.UserVO;
 

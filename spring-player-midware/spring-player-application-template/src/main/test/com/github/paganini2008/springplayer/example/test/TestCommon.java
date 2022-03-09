@@ -17,8 +17,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.github.paganini2008.springplayer.common.id.IdGenerator;
+import com.github.paganini2008.springplayer.common.redis.RedisBloomFilter;
 import com.github.paganini2008.springplayer.example.Application;
-import com.github.paganini2008.springplayer.redis.RedisBloomFilter;
 
 import lombok.extern.slf4j.Slf4j;
 
