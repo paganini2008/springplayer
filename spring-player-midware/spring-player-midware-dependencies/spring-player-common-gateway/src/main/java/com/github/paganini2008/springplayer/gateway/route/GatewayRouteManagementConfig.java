@@ -14,9 +14,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import com.github.paganini2008.springplayer.common.id.IdGenerator;
+import com.github.paganini2008.springplayer.common.id.RedisIdGenerator;
 import com.github.paganini2008.springplayer.gateway.utils.JdbcInitializer;
-import com.github.paganini2008.springplayer.id.IdGenerator;
-import com.github.paganini2008.springplayer.id.RedisIdGenerator;
 
 /**
  * 

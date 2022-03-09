@@ -1,4 +1,7 @@
-package com.yl.platform.example;
+package com.github.paganini2008.springplayer.example;
+
+import static com.github.paganini2008.springplayer.common.Constants.SERVER_PORT_END_WITH;
+import static com.github.paganini2008.springplayer.common.Constants.SERVER_PORT_START_WITH;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -8,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.paganini2008.devtools.net.NetUtils;
 import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
 
 /**
@@ -26,9 +30,8 @@ import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
 public class Application {
 
 	public static void main(String[] args) {
-		// final int port = NetUtils.getRandomPort(SERVER_PORT_START_WITH,
-		// SERVER_PORT_END_WITH);
-		int port = 9092;
+		final int port = NetUtils.getRandomPort(SERVER_PORT_START_WITH, SERVER_PORT_END_WITH);
+		// int port = 9092;
 		System.setProperty("server.port", String.valueOf(port));
 		SpringApplication.run(Application.class, args);
 	}

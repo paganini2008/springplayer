@@ -1,4 +1,4 @@
-package com.github.paganini2008.springplayer.id;
+package com.github.paganini2008.springplayer.common.id;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +27,7 @@ public class SnowFlakeIdGeneratorFactory implements IdGeneratorFactory, Applicat
 	private static final int DEFAULT_EXPIRATION_TIME = 60;
 	private static final int MAX_SLOT = 31;
 	private static final int MAX_CLUSTER_NODES = MAX_SLOT * MAX_SLOT;
-	private static final String KEY_PATTERN = "%s:snowflake:app:%s:%s";
+	private static final String REDIS_KEY_PATTERN = "%s:snowflake:app:%s:%s";
 
 	private final String namespace;
 	private final StringRedisTemplate redisTemplate;
@@ -65,7 +65,7 @@ public class SnowFlakeIdGeneratorFactory implements IdGeneratorFactory, Applicat
 			if (datacenterId >= MAX_SLOT) {
 				datacenterIdGen.set(0);
 			}
-			key = String.format(KEY_PATTERN, namespace, datacenterId, workerId);
+			key = String.format(REDIS_KEY_PATTERN, namespace, datacenterId, workerId);
 		} while (redisTemplate.hasKey(key));
 
 		redisTemplate.opsForValue().set(key, String.valueOf(System.currentTimeMillis()),
@@ -86,7 +86,7 @@ public class SnowFlakeIdGeneratorFactory implements IdGeneratorFactory, Applicat
 	@Override
 	public void onApplicationEvent(RedisKeyExpiredEvent event) {
 		String expiredKey = new String(event.getSource(), CharsetUtils.UTF_8);
-		String key = String.format(KEY_PATTERN, namespace, datacenterId, workerId);
+		String key = String.format(REDIS_KEY_PATTERN, namespace, datacenterId, workerId);
 		if (key.equals(expiredKey)) {
 			if (redisTemplate.hasKey(key)) {
 				log.warn("Notice that datacenterId '{}' and workerId '{}' has been used currently.", datacenterId, workerId);

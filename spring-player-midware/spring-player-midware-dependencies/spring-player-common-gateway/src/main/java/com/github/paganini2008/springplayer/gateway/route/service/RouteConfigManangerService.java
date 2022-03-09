@@ -27,6 +27,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.paganini2008.devtools.collection.CollectionUtils;
 import com.github.paganini2008.devtools.collection.MapUtils;
 import com.github.paganini2008.springplayer.common.JacksonUtils;
+import com.github.paganini2008.springplayer.common.id.IdGenerator;
 import com.github.paganini2008.springplayer.gateway.route.RouteConfigReader;
 import com.github.paganini2008.springplayer.gateway.route.RouteConfigUtils;
 import com.github.paganini2008.springplayer.gateway.route.model.RouteConfig;
@@ -35,7 +36,6 @@ import com.github.paganini2008.springplayer.gateway.route.pojo.RouteConfigDTO;
 import com.github.paganini2008.springplayer.gateway.sentinel.pojo.ApiPathPredicateItemDTO;
 import com.github.paganini2008.springplayer.gateway.sentinel.pojo.SentinelRuleDTO;
 import com.github.paganini2008.springplayer.gateway.sentinel.service.SentinelRuleManagerService;
-import com.github.paganini2008.springplayer.id.IdGenerator;
 import com.github.paganini2008.springplayer.sentinel.RuleType;
 
 import lombok.extern.slf4j.Slf4j;

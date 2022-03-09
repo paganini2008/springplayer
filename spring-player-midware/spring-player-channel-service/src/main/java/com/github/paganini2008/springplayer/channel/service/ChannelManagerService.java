@@ -20,7 +20,7 @@ import com.github.paganini2008.springplayer.channel.model.ChannelSetting;
 import com.github.paganini2008.springplayer.channel.pojo.ChannelDTO;
 import com.github.paganini2008.springplayer.channel.pojo.ChannelQueryDTO;
 import com.github.paganini2008.springplayer.channel.pojo.PageWrapper;
-import com.github.paganini2008.springplayer.id.IdGenerator;
+import com.github.paganini2008.springplayer.common.id.IdGenerator;
 
 /**
  * 

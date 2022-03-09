@@ -14,7 +14,7 @@
  * See the license for the specific language governing permissions and
  * limitations under the license.
  */
-package com.github.paganini2008.springplayer.id;
+package com.github.paganini2008.springplayer.common.id;
 
 import java.nio.ByteBuffer;
 import java.security.SecureRandom;

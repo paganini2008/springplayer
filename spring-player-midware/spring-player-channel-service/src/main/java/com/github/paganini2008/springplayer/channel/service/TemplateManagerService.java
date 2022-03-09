@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.paganini2008.springplayer.channel.model.Template;
 import com.github.paganini2008.springplayer.channel.pojo.TemplateDTO;
-import com.github.paganini2008.springplayer.id.IdGenerator;
+import com.github.paganini2008.springplayer.common.id.IdGenerator;
 
 /**
  * 

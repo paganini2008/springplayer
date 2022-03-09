@@ -1,4 +1,4 @@
-package com.yl.platform.example.feign;
+package com.github.paganini2008.springplayer.example.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,13 +8,13 @@ import com.github.paganini2008.springplayer.common.ApiResult;
 
 /**
  * 
- * RemoteTestService
+ * RemoteExampleService
  *
  * @author Fred Feng
  * @version 1.0.0
  */
-@FeignClient(contextId = "remoteTestService", name = "test-service")
-public interface RemoteTestService {
+@FeignClient(contextId = "remoteExampleService", name = "example-service")
+public interface RemoteExampleService {
 
 	@GetMapping("/echo")
 	ApiResult<String> echo(@RequestParam("q") String q);

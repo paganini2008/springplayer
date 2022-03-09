@@ -67,11 +67,12 @@ public class FeignClientClassPathBeanDefinitionScanner extends ClassPathBeanDefi
 			}
 			AnnotationAttributes attributes = AnnotatedElementUtils.getMergedAnnotationAttributes(clazz, FeignClient.class);
 			if (attributes == null) {
-				continue;
+				throw new IllegalStateException("Invalid class of FeignClient: " + clazz);
 			}
 
 			if (registry.containsBeanDefinition(className) || registry.containsBeanDefinition(beanDefinition.getBeanClassName())) {
-				continue;
+				throw new IllegalStateException(
+						"Duplicated FeignClient bean by name '" + className + "' or '" + beanDefinition.getBeanClassName() + "'");
 			}
 
 			registerClientConfiguration(registry, getClientName(attributes), attributes.get("configuration"));

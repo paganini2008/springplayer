@@ -1,4 +1,4 @@
-package com.github.paganini2008.springplayer.id;
+package com.github.paganini2008.springplayer.common.id;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
