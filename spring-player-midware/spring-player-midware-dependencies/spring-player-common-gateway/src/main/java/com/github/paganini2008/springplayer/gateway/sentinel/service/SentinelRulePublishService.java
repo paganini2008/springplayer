@@ -1,9 +1,9 @@
 package com.github.paganini2008.springplayer.gateway.sentinel.service;
 
+import static com.github.paganini2008.springplayer.common.sentinel.SentinelConstants.REDIS_PUBSUB_CHANNEL_SENTINEL_RULE_PUBLISH;
+import static com.github.paganini2008.springplayer.common.sentinel.SentinelConstants.REDIS_PUBSUB_CHANNEL_SENTINEL_RULE_UPDATE;
 import static com.github.paganini2008.springplayer.gateway.sentinel.GatewaySentinelRuleManager.SENTINEL_GATEWAY_RULE;
 import static com.github.paganini2008.springplayer.gateway.sentinel.GatewaySentinelRuleManager.SENTINEL_GATEWAY_RULE_API;
-import static com.github.paganini2008.springplayer.sentinel.SentinelConstants.REDIS_PUBSUB_CHANNEL_SENTINEL_RULE_PUBLISH;
-import static com.github.paganini2008.springplayer.sentinel.SentinelConstants.REDIS_PUBSUB_CHANNEL_SENTINEL_RULE_UPDATE;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -27,10 +27,10 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.paganini2008.devtools.collection.CollectionUtils;
 import com.github.paganini2008.springplayer.common.JacksonUtils;
 import com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSubService;
+import com.github.paganini2008.springplayer.common.sentinel.RuleType;
+import com.github.paganini2008.springplayer.common.sentinel.redis.SentinelRuleKeys;
 import com.github.paganini2008.springplayer.gateway.sentinel.model.SentinelRule;
 import com.github.paganini2008.springplayer.gateway.sentinel.pojo.GatewayFlowRuleDTO;
-import com.github.paganini2008.springplayer.sentinel.RuleType;
-import com.github.paganini2008.springplayer.sentinel.redis.SentinelRuleKeys;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

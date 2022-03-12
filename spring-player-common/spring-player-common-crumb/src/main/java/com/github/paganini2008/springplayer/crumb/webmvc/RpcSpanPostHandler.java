@@ -12,7 +12,7 @@ import org.springframework.http.HttpHeaders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 import feign.FeignException;
 import feign.Response;

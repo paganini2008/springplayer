@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.github.paganini2008.springplayer.sentinel.EnableSentinelResource;
+import com.github.paganini2008.springplayer.common.sentinel.EnableSentinelResource;
 
 /**
  * 

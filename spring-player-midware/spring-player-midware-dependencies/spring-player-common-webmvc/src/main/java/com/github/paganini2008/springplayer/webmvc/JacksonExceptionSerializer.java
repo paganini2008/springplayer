@@ -14,7 +14,7 @@ import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ErrorCode;
 import com.github.paganini2008.springplayer.common.ExceptionDescriptor;
 import com.github.paganini2008.springplayer.common.i18n.I18nUtils;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 import lombok.SneakyThrows;
 

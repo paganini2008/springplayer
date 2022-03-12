@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.github.paganini2008.springplayer.sentinel.RuleType;
+import com.github.paganini2008.springplayer.common.sentinel.RuleType;
 
 import lombok.Getter;
 import lombok.Setter;

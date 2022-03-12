@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 
-import com.github.paganini2008.springplayer.monitor.crumb.ThresholdTraceStore;
-import com.github.paganini2008.springplayer.monitor.crumb.TraceStore;
+import com.github.paganini2008.springplayer.common.monitor.crumb.ThresholdTraceStore;
+import com.github.paganini2008.springplayer.common.monitor.crumb.TraceStore;
 
 /**
  * 

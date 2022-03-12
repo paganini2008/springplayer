@@ -3,7 +3,7 @@ package com.github.paganini2008.springplayer.webmvc;
 import org.springframework.stereotype.Component;
 
 import com.github.paganini2008.devtools.StringUtils;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

@@ -24,7 +24,7 @@ import com.github.paganini2008.devtools.LocaleUtils;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.ErrorCode;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 import lombok.extern.slf4j.Slf4j;
 

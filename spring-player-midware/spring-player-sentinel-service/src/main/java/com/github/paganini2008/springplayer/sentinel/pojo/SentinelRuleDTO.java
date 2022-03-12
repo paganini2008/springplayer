@@ -8,7 +8,7 @@ import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.param.ParamFlowRule;
 import com.alibaba.csp.sentinel.slots.system.SystemRule;
 import com.github.paganini2008.springplayer.common.JacksonUtils;
-import com.github.paganini2008.springplayer.sentinel.RuleType;
+import com.github.paganini2008.springplayer.common.sentinel.RuleType;
 
 import lombok.Getter;
 import lombok.Setter;

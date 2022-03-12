@@ -76,10 +76,11 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 
 	@Override
 	public boolean acquire() {
+		boolean taken = false;
 		while (true) {
 			lock.lock();
 			try {
-				if (!expired && hasKey() && counter.get() < maxPermits) {
+				if (taken = (!expired && hasKey() && counter.get() < maxPermits)) {
 					counter.incrementAndGet();
 					return true;
 				} else {
@@ -91,7 +92,9 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 				}
 			} finally {
 				lock.unlock();
-				renewBeforeExpiration();
+				if (taken) {
+					renewBeforeExpiration();
+				}
 			}
 		}
 		return false;
@@ -110,10 +113,11 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 		final long begin = System.nanoTime();
 		long elapsed;
 		long nanosTimeout = TimeUnit.NANOSECONDS.convert(timeout, timeUnit);
+		boolean taken = false;
 		while (true) {
 			lock.lock();
 			try {
-				if (!expired && hasKey() && counter.get() < maxPermits) {
+				if (taken = (!expired && hasKey() && counter.get() < maxPermits)) {
 					counter.incrementAndGet();
 					return true;
 				} else {
@@ -131,7 +135,9 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 				}
 			} finally {
 				lock.unlock();
-				renewBeforeExpiration();
+				if (taken) {
+					renewBeforeExpiration();
+				}
 			}
 		}
 		return false;
@@ -145,6 +151,9 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 				Long ttl = ops.getExpire(key, TimeUnit.SECONDS);
 				if (ttl != null && ttl.longValue() > 0 && ttl.longValue() <= 5) {
 					counter.expire(expiration, TimeUnit.SECONDS);
+					if (log.isTraceEnabled()) {
+						log.trace("Renew the lock counter before its expiration.");
+					}
 				}
 			}
 		} finally {
@@ -155,15 +164,18 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 
 	@Override
 	public boolean tryAcquire() {
+		boolean taken = false;
 		lock.lock();
 		try {
-			if (!expired && hasKey() && counter.get() < maxPermits) {
+			if (taken = (!expired && hasKey() && counter.get() < maxPermits)) {
 				counter.incrementAndGet();
 				return true;
 			}
 		} finally {
 			lock.unlock();
-			renewBeforeExpiration();
+			if (taken) {
+				renewBeforeExpiration();
+			}
 		}
 		return false;
 	}
@@ -241,8 +253,8 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 		if (!expiredKey.equals(counter.getKey())) {
 			return;
 		}
-		if (log.isInfoEnabled()) {
-			log.info("Lock '{}' was expired.", lockName);
+		if (log.isTraceEnabled()) {
+			log.trace("Lock '{}' was expired.", lockName);
 		}
 		lock.lock();
 		try {
@@ -252,8 +264,8 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 				if (counter.get() != 0) {
 					counter.set(0);
 				}
-				if (log.isInfoEnabled()) {
-					log.info("Lock '{}' has been recreated.", lockName);
+				if (log.isTraceEnabled()) {
+					log.trace("Lock '{}' has been recreated.", lockName);
 				}
 			}
 		} finally {

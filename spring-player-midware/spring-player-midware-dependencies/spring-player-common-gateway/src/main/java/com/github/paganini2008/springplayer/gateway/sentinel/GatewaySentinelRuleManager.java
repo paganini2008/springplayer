@@ -17,9 +17,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.github.paganini2008.devtools.ArrayUtils;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.JacksonUtils;
-import com.github.paganini2008.springplayer.sentinel.redis.RedisDataSource;
-import com.github.paganini2008.springplayer.sentinel.redis.SentinelRulePublishEvent;
-import com.github.paganini2008.springplayer.sentinel.redis.SentinelRuleUpdateEventListenerContainer;
+import com.github.paganini2008.springplayer.common.sentinel.redis.RedisDataSource;
+import com.github.paganini2008.springplayer.common.sentinel.redis.SentinelRulePublishEvent;
+import com.github.paganini2008.springplayer.common.sentinel.redis.SentinelRuleUpdateEventListenerContainer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

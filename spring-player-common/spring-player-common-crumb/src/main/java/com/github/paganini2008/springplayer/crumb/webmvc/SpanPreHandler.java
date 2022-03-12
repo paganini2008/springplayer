@@ -18,9 +18,9 @@ import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 
-import com.github.paganini2008.springplayer.monitor.ConcurrencyUpdater;
-import com.github.paganini2008.springplayer.monitor.RequestConcurrencyContextHolder;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.monitor.ConcurrencyUpdater;
+import com.github.paganini2008.springplayer.common.monitor.RequestConcurrencyContextHolder;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 import lombok.RequiredArgsConstructor;
 

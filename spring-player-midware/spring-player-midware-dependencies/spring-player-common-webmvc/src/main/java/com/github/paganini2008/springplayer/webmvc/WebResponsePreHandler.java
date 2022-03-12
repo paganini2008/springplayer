@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 /**
  * 

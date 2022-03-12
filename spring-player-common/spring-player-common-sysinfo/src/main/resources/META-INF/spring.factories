@@ -1,3 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.paganini2008.springplayer.sysinfo.SysInfoEndpoint,\
-  com.github.paganini2008.springplayer.sysinfo.webflux.SysInfoEndpoint
+  com.github.paganini2008.springplayer.common.sysinfo.SysInfoEndpoint,\
+  com.github.paganini2008.springplayer.common.sysinfo.webflux.SysInfoEndpoint

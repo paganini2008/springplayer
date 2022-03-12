@@ -25,10 +25,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.monitor.ConcurrencyUpdater;
-import com.github.paganini2008.springplayer.monitor.RequestConcurrencyContextHolder;
-import com.github.paganini2008.springplayer.monitor.crumb.Span;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.monitor.ConcurrencyUpdater;
+import com.github.paganini2008.springplayer.common.monitor.RequestConcurrencyContextHolder;
+import com.github.paganini2008.springplayer.common.monitor.crumb.Span;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 import lombok.RequiredArgsConstructor;
 

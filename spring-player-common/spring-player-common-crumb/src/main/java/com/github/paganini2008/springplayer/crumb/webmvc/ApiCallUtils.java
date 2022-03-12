@@ -5,7 +5,7 @@ import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEAD
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TIMESTAMP;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TRACES;
 import static com.github.paganini2008.springplayer.common.Constants.REQUEST_HEADER_TRACE_ID;
-import static com.github.paganini2008.springplayer.web.HttpRequestContextHolder.getHeader;
+import static com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder.getHeader;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;
 
 import com.github.paganini2008.devtools.StringUtils;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 /**
  * 

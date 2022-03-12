@@ -2,8 +2,8 @@ package com.github.paganini2008.springplayer.gateway.sentinel.pojo;
 
 import javax.validation.constraints.NotNull;
 
-import com.github.paganini2008.springplayer.sentinel.RuleType;
-import com.github.paganini2008.springplayer.validation.JsonWellformed;
+import com.github.paganini2008.springplayer.common.sentinel.RuleType;
+import com.github.paganini2008.springplayer.common.validation.JsonWellformed;
 
 import lombok.Getter;
 import lombok.Setter;
