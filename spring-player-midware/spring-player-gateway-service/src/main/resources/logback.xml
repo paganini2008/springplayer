@@ -41,7 +41,7 @@
 		<applicationName>spring-player-gateway-service</applicationName>
 		<kafkaSettings>
 			<![CDATA[
-			bootstrap.servers=192.168.12.51:9092,192.168.12.52:9092,192.168.12.53:9092
+			bootstrap.servers=192.168.159.1:9092
 			retries=3
 			batch.size=16384
 			buffer.memory=33554432

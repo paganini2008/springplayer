@@ -19,14 +19,14 @@ import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 /**
  * 
- * LoggingWebMvcConfig
+ * ApiLoggingConfig
  *
  * @author Fred Feng
  * @version 1.0.0
  */
-@ConditionalOnProperty(name = "springplayer.logging.enabled", matchIfMissing = true)
+@ConditionalOnProperty(name = "spring.player.logging.enabled", matchIfMissing = true)
 @Configuration
-public class LoggingWebMvcConfig implements WebMvcConfigurer {
+public class ApiLoggingConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {

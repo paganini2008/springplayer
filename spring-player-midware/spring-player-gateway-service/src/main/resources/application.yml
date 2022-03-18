@@ -11,7 +11,7 @@ spring:
       rule:
         store: redis
       transport:
-        dashboard: 192.168.1.203:30669
+        dashboard: 192.168.159.1:9080
         heartbeat-interval-ms: 3000
         eager: true
     gateway:
@@ -45,9 +45,6 @@ eureka:
       defaultZone: http://localhost:7000/eureka
     fetch-registry: true
     registry-fetch-interval-seconds: 60
-  instance:
-    lease-renewal-interval-in-seconds: 4
-    lease-expiration-duration-in-seconds: 12
     
 management:
   endpoint:

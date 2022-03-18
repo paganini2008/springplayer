@@ -9,13 +9,13 @@ spring:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
   elasticsearch:
     rest:
-      uris: http://192.168.16.150:9200
+      uris: http://192.168.159.1:9200
   redis:
     port: 6379
     host: localhost
     password: 123456
   kafka:
-    bootstrap-servers: 192.168.12.51:9092,192.168.12.52:9092,192.168.12.53:9092 # kafka集群信息
+    bootstrap-servers: 192.168.159.1:9092
     producer:
       retries: 3
       batch-size: 16384
@@ -34,8 +34,5 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:7000/eureka
     fetch-registry: true
-    registry-fetch-interval-seconds: 8
-  instance:
-    lease-renewal-interval-in-seconds: 4
-    lease-expiration-duration-in-seconds: 12
+    registry-fetch-interval-seconds: 30
 

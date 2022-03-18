@@ -1,7 +1,6 @@
 package com.github.paganini2008.springplayer.common.redis;
 
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +24,6 @@ import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator
  * @version 1.0.0
  */
 @Order(Ordered.HIGHEST_PRECEDENCE)
-@ConditionalOnBean(RedisConnectionFactory.class)
 @AutoConfigureBefore(RedisAutoConfiguration.class)
 @Configuration(proxyBeanMethods = false)
 public class RedisConfig {

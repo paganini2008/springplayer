@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.paganini2008.springplayer.common.oauth.ErrorCodes;
 import com.github.paganini2008.springplayer.common.oauth.info.OauthConstants;
-import com.github.paganini2008.springplayer.web.HttpRequestContextHolder;
+import com.github.paganini2008.springplayer.common.web.HttpRequestContextHolder;
 
 import lombok.extern.slf4j.Slf4j;
 

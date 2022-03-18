@@ -11,7 +11,7 @@
 	<appender name="applog" class="com.github.paganini2008.springplayer.logback.KafkaLoggingAppender">
 		<applicationName>spring-player-upms-service</applicationName>
 		<kafkaSettings>
-			bootstrap.servers=192.168.12.51:9092,192.168.12.52:9092,192.168.12.53:9092
+			bootstrap.servers=192.168.159.1:9092
 			retries=3
 			batch.size=16384
 			buffer.memory=33554432

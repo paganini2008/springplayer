@@ -76,7 +76,7 @@ public class RouteConfigManangerService {
 	@Value("${spring.profiles.active:default}")
 	private String env;
 
-	@Autowired
+	@Autowired(required = false)
 	private SentinelRuleManagerService sentinelRuleManagerService;
 
 	/**
@@ -321,7 +321,9 @@ public class RouteConfigManangerService {
 		}
 		batchSaveRouteConfig(groupName, routeConfigDTOs);
 		saveRouteFile(groupName, text, format);
-		cascadeSaveSentinelRules(routeConfigDTOs);
+		if (sentinelRuleManagerService != null) {
+			cascadeSaveSentinelRules(routeConfigDTOs);
+		}
 	}
 
 	@SuppressWarnings("all")

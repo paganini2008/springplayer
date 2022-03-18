@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
  * @author Fred Feng
  * @version 1.0.0
  */
-@ComponentScan("com.github.paganini2008.springplayer.security")
+@ComponentScan("com.github.paganini2008.springplayer.common.oauth")
 @EnableConfigurationProperties({ WhiteListProperties.class })
 @Configuration
 public class ResourceServerSecurityConfig {
