@@ -20,7 +20,7 @@
 			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-i18n</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-mybatis</artifactId>
@@ -34,6 +34,11 @@
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-jdbc</artifactId>
+		</dependency>
+
+		<dependency> 
+			<groupId>com.github.paganini2008.springplayer</groupId>
+			<artifactId>spring-player-common-xxljob</artifactId>
 		</dependency>
 
 		<dependency>

@@ -210,6 +210,12 @@
 				<version>${spring-player.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-xxljob</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
