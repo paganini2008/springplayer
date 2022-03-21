@@ -48,6 +48,8 @@
 		<module>../spring-player-common-vm</module>
 		<module>../spring-player-common-monitor</module>
 		<module>../spring-player-common-zookeeper</module>
+		<module>../spring-player-common-hystrix</module>
+		<module>../spring-player-common-quartz</module>
 	</modules>
 
 	<dependencyManagement>
