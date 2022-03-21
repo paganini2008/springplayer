@@ -1,0 +1,2 @@
+com.github.paganini2008.springplayer.feign.FeignClientCandidatesAutoConfiguration=\
+  com.github.paganini2008.springplayer.common.file.RemoteFileService

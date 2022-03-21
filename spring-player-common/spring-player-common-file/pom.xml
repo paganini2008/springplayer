@@ -13,11 +13,31 @@
 	<artifactId>spring-player-common-file</artifactId>
 	<packaging>jar</packaging>
 
+	<properties>
+		<minio.version>8.3.5</minio.version>
+	</properties>
+
 	<dependencies>
 
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-data</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.paganini2008.springplayer</groupId>
+			<artifactId>spring-player-common-feign</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.minio</groupId>
+			<artifactId>minio</artifactId>
+			<version>7.1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
 		</dependency>
 
 	</dependencies>

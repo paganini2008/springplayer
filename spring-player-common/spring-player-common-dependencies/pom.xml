@@ -47,6 +47,7 @@
 		<module>../spring-player-common-sysinfo</module>
 		<module>../spring-player-common-vm</module>
 		<module>../spring-player-common-monitor</module>
+		<module>../spring-player-common-zookeeper</module>
 	</modules>
 
 	<dependencyManagement>
@@ -198,6 +199,12 @@
 			<dependency>
 				<groupId>com.github.paganini2008.springplayer</groupId>
 				<artifactId>spring-player-common-monitor</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-file</artifactId>
 				<version>${spring-player.version}</version>
 			</dependency>
 
