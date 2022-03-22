@@ -1,0 +1,46 @@
+2022-03-22 17:29:23 [INFO ] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2022-03-22 17:29:25 [INFO ] c.g.p.s.example.ExampleApplication - No active profile set, falling back to default profiles: default
+2022-03-22 17:29:26 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-22 17:29:26 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-03-22 17:29:26 [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2022-03-22 17:29:26 [WARN ] o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-03-22 17:29:26 [WARN ] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.yl.platform.example.*.mapper]' package. Please check your configuration.
+2022-03-22 17:29:26 [INFO ] o.s.cloud.context.scope.GenericScope - BeanFactory id=7d0ddb36-004e-3cad-a5e5-5bab2861556b
+2022-03-22 17:29:26 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'remoteI18nService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-22 17:29:27 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSubConfig' of type [com.github.paganini2008.springplayer.common.redis.pubsub.RedisPubSubConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-22 17:29:27 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-22 17:29:27 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-22 17:29:27 [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-22 17:29:29 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-03-22 17:29:29 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-03-22 17:29:29 [WARN ] c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-03-22 17:29:29 [INFO ] c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-03-22 17:29:31 [INFO ] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-22 17:29:34 [INFO ] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-03-22 17:29:34 [WARN ] o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-03-22 17:29:34 [WARN ] o.s.c.c.l.r.ReactorLoadBalancerClientAutoConfiguration$ReactorLoadBalancerClientRibbonWarnLogger - You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-03-22 17:29:35 [INFO ] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-03-22 17:29:35 [INFO ] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-03-22 17:29:35 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-03-22 17:29:35 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-03-22 17:29:36 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-03-22 17:29:36 [INFO ] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-03-22 17:29:36 [INFO ] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-03-22 17:29:36 [INFO ] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-03-22 17:29:36 [INFO ] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-03-22 17:29:36 [INFO ] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-03-22 17:29:36 [INFO ] c.netflix.discovery.DiscoveryClient - Application is null : false
+2022-03-22 17:29:36 [INFO ] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-03-22 17:29:36 [INFO ] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-03-22 17:29:36 [INFO ] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-03-22 17:29:36 [INFO ] c.netflix.discovery.DiscoveryClient - The response status is 200
+2022-03-22 17:29:37 [INFO ] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2022-03-22 17:29:37 [INFO ] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-03-22 17:29:37 [INFO ] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1647941377006 with initial instances count: 0
+2022-03-22 17:29:37 [INFO ] o.s.c.n.e.s.EurekaServiceRegistry - Registering application SPRING-PLAYER-APPLICATION-WEBFLUX-TEMPLATE with eureka with status UP
+2022-03-22 17:29:37 [INFO ] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1647941377009, current=UP, previous=STARTING]
+2022-03-22 17:29:37 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_SPRING-PLAYER-APPLICATION-WEBFLUX-TEMPLATE/DESKTOP-JVEFRNA:spring-player-application-webflux-template:50311: registering service...
+2022-03-22 17:29:37 [INFO ] o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 50311
+2022-03-22 17:29:37 [INFO ] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 50311
+2022-03-22 17:29:37 [INFO ] c.netflix.discovery.DiscoveryClient - DiscoveryClient_SPRING-PLAYER-APPLICATION-WEBFLUX-TEMPLATE/DESKTOP-JVEFRNA:spring-player-application-webflux-template:50311 - registration status: 204
+2022-03-22 17:29:38 [INFO ] c.g.p.s.example.ExampleApplication - Started ExampleApplication in 16.299 seconds (JVM running for 17.072)

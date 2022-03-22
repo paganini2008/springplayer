@@ -27,13 +27,13 @@ import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
 @EnableAsync
 @EnableDiscoveryClient
 @SpringBootApplication
-public class Application {
+public class ExampleApplication {
 
 	public static void main(String[] args) {
 		final int port = NetUtils.getRandomPort(SERVER_PORT_START_WITH, SERVER_PORT_END_WITH);
 		// int port = 9092;
 		System.setProperty("server.port", String.valueOf(port));
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ExampleApplication.class, args);
 	}
 
 	@GetMapping("/")
