@@ -22,6 +22,6 @@ public abstract class WsHandler {
 
 	public abstract WsUser currentUser();
 
-	protected abstract void receiveMessage(WsUser user, String content, Object attachment, long timestamp) ;
+	protected abstract void receiveMessage(WsUser user, String content, Object attachment, long timestamp);
 
 }

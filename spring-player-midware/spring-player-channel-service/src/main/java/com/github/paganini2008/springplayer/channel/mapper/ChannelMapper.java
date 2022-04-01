@@ -9,7 +9,7 @@ import com.github.paganini2008.springplayer.common.mybatis.EntityMapper;
  * 
  * ChannelMapper
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 @Mapper

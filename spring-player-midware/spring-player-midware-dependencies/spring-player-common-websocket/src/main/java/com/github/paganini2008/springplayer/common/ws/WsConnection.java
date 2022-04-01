@@ -10,13 +10,13 @@ package com.github.paganini2008.springplayer.common.ws;
 public interface WsConnection {
 
 	void connect();
-	
-	void send(String content);
-	
-	void disconnect();
-	
-	void close();
-	
-	boolean isActive();
-	
+
+	void close(boolean abandoned);
+
+	boolean isClosed();
+
+	boolean isAbandoned();
+
+	void send(String text);
+
 }

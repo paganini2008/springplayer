@@ -16,7 +16,7 @@ import com.github.paganini2008.devtools.StringUtils;
  * 
  * JacksonUtils
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public abstract class JacksonUtils {

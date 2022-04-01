@@ -51,17 +51,6 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 	private volatile boolean reused = true;
 	private volatile boolean expired;
 
-	@SuppressWarnings("unchecked")
-	protected RedisAtomicInteger initializeCounter(String lockName) {
-		RedisAtomicInteger counter = new RedisAtomicInteger(lockName + ":counter", connectionFactory);
-		counter.expire(expiration, TimeUnit.SECONDS);
-		ops = (RedisTemplate<String, Integer>) FieldUtils.readField(counter, "generalOps");
-
-		this.expired = false;
-		this.startTime = System.currentTimeMillis();
-		return counter;
-	}
-
 	public boolean isReused() {
 		return reused;
 	}
@@ -74,13 +63,47 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 		return expired;
 	}
 
+	private void recreateCounterIfLockNameAbsent() {
+		lock.lock();
+		try {
+			if (!ops.hasKey(counter.getKey())) {
+				expired = true;
+				if (reused) {
+					this.counter = initializeCounter(lockName);
+					if (counter.get() != 0) {
+						counter.set(0);
+					}
+					if (log.isInfoEnabled()) {
+						log.info("Lock '{}' has been recreated.", lockName);
+					}
+				} else {
+					if (log.isWarnEnabled()) {
+						log.warn("Lock '{}' is expired.");
+					}
+				}
+			}
+		} finally {
+			lock.unlock();
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	protected RedisAtomicInteger initializeCounter(String lockName) {
+		RedisAtomicInteger counter = new RedisAtomicInteger(lockName + ":counter", connectionFactory);
+		counter.expire(expiration, TimeUnit.SECONDS);
+		this.ops = (RedisTemplate<String, Integer>) FieldUtils.readField(counter, "generalOps");
+		this.expired = false;
+		this.startTime = System.currentTimeMillis();
+		return counter;
+	}
+
 	@Override
 	public boolean acquire() {
 		boolean taken = false;
 		while (true) {
 			lock.lock();
 			try {
-				if (taken = (!expired && hasKey() && counter.get() < maxPermits)) {
+				if (taken = (!expired && hasLock() && counter.get() < maxPermits)) {
 					counter.incrementAndGet();
 					return true;
 				} else {
@@ -100,8 +123,12 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 		return false;
 	}
 
-	private boolean hasKey() {
+	private boolean hasLock() {
 		try {
+			if (ops.hasKey(counter.getKey())) {
+				return true;
+			}
+			recreateCounterIfLockNameAbsent();
 			return ops.hasKey(counter.getKey());
 		} catch (RuntimeException e) {
 			return false;
@@ -117,7 +144,7 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 		while (true) {
 			lock.lock();
 			try {
-				if (taken = (!expired && hasKey() && counter.get() < maxPermits)) {
+				if (taken = (!expired && hasLock() && counter.get() < maxPermits)) {
 					counter.incrementAndGet();
 					return true;
 				} else {
@@ -167,7 +194,7 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 		boolean taken = false;
 		lock.lock();
 		try {
-			if (taken = (!expired && hasKey() && counter.get() < maxPermits)) {
+			if (taken = (!expired && hasLock() && counter.get() < maxPermits)) {
 				counter.incrementAndGet();
 				return true;
 			}
@@ -206,7 +233,7 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 		while (true) {
 			lock.lock();
 			try {
-				if (!expired && hasKey()) {
+				if (!expired && hasLock()) {
 					return counter.get() > 0;
 				}
 			} finally {
@@ -238,7 +265,7 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 		while (true) {
 			lock.lock();
 			try {
-				if (!expired && hasKey()) {
+				if (!expired && hasLock()) {
 					return maxPermits - counter.get();
 				}
 			} finally {
@@ -250,26 +277,8 @@ public class RedisSharedLock implements SharedLock, ApplicationListener<RedisKey
 	@Override
 	public void onApplicationEvent(RedisKeyExpiredEvent<?> event) {
 		String expiredKey = new String(event.getSource(), CharsetUtils.UTF_8);
-		if (!expiredKey.equals(counter.getKey())) {
-			return;
-		}
-		if (log.isTraceEnabled()) {
-			log.trace("Lock '{}' was expired.", lockName);
-		}
-		lock.lock();
-		try {
-			expired = true;
-			if (reused) {
-				this.counter = initializeCounter(lockName);
-				if (counter.get() != 0) {
-					counter.set(0);
-				}
-				if (log.isTraceEnabled()) {
-					log.trace("Lock '{}' has been recreated.", lockName);
-				}
-			}
-		} finally {
-			lock.unlock();
+		if (expiredKey.equals(counter.getKey())) {
+			recreateCounterIfLockNameAbsent();
 		}
 	}
 }

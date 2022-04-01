@@ -9,6 +9,6 @@ package com.github.paganini2008.springplayer.messenger;
  */
 public abstract class MessengerConstants {
 
-	public static final String MESSAGING_STREAM_TOPIC = "MESSAGING_CENTER";
+	public static final String MESSAGING_STREAM_TOPIC = "YL_PLATFORM_MESSAGE_HUB";
 
 }

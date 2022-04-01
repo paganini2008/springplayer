@@ -22,7 +22,7 @@ import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
  * @version 1.0.0
  */
 @RestController
-@MapperScan("com.yl.platform.example.*.mapper")
+@MapperScan("com.github.paganini2008.springplayer.*.mapper")
 @EnableFeignClientEndpoint
 @EnableAsync
 @EnableDiscoveryClient

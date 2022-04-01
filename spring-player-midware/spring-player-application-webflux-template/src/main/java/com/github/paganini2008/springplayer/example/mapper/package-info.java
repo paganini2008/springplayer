@@ -1,0 +1,1 @@
+package com.github.paganini2008.springplayer.example.mapper;

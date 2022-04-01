@@ -1,8 +1,5 @@
 package com.github.paganini2008.springplayer.messenger;
 
-import static com.github.paganini2008.springplayer.common.Constants.SERVER_PORT_END_WITH;
-import static com.github.paganini2008.springplayer.common.Constants.SERVER_PORT_START_WITH;
-
 import java.io.File;
 
 import org.springframework.boot.SpringApplication;
@@ -11,9 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 import com.github.paganini2008.devtools.io.FileUtils;
-import com.github.paganini2008.devtools.net.NetUtils;
 import com.github.paganini2008.springplayer.common.swagger.EnableSwaggerResource;
-import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
+import com.github.paganini2008.springplayer.common.ws.EnableWsClient;
 
 /**
  * 
@@ -22,8 +18,8 @@ import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
  * @author Fred Feng
  * @version 1.0.0
  */
+@EnableWsClient
 @EnableSwaggerResource
-@EnableFeignClientEndpoint
 @EnableAsync
 @EnableDiscoveryClient
 @SpringBootApplication
@@ -39,7 +35,7 @@ public class MessengerApplication {
 	}
 
 	public static void main(String[] args) {
-		final int port = NetUtils.getRandomPort(SERVER_PORT_START_WITH, SERVER_PORT_END_WITH);
+		final int port = 12000;
 		System.setProperty("server.port", String.valueOf(port));
 		SpringApplication.run(MessengerApplication.class, args);
 	}

@@ -50,6 +50,7 @@
 		<module>../spring-player-common-zookeeper</module>
 		<module>../spring-player-common-hystrix</module>
 		<module>../spring-player-common-quartz</module>
+		<module>../spring-player-common-messenger</module>
 	</modules>
 
 	<dependencyManagement>
@@ -213,6 +214,12 @@
 			<dependency>
 				<groupId>com.github.paganini2008.springplayer</groupId>
 				<artifactId>spring-player-common-xxljob</artifactId>
+				<version>${spring-player.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.paganini2008.springplayer</groupId>
+				<artifactId>spring-player-common-messenger</artifactId>
 				<version>${spring-player.version}</version>
 			</dependency>
 

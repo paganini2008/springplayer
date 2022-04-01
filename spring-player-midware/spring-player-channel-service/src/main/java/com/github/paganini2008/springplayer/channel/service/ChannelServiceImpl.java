@@ -10,7 +10,7 @@ import com.github.paganini2008.springplayer.common.mybatis.PageableIServiceImpl;
  * 
  * ChannelServiceImpl
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 @Service

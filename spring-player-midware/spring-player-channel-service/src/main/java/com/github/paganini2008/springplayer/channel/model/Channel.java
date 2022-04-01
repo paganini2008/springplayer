@@ -14,7 +14,7 @@ import lombok.Setter;
  * 
  * Channel
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 @TableName("infra_channel")

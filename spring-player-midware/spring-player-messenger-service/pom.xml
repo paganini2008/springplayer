@@ -50,6 +50,11 @@
 
 		<dependency>
 			<groupId>com.github.paganini2008.springplayer</groupId>
+			<artifactId>spring-player-common-websocket</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.paganini2008.springplayer</groupId>
 			<artifactId>spring-player-common-dingtalk</artifactId>
 		</dependency>
 
@@ -59,8 +64,21 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.github.paganini2008.springplayer</groupId>
+			<artifactId>spring-player-common-messenger</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>dingding</groupId>
+			<artifactId>dingding</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/dingding-1.0.0.jar</systemPath>
 		</dependency>
 
 		<dependency>

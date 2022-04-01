@@ -23,7 +23,7 @@ public class PopupApplication {
 	static {
 		System.setProperty("spring.devtools.restart.enabled", "false");
 
-		File logDir = FileUtils.getFile(FileUtils.getUserDirectory(), "logs", "yl-platform-popup-service");
+		File logDir = FileUtils.getFile(FileUtils.getUserDirectory(), "logs", "spring-player-popup-service");
 		if (!logDir.exists()) {
 			logDir.mkdirs();
 		}

@@ -1,6 +1,5 @@
 package com.github.paganini2008.springplayer.common.ws;
 
-import java.net.URI;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -15,18 +14,21 @@ import com.github.paganini2008.devtools.collection.MapUtils;
  */
 public class WsConnectionPool {
 
-	private final Map<URI, WsConnection> pool = new ConcurrentHashMap<>();
+	private final Map<String, WsConnection> pool = new ConcurrentHashMap<>();
 
-	public WsConnection get(URI uri) {
-		return MapUtils.get(pool, uri, () -> {
-			WsConnection connection = new WsConnectionImpl(uri);
+	public WsConnection get(String url) {
+		return MapUtils.get(pool, url, () -> {
+			WsConnectionWrapper connection = new WsConnectionWrapper(url, 3);
 			connection.connect();
 			return connection;
 		});
 	}
 
-	public void remove(URI uri) {
-		pool.remove(uri);
+	public void remove(String url) {
+		WsConnection connection = pool.remove(url);
+		if (connection != null && !connection.isClosed()) {
+			connection.close(true);
+		}
 	}
 
 	public int size() {

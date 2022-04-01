@@ -1,0 +1,2 @@
+com.yl.platform.common.feign.FeignClientCandidatesAutoConfiguration=\
+  com.yl.platform.common.messenger.api.RemoteMessageService
