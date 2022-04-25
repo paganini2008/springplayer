@@ -27,7 +27,7 @@ import reactor.core.publisher.Mono;
  * 
  * 监控相关界面接口
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 @CrossOrigin(origins = "*")

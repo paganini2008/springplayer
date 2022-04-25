@@ -6,7 +6,7 @@ import java.util.Map;
  * 
  * HttpTrace
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public interface HttpTrace {

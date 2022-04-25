@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicStampedReference;
  * 
  * Summary
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class Summary<T extends UserMetric<T>> {

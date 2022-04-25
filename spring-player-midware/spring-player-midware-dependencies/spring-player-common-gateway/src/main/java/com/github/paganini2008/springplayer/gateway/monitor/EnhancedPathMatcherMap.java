@@ -4,7 +4,7 @@ package com.github.paganini2008.springplayer.gateway.monitor;
  * 
  * EnhancedPathMatcherMap
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class EnhancedPathMatcherMap<V> extends PathMatcherMap<V> {

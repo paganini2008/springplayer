@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * 
  * GatewayMonitorConfig
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 @Configuration(proxyBeanMethods = false)
