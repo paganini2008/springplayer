@@ -3,8 +3,6 @@ package com.github.paganini2008.springplayer.gateway;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.github.paganini2008.devtools.net.NetUtils;
-
 /**
  * 
  * GatewayConstants
@@ -37,12 +35,11 @@ public abstract class GatewayConstants {
 	public static final String SENTINEL_GATEWAY_FLOW_RULE = "yl:platform:gateway:sentinel:flow";
 	public static final String SENTINEL_RULE_PUBLISH_CHANNEL = "yl:platform:sentinel:rule:publish";
 	public static final String SENTINEL_RULE_UPDATE_CHANNEL = "yl:platform:sentinel:rule:update";
-
+	
+	public static final String[] GENERIC_DATETIME_PATTERNS = { "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyyMMddHHmmss" };
 
 	static Map<String, String> defaultSettings() {
 		Map<String, String> settings = new HashMap<>();
-		settings.put("spring.cloud.sentinel.transport.clientIp", NetUtils.getLocalHost());
-		settings.put("spring.cloud.sentinel.eager", "true");
 
 		settings.put("reactor.netty.pool.leasingStrategy", "lifo");
 		settings.put("eureka.client.registry-fetch-interval-seconds", "60");
