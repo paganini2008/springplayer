@@ -21,10 +21,20 @@ public class AppendableTimeWindowMap<T> extends AppendableTimeSlotMap<T> {
 	public AppendableTimeWindowMap(int span, TimeWindowUnit timeWindowUnit, int bufferSize, int maxListSize) {
 		super(new ConcurrentSortedBoundedMap<>(Integer.min(bufferSize, timeWindowUnit.sizeOf(span, 1))), span,
 				timeWindowUnit.getTimeSlot());
+		this.timeWindowUnit = timeWindowUnit;
 		this.maxListSize = maxListSize;
 	}
 
+	private final TimeWindowUnit timeWindowUnit;
 	private final int maxListSize;
+
+	public TimeWindowUnit getTimeWindowUnit() {
+		return timeWindowUnit;
+	}
+
+	public int getMaxListSize() {
+		return maxListSize;
+	}
 
 	@Override
 	public List<T> append(Instant key, T value) {
