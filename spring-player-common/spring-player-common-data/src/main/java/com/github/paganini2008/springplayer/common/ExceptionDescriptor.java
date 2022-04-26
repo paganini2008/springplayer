@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
  * 
  * ExceptionDescriptor
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 public interface ExceptionDescriptor {

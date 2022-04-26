@@ -1,16 +1,20 @@
-#maven
-/target/
+# Java Class
+*.class
 
-# Eclipse
+# Maven Generated
+**/target/
+**/bin/
+.flattened-pom.xml
+
+# Eclipse Generated
+.metadata/
+.settings/
 .classpath
 .project
-/.metadata/
-/.settings/
-#other
-/tmp/
-/logs/
-/*.iml
+
+# IntelliJ Generated
 *.iml
-/bin/
-.dbeaver
-.factorypath
+
+# Other
+**/tmp/
+**/logs/

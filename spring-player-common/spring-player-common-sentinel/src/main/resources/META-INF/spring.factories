@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.yl.platform.common.sentinel.apollo.SentinelApolloConfig,\
+  com.yl.platform.common.sentinel.redis.SentinelRedisConfig,\
+  com.yl.platform.common.sentinel.example.SentinelExampleAutoConfig

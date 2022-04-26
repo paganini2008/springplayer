@@ -3,8 +3,7 @@ package com.github.paganini2008.springplayer.common.sentinel;
 import java.util.List;
 
 import org.springframework.beans.factory.InitializingBean;
-
-import com.github.paganini2008.devtools.collection.CollectionUtils;
+import org.springframework.util.CollectionUtils;
 
 import lombok.RequiredArgsConstructor;
 
@@ -12,7 +11,7 @@ import lombok.RequiredArgsConstructor;
  * 
  * SentinelRuleAutoInitializer
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 @RequiredArgsConstructor

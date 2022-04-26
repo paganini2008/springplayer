@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alibaba.csp.sentinel.dashboard.datasource.entity.mapper.SentinelRuleMapper">
+
+	<resultMap id="BaseResultMap" type="com.alibaba.csp.sentinel.dashboard.datasource.entity.SentinelRule">
+        <id column="id" jdbcType="NUMERIC" property="id"/>
+        <result column="rule_type" jdbcType="INTEGER" property="type"/>
+        <result column="app_name" jdbcType="VARCHAR" property="appName"/>
+        <result column="ip_addr" jdbcType="VARCHAR" property="ipAddr"/>
+        <result column="port" jdbcType="INTEGER" property="port"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime"/>
+        <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime"/>
+    </resultMap>
+    
+    <delete id="clear" parameterType="java.lang.Integer">
+    	delete from sentinel_rule where rule_type=#{ruleType}
+    </delete>
+
+</mapper>

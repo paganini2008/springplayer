@@ -21,8 +21,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
-import com.github.paganini2008.springplayer.common.JacksonUtils;
 import com.github.paganini2008.springplayer.common.messenger.model.MessageDTO;
+import com.github.paganini2008.springplayer.common.utils.JacksonUtils;
 import com.rabbitmq.client.Channel;
 
 import lombok.SneakyThrows;

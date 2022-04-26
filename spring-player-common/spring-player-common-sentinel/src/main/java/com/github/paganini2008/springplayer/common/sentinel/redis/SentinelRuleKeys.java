@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  * 
  * SentinelRuleKeys
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 @NoArgsConstructor

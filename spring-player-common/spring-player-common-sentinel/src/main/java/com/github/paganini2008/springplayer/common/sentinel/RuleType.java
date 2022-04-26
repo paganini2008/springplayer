@@ -9,7 +9,7 @@ import com.github.paganini2008.devtools.enums.EnumUtils;
  * 
  * RuleType
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 public enum RuleType implements EnumConstant {

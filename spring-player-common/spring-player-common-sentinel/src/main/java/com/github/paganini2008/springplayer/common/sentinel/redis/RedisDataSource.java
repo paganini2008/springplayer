@@ -1,5 +1,10 @@
 package com.github.paganini2008.springplayer.common.sentinel.redis;
 
+import java.util.Arrays;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.data.redis.core.RedisOperations;
 
 import com.alibaba.csp.sentinel.datasource.AbstractDataSource;
@@ -11,28 +16,25 @@ import lombok.extern.slf4j.Slf4j;
  * 
  * RedisDataSource
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 @Slf4j
 public class RedisDataSource<T> extends AbstractDataSource<String, T> implements SentinelRuleUpdateEventListener {
 
-	public RedisDataSource(RedisOperations<String, Object> redisOperations, String ruleKey, Converter<String, T> parser) {
-		this(redisOperations, ruleKey, "rule", parser);
-	}
+	private static final String RULE_HASH_KEY = "rule";
 
-	public RedisDataSource(RedisOperations<String, Object> redisOperations, String ruleKey, String ruleProperty,
-			Converter<String, T> parser) {
+	public RedisDataSource(RedisOperations<String, Object> redisOperations, String ruleKey, Converter<String, T> parser) {
 		super(parser);
 		this.redisOperations = redisOperations;
 		this.ruleKey = ruleKey;
-		this.ruleProperty = ruleProperty;
+		this.lock = new ReentrantLock();
 		initializeConfig();
 	}
 
 	private final RedisOperations<String, Object> redisOperations;
-	private final String ruleProperty;
 	private final String ruleKey;
+	private final Lock lock;
 
 	private void initializeConfig() {
 		try {
@@ -46,7 +48,7 @@ public class RedisDataSource<T> extends AbstractDataSource<String, T> implements
 
 	@Override
 	public String readSource() throws Exception {
-		return (String) redisOperations.opsForHash().get(ruleKey, ruleProperty);
+		return (String) redisOperations.opsForHash().get(ruleKey, RULE_HASH_KEY);
 	}
 
 	@Override
@@ -55,8 +57,13 @@ public class RedisDataSource<T> extends AbstractDataSource<String, T> implements
 
 	@Override
 	public void onApplicationEvent(SentinelRuleUpdateEvent event) {
-		if (event.getRuleKey().equals(this.ruleKey)) {
-			fireSentinelRuleFefreshed();
+		if (ArrayUtils.contains(event.getRuleKeys(), this.ruleKey)) {
+			lock.lock();
+			try {
+				fireSentinelRuleFefreshed();
+			} finally {
+				lock.unlock();
+			}
 		}
 	}
 
@@ -74,12 +81,12 @@ public class RedisDataSource<T> extends AbstractDataSource<String, T> implements
 		}
 	}
 
-	public String getRuleKey() {
-		return ruleKey;
+	public String[] getRuleKeys() {
+		return new String[] { ruleKey };
 	}
 
 	public String toString() {
-		return "[RedisDataSource] ruleKey: " + getRuleKey();
+		return "[RedisDataSource] ruleKeys: " + Arrays.toString(getRuleKeys());
 	}
 
 }

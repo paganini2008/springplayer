@@ -4,8 +4,8 @@ import java.util.Locale;
 
 import com.github.paganini2008.devtools.StringUtils;
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.common.ApplicationContextUtils;
 import com.github.paganini2008.springplayer.common.ErrorCode;
+import com.github.paganini2008.springplayer.common.context.ApplicationContextUtils;
 import com.github.paganini2008.springplayer.common.i18n.api.RemoteI18nService;
 
 /**

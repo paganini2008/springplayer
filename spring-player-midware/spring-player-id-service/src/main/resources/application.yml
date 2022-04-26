@@ -1,0 +1,18 @@
+server:
+  port: 6100
+
+spring:
+  application:
+    name: yl-platform-id-service
+  redis:
+    port: 6379
+    host: localhost
+    password: 123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://fred-pc:7000/eureka
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
+

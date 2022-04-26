@@ -1,5 +1,6 @@
 package com.github.paganini2008.springplayer.common.sentinel.redis;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -8,7 +9,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.util.StringUtils;
 
 import com.alibaba.csp.sentinel.slots.block.authority.AuthorityRule;
 import com.alibaba.csp.sentinel.slots.block.authority.AuthorityRuleManager;
@@ -21,8 +21,8 @@ import com.alibaba.csp.sentinel.slots.block.flow.param.ParamFlowRuleManager;
 import com.alibaba.csp.sentinel.slots.system.SystemRule;
 import com.alibaba.csp.sentinel.slots.system.SystemRuleManager;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.github.paganini2008.springplayer.common.JacksonUtils;
 import com.github.paganini2008.springplayer.common.sentinel.RuleManager;
+import com.github.paganini2008.springplayer.common.utils.JacksonUtils;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
  * 
  * RedisRuleManager
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 @Slf4j
@@ -48,21 +48,29 @@ public class RedisRuleManager extends RuleManager {
 	 * @param ruleKey
 	 * @param channel
 	 */
-	public void loadAuthorityRules(String... ruleKeys) {
+	public void loadAuthorityRules(String[] ruleKeys) {
 		if (ArrayUtils.isEmpty(ruleKeys)) {
 			return;
 		}
-		Arrays.stream(ruleKeys).forEach(ruleKey -> {
-			sentinelRuleUpdateEventListenerContainer.unsubscribe(ruleKey);
-			RedisDataSource<List<AuthorityRule>> authorityRuleDataSource = new RedisDataSource<>(redisOperations, ruleKey,
-					source -> StringUtils.isEmpty(source) ? Collections.emptyList()
-							: JacksonUtils.parseJson(source, new TypeReference<List<AuthorityRule>>() {
-							}));
+		String name = Arrays.toString(ruleKeys);
+		sentinelRuleUpdateEventListenerContainer.unsubscribe(name);
+		FixedRedisDataSource<List<AuthorityRule>> authorityRuleDataSource = new FixedRedisDataSource<>(redisOperations, ruleKeys,
+				sources -> ArrayUtils.isEmpty(sources) ? Collections.emptyList() : parseAuthorityRuleJsons(sources));
+		AuthorityRuleManager.register2Property(authorityRuleDataSource.getProperty());
+		sentinelRuleUpdateEventListenerContainer.subscribe(name, authorityRuleDataSource);
 
-			AuthorityRuleManager.register2Property(authorityRuleDataSource.getProperty());
-			sentinelRuleUpdateEventListenerContainer.subscribe(ruleKey, authorityRuleDataSource);
+	}
+
+	private List<AuthorityRule> parseAuthorityRuleJsons(String[] sources) {
+		List<AuthorityRule> list = new ArrayList<>();
+		Arrays.stream(sources).forEach(source -> {
+			List<AuthorityRule> rules = JacksonUtils.parseJson(source, new TypeReference<List<AuthorityRule>>() {
+			});
+			if (rules != null) {
+				list.addAll(rules);
+			}
 		});
-
+		return list;
 	}
 
 	/**
@@ -71,19 +79,29 @@ public class RedisRuleManager extends RuleManager {
 	 * @param ruleKey
 	 * @param channel
 	 */
-	public void loadDegradeRules(String... ruleKeys) {
+	public void loadDegradeRules(String[] ruleKeys) {
 		if (ArrayUtils.isEmpty(ruleKeys)) {
 			return;
 		}
-		Arrays.stream(ruleKeys).forEach(ruleKey -> {
-			sentinelRuleUpdateEventListenerContainer.unsubscribe(ruleKey);
-			RedisDataSource<List<DegradeRule>> degradeRuleDataSource = new RedisDataSource<>(redisOperations, ruleKey,
-					source -> StringUtils.isEmpty(source) ? Collections.emptyList()
-							: JacksonUtils.parseJson(source, new TypeReference<List<DegradeRule>>() {
-							}));
-			DegradeRuleManager.register2Property(degradeRuleDataSource.getProperty());
-			sentinelRuleUpdateEventListenerContainer.subscribe(ruleKey, degradeRuleDataSource);
+		String name = Arrays.toString(ruleKeys);
+
+		sentinelRuleUpdateEventListenerContainer.unsubscribe(name);
+		FixedRedisDataSource<List<DegradeRule>> degradeRuleDataSource = new FixedRedisDataSource<>(redisOperations, ruleKeys,
+				sources -> ArrayUtils.isEmpty(sources) ? Collections.emptyList() : parseDegradeRuleJsons(sources));
+		DegradeRuleManager.register2Property(degradeRuleDataSource.getProperty());
+		sentinelRuleUpdateEventListenerContainer.subscribe(name, degradeRuleDataSource);
+	}
+
+	private List<DegradeRule> parseDegradeRuleJsons(String[] sources) {
+		List<DegradeRule> list = new ArrayList<>();
+		Arrays.stream(sources).forEach(source -> {
+			List<DegradeRule> rules = JacksonUtils.parseJson(source, new TypeReference<List<DegradeRule>>() {
+			});
+			if (rules != null) {
+				list.addAll(rules);
+			}
 		});
+		return list;
 	}
 
 	/**
@@ -92,61 +110,76 @@ public class RedisRuleManager extends RuleManager {
 	 * @param ruleKey
 	 * @param channel
 	 */
-	public void loadSystemRules(String... ruleKeys) {
+	public void loadSystemRules(String[] ruleKeys) {
 		if (ArrayUtils.isEmpty(ruleKeys)) {
 			return;
 		}
-		Arrays.stream(ruleKeys).forEach(ruleKey -> {
-			sentinelRuleUpdateEventListenerContainer.unsubscribe(ruleKey);
-			RedisDataSource<List<SystemRule>> systemRuleDataSource = new RedisDataSource<List<SystemRule>>(redisOperations, ruleKey,
-					source -> StringUtils.isEmpty(source) ? Collections.emptyList()
-							: JacksonUtils.parseJson(source, new TypeReference<List<SystemRule>>() {
-							}));
-			SystemRuleManager.register2Property(systemRuleDataSource.getProperty());
-			sentinelRuleUpdateEventListenerContainer.subscribe(ruleKey, systemRuleDataSource);
-		});
+		String name = Arrays.toString(ruleKeys);
+		sentinelRuleUpdateEventListenerContainer.unsubscribe(name);
+		FixedRedisDataSource<List<SystemRule>> systemRuleDataSource = new FixedRedisDataSource<List<SystemRule>>(redisOperations, ruleKeys,
+				sources -> ArrayUtils.isEmpty(sources) ? Collections.emptyList() : parseSystemRuleJsons(sources));
+		SystemRuleManager.register2Property(systemRuleDataSource.getProperty());
+		sentinelRuleUpdateEventListenerContainer.subscribe(name, systemRuleDataSource);
 	}
 
-	/**
-	 * 流控规则
-	 * 
-	 * @param ruleKey
-	 * @param channel
-	 */
-	public void loadFlowRules(String... ruleKeys) {
-		if (ArrayUtils.isEmpty(ruleKeys)) {
-			return;
-		}
-		Arrays.stream(ruleKeys).forEach(ruleKey -> {
-			sentinelRuleUpdateEventListenerContainer.unsubscribe(ruleKey);
-			RedisDataSource<List<FlowRule>> flowRuleDataSource = new RedisDataSource<List<FlowRule>>(redisOperations, ruleKey,
-					source -> StringUtils.isEmpty(source) ? Collections.emptyList()
-							: JacksonUtils.parseJson(source, new TypeReference<List<FlowRule>>() {
-							}));
-			FlowRuleManager.register2Property(flowRuleDataSource.getProperty());
-			sentinelRuleUpdateEventListenerContainer.subscribe(ruleKey, flowRuleDataSource);
+	private List<SystemRule> parseSystemRuleJsons(String[] sources) {
+		List<SystemRule> list = new ArrayList<>();
+		Arrays.stream(sources).forEach(source -> {
+			List<SystemRule> rules = JacksonUtils.parseJson(source, new TypeReference<List<SystemRule>>() {
+			});
+			if (rules != null) {
+				list.addAll(rules);
+			}
 		});
+		return list;
 	}
 
-	/**
-	 * 热点参数规则
-	 * 
-	 * @param ruleKey
-	 * @param channel
-	 */
-	public void loadParamFlowRules(String... ruleKeys) {
+	public void loadFlowRules(String[] ruleKeys) {
 		if (ArrayUtils.isEmpty(ruleKeys)) {
 			return;
 		}
-		Arrays.stream(ruleKeys).forEach(ruleKey -> {
-			sentinelRuleUpdateEventListenerContainer.unsubscribe(ruleKey);
-			RedisDataSource<List<ParamFlowRule>> flowRuleDataSource = new RedisDataSource<List<ParamFlowRule>>(redisOperations, ruleKey,
-					source -> StringUtils.isEmpty(source) ? Collections.emptyList()
-							: JacksonUtils.parseJson(source, new TypeReference<List<ParamFlowRule>>() {
-							}));
-			ParamFlowRuleManager.register2Property(flowRuleDataSource.getProperty());
-			sentinelRuleUpdateEventListenerContainer.subscribe(ruleKey, flowRuleDataSource);
+		String name = Arrays.toString(ruleKeys);
+		sentinelRuleUpdateEventListenerContainer.unsubscribe(name);
+		FixedRedisDataSource<List<FlowRule>> flowRuleDataSource = new FixedRedisDataSource<List<FlowRule>>(redisOperations, ruleKeys,
+				sources -> ArrayUtils.isEmpty(sources) ? Collections.emptyList() : parseFlowRuleJsons(sources));
+		FlowRuleManager.register2Property(flowRuleDataSource.getProperty());
+		sentinelRuleUpdateEventListenerContainer.subscribe(name, flowRuleDataSource);
+	}
+
+	private List<FlowRule> parseFlowRuleJsons(String[] sources) {
+		List<FlowRule> list = new ArrayList<>();
+		Arrays.stream(sources).forEach(source -> {
+			List<FlowRule> rules = JacksonUtils.parseJson(source, new TypeReference<List<FlowRule>>() {
+			});
+			if (rules != null) {
+				list.addAll(rules);
+			}
 		});
+		return list;
+	}
+
+	public void loadParamFlowRules(String[] ruleKeys) {
+		if (ArrayUtils.isEmpty(ruleKeys)) {
+			return;
+		}
+		String name = Arrays.toString(ruleKeys);
+		sentinelRuleUpdateEventListenerContainer.unsubscribe(name);
+		FixedRedisDataSource<List<ParamFlowRule>> flowRuleDataSource = new FixedRedisDataSource<List<ParamFlowRule>>(redisOperations,
+				ruleKeys, sources -> ArrayUtils.isEmpty(sources) ? Collections.emptyList() : parseParamFlowRuleJsons(sources));
+		ParamFlowRuleManager.register2Property(flowRuleDataSource.getProperty());
+		sentinelRuleUpdateEventListenerContainer.subscribe(name, flowRuleDataSource);
+	}
+
+	private List<ParamFlowRule> parseParamFlowRuleJsons(String[] sources) {
+		List<ParamFlowRule> list = new ArrayList<>();
+		Arrays.stream(sources).forEach(source -> {
+			List<ParamFlowRule> rules = JacksonUtils.parseJson(source, new TypeReference<List<ParamFlowRule>>() {
+			});
+			if (rules != null) {
+				list.addAll(rules);
+			}
+		});
+		return list;
 	}
 
 	@Async

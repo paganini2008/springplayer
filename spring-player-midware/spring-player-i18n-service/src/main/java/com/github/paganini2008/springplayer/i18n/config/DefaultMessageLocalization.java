@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 import com.github.paganini2008.devtools.ArrayUtils;
 import com.github.paganini2008.devtools.StringUtils;
+import com.github.paganini2008.springplayer.common.context.MessageLocalization;
 import com.github.paganini2008.springplayer.i18n.service.I18nMessageService;
-import com.github.paganini2008.springplayer.webmvc.MessageLocalization;
 
 /**
  * 
@@ -31,7 +31,7 @@ public class DefaultMessageLocalization implements MessageLocalization {
 	private I18nMessageService i18nMessageService;
 
 	@Override
-	public String getMessage(String code, Object[] args, String defaultMessage, Locale locale) {
+	public String getMessage(String code, Locale locale, Object[] args, String defaultMessage) {
 		if (locale == null) {
 			locale = Locale.getDefault();
 		}

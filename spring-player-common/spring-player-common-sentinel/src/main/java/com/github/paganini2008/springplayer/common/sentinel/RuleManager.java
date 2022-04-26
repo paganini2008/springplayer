@@ -17,7 +17,7 @@ import com.alibaba.csp.sentinel.slots.system.SystemRuleManager;
  * 
  * RuleManager
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 public abstract class RuleManager {
@@ -62,14 +62,39 @@ public abstract class RuleManager {
 		return ParamFlowRuleManager.getRules();
 	}
 
-	public abstract void loadAuthorityRules(String... ruleKeys);
+	/**
+	 * 加载授权规则
+	 * 
+	 * @param ruleKeys
+	 */
+	public abstract void loadAuthorityRules(String[] ruleKeys);
 
-	public abstract void loadDegradeRules(String... ruleKeys);
+	/**
+	 * 加载降级规则
+	 * 
+	 * @param ruleKeys
+	 */
+	public abstract void loadDegradeRules(String[] ruleKeys);
 
-	public abstract void loadSystemRules(String... ruleKeys);
+	/**
+	 * 加载系统规则
+	 * 
+	 * @param ruleKeys
+	 */
+	public abstract void loadSystemRules(String[] ruleKeys);
 
-	public abstract void loadFlowRules(String... ruleKeys);
+	/**
+	 * 加载流控规则
+	 * 
+	 * @param ruleKeys
+	 */
+	public abstract void loadFlowRules(String[] ruleKeys);
 
-	public abstract void loadParamFlowRules(String... ruleKeys);
+	/**
+	 * 加载热点参数规则
+	 * 
+	 * @param ruleKeys
+	 */
+	public abstract void loadParamFlowRules(String[] ruleKeys);
 
 }

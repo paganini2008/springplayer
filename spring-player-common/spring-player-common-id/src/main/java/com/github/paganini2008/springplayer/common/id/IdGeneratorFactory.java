@@ -6,7 +6,7 @@ import org.springframework.beans.factory.FactoryBean;
  * 
  * IdGeneratorFactory
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 public interface IdGeneratorFactory extends FactoryBean<IdGenerator> {

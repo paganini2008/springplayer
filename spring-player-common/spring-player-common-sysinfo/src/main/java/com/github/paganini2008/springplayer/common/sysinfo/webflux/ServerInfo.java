@@ -22,7 +22,7 @@ import com.github.paganini2008.devtools.io.FileUtils;
 import com.github.paganini2008.devtools.net.NetUtils;
 import com.github.paganini2008.devtools.time.Duration;
 import com.github.paganini2008.devtools.time.LocalDateTimeUtils;
-import com.github.paganini2008.springplayer.common.JacksonUtils;
+import com.github.paganini2008.springplayer.common.utils.JacksonUtils;
 
 import io.micrometer.core.instrument.Meter;
 import io.micrometer.core.instrument.MeterRegistry;

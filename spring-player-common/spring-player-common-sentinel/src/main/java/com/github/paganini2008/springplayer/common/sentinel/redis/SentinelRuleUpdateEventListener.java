@@ -6,11 +6,11 @@ import org.springframework.context.ApplicationListener;
  * 
  * SentinelRuleUpdateEventListener
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 public interface SentinelRuleUpdateEventListener extends ApplicationListener<SentinelRuleUpdateEvent>{
 
-	String getRuleKey();
+	String[] getRuleKeys();
 	
 }

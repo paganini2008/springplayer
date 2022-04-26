@@ -6,7 +6,7 @@ import org.springframework.security.authentication.AccountStatusException;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.github.paganini2008.springplayer.common.ErrorCode;
 import com.github.paganini2008.springplayer.common.ExceptionDescriptor;
-import com.github.paganini2008.springplayer.webmvc.JacksonExceptionSerializer;
+import com.github.paganini2008.springplayer.common.webmvc.JacksonExceptionSerializer;
 
 /**
  * 

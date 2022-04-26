@@ -8,7 +8,7 @@ import com.github.paganini2008.springplayer.common.sentinel.RuleType;
  * 
  * SentinelRuleEvent
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 public abstract class SentinelRuleEvent extends ApplicationEvent {

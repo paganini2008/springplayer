@@ -7,7 +7,7 @@ import lombok.Setter;
  * 
  * ApiResult
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 @Getter

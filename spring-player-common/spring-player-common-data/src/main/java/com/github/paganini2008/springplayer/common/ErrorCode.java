@@ -4,7 +4,7 @@ package com.github.paganini2008.springplayer.common;
  * 
  * ErrorCode
  *
- * @author Fred Feng
+ * @author Feng Yan
  * @version 1.0.0
  */
 public interface ErrorCode {

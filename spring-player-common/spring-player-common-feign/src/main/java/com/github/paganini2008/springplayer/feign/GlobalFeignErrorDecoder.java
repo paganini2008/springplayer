@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import com.github.paganini2008.springplayer.common.ApiResult;
 import com.github.paganini2008.springplayer.common.BizException;
 import com.github.paganini2008.springplayer.common.ErrorCode;
-import com.github.paganini2008.springplayer.common.JacksonUtils;
+import com.github.paganini2008.springplayer.common.utils.JacksonUtils;
 
 import feign.FeignException;
 import feign.Response;

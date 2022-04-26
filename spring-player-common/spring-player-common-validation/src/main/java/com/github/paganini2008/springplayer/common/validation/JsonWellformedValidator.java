@@ -4,7 +4,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import com.github.paganini2008.devtools.StringUtils;
-import com.github.paganini2008.springplayer.common.JacksonUtils;
+import com.github.paganini2008.springplayer.common.utils.JacksonUtils;
 
 /**
  * 
