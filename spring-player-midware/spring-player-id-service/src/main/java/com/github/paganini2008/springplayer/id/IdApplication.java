@@ -1,4 +1,4 @@
-package com.yl.platform.id;
+package com.github.paganini2008.springplayer.id;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

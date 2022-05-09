@@ -6,6 +6,7 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Component;
 
 import com.github.paganini2008.devtools.ArrayUtils;
@@ -33,7 +34,7 @@ public class DefaultMessageLocalization implements MessageLocalization {
 	@Override
 	public String getMessage(String code, Locale locale, Object[] args, String defaultMessage) {
 		if (locale == null) {
-			locale = Locale.getDefault();
+			locale = LocaleContextHolder.getLocale();
 		}
 		String text = i18nMessageService.getMessage(applicationName, locale.getLanguage(), code);
 		if (StringUtils.isBlank(text)) {

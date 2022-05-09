@@ -13,11 +13,11 @@
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<level>ERROR</level>
 			<onMatch>DENY</onMatch>
-			<onMismatch>ACCEPT</onMismatch> 
+			<onMismatch>ACCEPT</onMismatch>
 		</filter>
-		<file>${LOG_BASE}/app-info.log</file>
+		<file>logs/app-info.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_BASE}/history/app-info.%d{yyyy-MM-dd}-%i.log
+			<fileNamePattern>logs/history/app-info.%d{yyyy-MM-dd}-%i.log
 			</fileNamePattern>
 			<maxHistory>10</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy
@@ -36,9 +36,9 @@
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>ERROR</level>
         </filter>
-		<file>${LOG_BASE}/app-error.log</file>
+		<file>logs/app-error.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_BASE}/history/app-error.%d{yyyy-MM-dd}-%i.log
+			<fileNamePattern>logs/history/app-error.%d{yyyy-MM-dd}-%i.log
 			</fileNamePattern>
 			<maxHistory>10</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy

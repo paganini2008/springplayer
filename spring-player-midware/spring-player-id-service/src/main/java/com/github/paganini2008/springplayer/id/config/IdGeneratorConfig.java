@@ -1,4 +1,4 @@
-package com.yl.platform.id.config;
+package com.github.paganini2008.springplayer.id.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +15,7 @@ import com.github.paganini2008.springplayer.common.id.api.SnowFlakeIdGeneratorFa
  * @author Feng Yan
  * @version 1.0.0
  */
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class IdGeneratorConfig {
 
 	@Value("${spring.application.name}")
