@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import com.github.paganini2008.springplayer.logging.common.AppLogEntry;
+import com.github.paganini2008.springplayer.common.logging.AppLogEntry;
 
 /**
  * 

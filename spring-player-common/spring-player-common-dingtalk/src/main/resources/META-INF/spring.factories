@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.paganini2008.springplayer.dingtalk.DingTalkSenderConfig
+  com.github.paganini2008.springplayer.common.dingtalk.DingTalkSenderConfig

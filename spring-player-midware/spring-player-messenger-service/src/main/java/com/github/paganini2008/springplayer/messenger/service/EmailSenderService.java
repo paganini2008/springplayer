@@ -5,11 +5,11 @@ import java.util.concurrent.Semaphore;
 import org.springframework.stereotype.Component;
 
 import com.github.paganini2008.devtools.beans.BeanUtils;
+import com.github.paganini2008.springplayer.common.email.JavaEmailService;
+import com.github.paganini2008.springplayer.common.email.RichTextEmail;
+import com.github.paganini2008.springplayer.common.email.RichTextType;
+import com.github.paganini2008.springplayer.common.email.TextEmail;
 import com.github.paganini2008.springplayer.common.messenger.model.EmailDTO;
-import com.github.paganini2008.springplayer.email.JavaEmailService;
-import com.github.paganini2008.springplayer.email.RichTextEmail;
-import com.github.paganini2008.springplayer.email.RichTextType;
-import com.github.paganini2008.springplayer.email.TextEmail;
 
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;

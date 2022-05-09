@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 
 import com.github.paganini2008.devtools.ArrayUtils;
 import com.github.paganini2008.devtools.beans.BeanUtils;
+import com.github.paganini2008.springplayer.common.dingtalk.DingTalkService;
+import com.github.paganini2008.springplayer.common.dingtalk.message.ActionCardMessage;
+import com.github.paganini2008.springplayer.common.dingtalk.message.FeedCardMessage;
+import com.github.paganini2008.springplayer.common.dingtalk.message.LinkMessage;
+import com.github.paganini2008.springplayer.common.dingtalk.message.MarkdownMessage;
+import com.github.paganini2008.springplayer.common.dingtalk.message.TextMessage;
+import com.github.paganini2008.springplayer.common.dingtalk.message.ActionCardMessage.BtnMessage;
+import com.github.paganini2008.springplayer.common.dingtalk.message.FeedCardMessage.LinksMessage;
 import com.github.paganini2008.springplayer.common.messenger.model.DingTalkDTO;
-import com.github.paganini2008.springplayer.dingtalk.DingTalkService;
-import com.github.paganini2008.springplayer.dingtalk.message.ActionCardMessage;
-import com.github.paganini2008.springplayer.dingtalk.message.ActionCardMessage.BtnMessage;
-import com.github.paganini2008.springplayer.dingtalk.message.FeedCardMessage;
-import com.github.paganini2008.springplayer.dingtalk.message.FeedCardMessage.LinksMessage;
-import com.github.paganini2008.springplayer.dingtalk.message.LinkMessage;
-import com.github.paganini2008.springplayer.dingtalk.message.MarkdownMessage;
-import com.github.paganini2008.springplayer.dingtalk.message.TextMessage;
 
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;

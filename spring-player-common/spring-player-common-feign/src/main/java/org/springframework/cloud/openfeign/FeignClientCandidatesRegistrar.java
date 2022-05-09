@@ -21,7 +21,7 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.lang.Nullable;
 import org.springframework.util.StringUtils;
 
-import com.github.paganini2008.springplayer.feign.FeignClientCandidatesAutoConfiguration;
+import com.github.paganini2008.springplayer.common.feign.FeignClientCandidatesAutoConfiguration;
 
 import lombok.Getter;
 import lombok.Setter;

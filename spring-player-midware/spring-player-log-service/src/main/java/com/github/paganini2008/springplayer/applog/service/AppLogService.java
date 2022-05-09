@@ -29,8 +29,8 @@ import com.github.paganini2008.springplayer.applog.entity.AppLog;
 import com.github.paganini2008.springplayer.applog.vo.AppLogVO;
 import com.github.paganini2008.springplayer.common.PageResult;
 import com.github.paganini2008.springplayer.common.id.IdGenerator;
+import com.github.paganini2008.springplayer.common.logging.AppLogEntry;
 import com.github.paganini2008.springplayer.common.utils.JacksonUtils;
-import com.github.paganini2008.springplayer.logging.common.AppLogEntry;
 
 import lombok.extern.slf4j.Slf4j;
 

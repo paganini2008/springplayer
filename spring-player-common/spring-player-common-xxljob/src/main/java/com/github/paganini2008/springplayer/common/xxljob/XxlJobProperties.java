@@ -12,7 +12,7 @@ import lombok.Data;
  * @version 1.0.0
  */
 @Data
-@ConfigurationProperties("spring.player.xxljob")
+@ConfigurationProperties("springplayer.xxljob")
 public class XxlJobProperties {
 
 	private String url = "http://localhost:8080/xxl-job-admin";

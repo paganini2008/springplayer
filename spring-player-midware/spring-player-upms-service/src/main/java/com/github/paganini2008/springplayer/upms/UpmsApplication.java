@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.github.paganini2008.devtools.Env;
+import com.github.paganini2008.springplayer.common.feign.EnableFeignClientEndpoint;
 import com.github.paganini2008.springplayer.common.oauth.EnableResourceServerSecurity;
-import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
 
 /**
  * 

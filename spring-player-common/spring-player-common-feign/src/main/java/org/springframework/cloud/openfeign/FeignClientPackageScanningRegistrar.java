@@ -13,8 +13,8 @@ import org.springframework.core.io.support.SpringFactoriesLoader;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.util.CollectionUtils;
 
-import com.github.paganini2008.springplayer.feign.FeignClientCandidatesExcludedAutoConfiguration;
-import com.github.paganini2008.springplayer.feign.FeignClientPackageScanningAutoConfiguration;
+import com.github.paganini2008.springplayer.common.feign.FeignClientCandidatesExcludedAutoConfiguration;
+import com.github.paganini2008.springplayer.common.feign.FeignClientPackageScanningAutoConfiguration;
 
 import lombok.Getter;
 import lombok.Setter;

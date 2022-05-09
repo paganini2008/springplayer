@@ -18,11 +18,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class HttpRequestInfo implements Serializable{
+public class HttpRequestInfo implements Serializable {
 
 	private static final long serialVersionUID = 5359161967793485293L;
 	private String method;
 	private String path;
 	private HttpHeaders headers;
-	
+
 }

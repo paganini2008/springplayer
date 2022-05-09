@@ -21,11 +21,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-autoconfigure</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<scope>provided</scope>
@@ -35,10 +30,7 @@
 			<groupId>dingding</groupId>
 			<artifactId>dingding</artifactId>
 			<version>1.0.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/dingding-1.0.0.jar</systemPath>
 		</dependency>
-
 
 	</dependencies>
 

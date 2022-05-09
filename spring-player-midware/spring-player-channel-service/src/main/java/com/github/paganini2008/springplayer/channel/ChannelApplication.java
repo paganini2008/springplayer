@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 import com.github.paganini2008.devtools.io.FileUtils;
 import com.github.paganini2008.devtools.net.NetUtils;
-import com.github.paganini2008.springplayer.feign.EnableFeignClientEndpoint;
+import com.github.paganini2008.springplayer.common.feign.EnableFeignClientEndpoint;
 
 /**
  * 

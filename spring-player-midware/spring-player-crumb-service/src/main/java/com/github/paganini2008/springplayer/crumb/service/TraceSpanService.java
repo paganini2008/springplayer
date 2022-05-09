@@ -26,12 +26,12 @@ import com.github.paganini2008.devtools.multithreads.Executable;
 import com.github.paganini2008.devtools.multithreads.ThreadUtils;
 import com.github.paganini2008.springplayer.common.PageResult;
 import com.github.paganini2008.springplayer.common.id.IdGenerator;
+import com.github.paganini2008.springplayer.common.logging.AppLogEntry;
 import com.github.paganini2008.springplayer.common.monitor.crumb.Span;
 import com.github.paganini2008.springplayer.common.monitor.crumb.SpanTree;
 import com.github.paganini2008.springplayer.common.utils.JacksonUtils;
 import com.github.paganini2008.springplayer.crumb.entity.TraceSpan;
 import com.github.paganini2008.springplayer.crumb.vo.TraceSpanVO;
-import com.github.paganini2008.springplayer.logging.common.AppLogEntry;
 
 import lombok.extern.slf4j.Slf4j;
 

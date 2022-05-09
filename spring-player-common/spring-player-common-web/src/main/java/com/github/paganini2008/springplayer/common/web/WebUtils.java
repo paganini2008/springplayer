@@ -61,7 +61,7 @@ public abstract class WebUtils {
 	}
 
 	public static String getIpAddr() {
-		return getIpAddr(getRequest());
+		return getIpAddr(getRequiredRequest());
 	}
 
 	public static String getIpAddr(HttpServletRequest request) {
@@ -94,12 +94,16 @@ public abstract class WebUtils {
 	}
 
 	public static HttpServletRequest getRequiredRequest() {
-		return ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		try {
+			return ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		} catch (RuntimeException e) {
+			throw new IllegalStateException(e.getMessage(), e);
+		}
 	}
 
 	public static HttpServletRequest getRequest() {
 		try {
-			return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+			return getRequiredRequest();
 		} catch (RuntimeException e) {
 			return null;
 		}
@@ -119,7 +123,7 @@ public abstract class WebUtils {
 	}
 
 	public static HttpSession getSession() {
-		return getRequest().getSession();
+		return getRequiredRequest().getSession();
 	}
 
 	public static <T> T getSessionAttr(String attrName) {
