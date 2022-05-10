@@ -1,8 +1,5 @@
 package com.github.paganini2008.springplayer.upms;
 
-import java.io.File;
-
-import org.apache.commons.io.FileUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,12 +25,6 @@ public class UpmsApplication {
 
 	static {
 		System.setProperty("spring.devtools.restart.enabled", "false");
-
-		File logDir = FileUtils.getFile(FileUtils.getUserDirectory(), "logs", "spring-player-upms-service");
-		if (!logDir.exists()) {
-			logDir.mkdirs();
-		}
-		System.setProperty("LOG_BASE", logDir.getAbsolutePath());
 	}
 
 	public static void main(String[] args) {

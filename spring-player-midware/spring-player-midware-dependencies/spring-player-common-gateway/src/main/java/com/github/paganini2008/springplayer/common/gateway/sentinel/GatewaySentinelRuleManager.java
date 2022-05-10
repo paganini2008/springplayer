@@ -21,7 +21,7 @@ import com.github.paganini2008.springplayer.common.sentinel.redis.SentinelRulePu
 import com.github.paganini2008.springplayer.common.sentinel.redis.SentinelRuleUpdateEventListenerContainer;
 import com.github.paganini2008.springplayer.common.utils.JacksonUtils;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -33,7 +33,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Component
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class GatewaySentinelRuleManager {
 
 	public static final String SENTINEL_GATEWAY_RULE = "rule";

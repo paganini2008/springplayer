@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.paganini2008.devtools.collection.CollectionUtils;
-import com.github.paganini2008.springplayer.common.SimpleErrorCode;
+import com.github.paganini2008.springplayer.common.upms.vo.DeptVO;
+import com.github.paganini2008.springplayer.common.upms.vo.EnterpriseVO;
+import com.github.paganini2008.springplayer.common.upms.vo.PermissionVO;
+import com.github.paganini2008.springplayer.common.upms.vo.RoleVO;
+import com.github.paganini2008.springplayer.common.upms.vo.UserVO;
 import com.github.paganini2008.springplayer.upms.ErrorCodes;
 import com.github.paganini2008.springplayer.upms.UpmsException;
 import com.github.paganini2008.springplayer.upms.model.Dept;
@@ -25,11 +29,6 @@ import com.github.paganini2008.springplayer.upms.service.PermissionService;
 import com.github.paganini2008.springplayer.upms.service.RoleEmployeeService;
 import com.github.paganini2008.springplayer.upms.service.RolePermissionService;
 import com.github.paganini2008.springplayer.upms.service.RoleService;
-import com.github.paganini2008.springplayer.upms.vo.DeptVO;
-import com.github.paganini2008.springplayer.upms.vo.EnterpriseVO;
-import com.github.paganini2008.springplayer.upms.vo.PermissionVO;
-import com.github.paganini2008.springplayer.upms.vo.RoleVO;
-import com.github.paganini2008.springplayer.upms.vo.UserVO;
 
 /**
  * 

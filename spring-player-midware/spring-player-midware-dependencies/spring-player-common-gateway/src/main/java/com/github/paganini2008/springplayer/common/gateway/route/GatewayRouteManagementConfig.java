@@ -23,8 +23,8 @@ import com.github.paganini2008.springplayer.common.gateway.utils.JdbcInitializer
  * @version 1.0.0
  */
 @AutoConfigureBefore(GatewayAutoConfiguration.class)
-@MapperScan("com.github.paganini2008.springplayer.gateway.route.mapper")
-@ComponentScan("com.github.paganini2008.springplayer.gateway.route")
+@MapperScan("com.github.paganini2008.springplayer.common.gateway.route.mapper")
+@ComponentScan("com.github.paganini2008.springplayer.common.gateway.route")
 @ConditionalOnProperty(name = "spring.cloud.gateway.route.management.enabled", matchIfMissing = true)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.REACTIVE)
 @Configuration(proxyBeanMethods = false)

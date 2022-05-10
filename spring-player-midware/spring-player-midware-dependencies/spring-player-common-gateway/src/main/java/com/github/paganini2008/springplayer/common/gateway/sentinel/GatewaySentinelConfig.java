@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
  * @author Fred Feng
  * @version 1.0.0
  */
-@MapperScan("com.github.paganini2008.springplayer.gateway.sentinel.mapper")
-@ComponentScan("com.github.paganini2008.springplayer.gateway.sentinel")
+@MapperScan("com.github.paganini2008.springplayer.common.gateway.sentinel.mapper")
+@ComponentScan("com.github.paganini2008.springplayer.common.gateway.sentinel")
 @Configuration(proxyBeanMethods = false)
 public class GatewaySentinelConfig {
 }

@@ -16,7 +16,7 @@ import com.github.paganini2008.springplayer.common.monitor.crumb.TraceStore;
  * @author Fred Feng
  * @version 1.0.0
  */
-@ComponentScan("com.github.paganini2008.springplayer.gateway.crumb")
+@ComponentScan("com.github.paganini2008.springplayer.common.gateway.crumb")
 @Configuration(proxyBeanMethods = false)
 public class GatewayCrumbConfig {
 

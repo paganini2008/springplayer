@@ -97,7 +97,11 @@ public class HttpRequestContextHolder extends GenericFilterBean {
 	}
 
 	public static HttpRequestInfo get() {
-		return ttl.get();
+		HttpRequestInfo info = ttl.get();
+		if (info == null) {
+			info = new HttpRequestInfo();
+		}
+		return info;
 	}
 
 	public static HttpHeaders getHeaders() {

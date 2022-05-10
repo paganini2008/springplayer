@@ -17,10 +17,10 @@
 			<onMatch>DENY</onMatch>
 			<onMismatch>ACCEPT</onMismatch>
 		</filter>
-		<file>${LOG_BASE}/app-info.log</file>
+		<file>logs/app-info.log</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_BASE}/history/app-info.%d{yyyy-MM-dd}-%i.log
+			<fileNamePattern>logs/history/app-info.%d{yyyy-MM-dd}-%i.log
 			</fileNamePattern>
 			<maxHistory>10</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy
@@ -36,7 +36,7 @@
 	</appender>
 
 	<appender name="applog"
-		class="com.github.paganini2008.springplayer.logback.KafkaLoggingAppender">
+		class="com.github.paganini2008.springplayer.common.logging.kafka.KafkaLoggingAppender">
 		<topic>appTraceSpan</topic>
 		<applicationName>spring-player-gateway-service</applicationName>
 		<kafkaSettings>
@@ -47,7 +47,7 @@
 			buffer.memory=33554432
 			acks=1
 			key.serializer=org.apache.kafka.common.serialization.StringSerializer
-			value.serializer=com.github.paganini2008.springplayer.logging.common.AppLogEntryJsonSerializer
+			value.serializer=com.github.paganini2008.springplayer.common.logging.kafka.AppLogEntryJsonSerializer
 			 ]]>
 		</kafkaSettings>
 	</appender>
@@ -57,10 +57,10 @@
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>ERROR</level>
 		</filter>
-		<file>${LOG_BASE}/app-error.log</file>
+		<file>logs/app-error.log</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_BASE}/history/app-error.%d{yyyy-MM-dd}-%i.log
+			<fileNamePattern>logs/history/app-error.%d{yyyy-MM-dd}-%i.log
 			</fileNamePattern>
 			<maxHistory>10</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy

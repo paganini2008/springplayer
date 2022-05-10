@@ -63,7 +63,7 @@ info:
   app:
     name: spring-player-gateway-service
   company:
-    name: JMS
+    name: Apache Software
   build:
     artifactId: spring-player-gateway-service
     version: 1.0.0

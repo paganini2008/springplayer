@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiOperation;
  *
  * @version 2.0.5
  */
-@Api(tags = "ID生成API")
+@Api(tags = "全局ID生成API")
 @RequestMapping("/id")
 @RestController
 public class IdController {
@@ -27,13 +27,13 @@ public class IdController {
 	@Autowired
 	private IdGenerator idGenerator;
 
-	@ApiOperation(value = "下一个ID", notes = "下一个ID")
+	@ApiOperation(value = "获取下一个ID", notes = "获取下一个ID")
 	@GetMapping("/next")
 	public ApiResult<Long> getNextValue() {
 		return ApiResult.ok(idGenerator.generateId());
 	}
 
-	@ApiOperation(value = "当前ID", notes = "当前ID")
+	@ApiOperation(value = "获取当前ID", notes = "获取当前ID")
 	@GetMapping("/current")
 	public ApiResult<Long> getCurrentValue() {
 		return ApiResult.ok(idGenerator.currentId());

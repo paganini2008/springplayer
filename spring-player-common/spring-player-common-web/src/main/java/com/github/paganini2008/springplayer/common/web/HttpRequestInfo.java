@@ -23,6 +23,6 @@ public class HttpRequestInfo implements Serializable {
 	private static final long serialVersionUID = 5359161967793485293L;
 	private String method;
 	private String path;
-	private HttpHeaders headers;
+	private HttpHeaders headers = new HttpHeaders();
 
 }

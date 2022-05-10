@@ -1,11 +1,11 @@
-package com.github.paganini2008.springplayer.upms.api;
+package com.github.paganini2008.springplayer.common.upms.api;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.github.paganini2008.springplayer.common.ApiResult;
-import com.github.paganini2008.springplayer.upms.vo.EmployeeVO;
+import com.github.paganini2008.springplayer.common.upms.vo.EmployeeVO;
 
 /**
  * 

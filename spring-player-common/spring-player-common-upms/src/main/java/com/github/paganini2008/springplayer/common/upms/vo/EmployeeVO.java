@@ -1,4 +1,4 @@
-package com.github.paganini2008.springplayer.upms.vo;
+package com.github.paganini2008.springplayer.common.upms.vo;
 
 /**
  * 

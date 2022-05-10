@@ -13,7 +13,7 @@ import com.github.paganini2008.springplayer.common.ApiResult;
  *
  * @version 2.0.5
  */
-@FeignClient(contextId = "remoteIdService", name = "yl-platform-id-service")
+@FeignClient(contextId = "remoteIdService", name = "spring-player-id-service")
 public interface RemoteIdService {
 
 	@GetMapping("/id/next")

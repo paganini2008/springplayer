@@ -25,7 +25,7 @@ import com.github.paganini2008.springplayer.common.sentinel.SentinelRuleProperti
  */
 @EnableConfigurationProperties(SentinelRuleProperties.class)
 @ConditionalOnClass({ Config.class, SentinelAutoConfiguration.class, SentinelConfig.class })
-@ConditionalOnProperty(name = "yl.platform.sentinel.rule.store", havingValue = "apollo", matchIfMissing = true)
+@ConditionalOnProperty(name = "spring.cloud.sentinel.rule.store", havingValue = "apollo", matchIfMissing = true)
 public class SentinelApolloConfig {
 
 	@ConditionalOnMissingBean

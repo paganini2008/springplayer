@@ -23,8 +23,8 @@ import com.github.paganini2008.springplayer.common.oauth.info.PermissionInfo;
 import com.github.paganini2008.springplayer.common.oauth.info.RoleInfo;
 import com.github.paganini2008.springplayer.common.oauth.info.UpmsUser;
 import com.github.paganini2008.springplayer.common.oauth.info.UserInfo;
-import com.github.paganini2008.springplayer.upms.api.RemoteUserService;
-import com.github.paganini2008.springplayer.upms.vo.UserVO;
+import com.github.paganini2008.springplayer.common.upms.api.RemoteUserService;
+import com.github.paganini2008.springplayer.common.upms.vo.UserVO;
 
 import lombok.RequiredArgsConstructor;
 

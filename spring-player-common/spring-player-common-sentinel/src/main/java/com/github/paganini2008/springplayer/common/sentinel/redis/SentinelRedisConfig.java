@@ -30,7 +30,7 @@ import com.github.paganini2008.springplayer.common.sentinel.SentinelRuleProperti
  */
 @AutoConfigureAfter(RedisAutoConfiguration.class)
 @EnableConfigurationProperties(SentinelRuleProperties.class)
-@ConditionalOnProperty(name = "yl.platform.sentinel.rule.store", havingValue = "redis")
+@ConditionalOnProperty(name = "spring.cloud.sentinel.rule.store", havingValue = "redis")
 @ConditionalOnClass({ RedisOperations.class, SentinelAutoConfiguration.class, SentinelConfig.class })
 @ConditionalOnBean(RedisConnectionFactory.class)
 public class SentinelRedisConfig {
@@ -76,7 +76,7 @@ public class SentinelRedisConfig {
 		return new SentinelRuleAutoInitializer(sentinelRedisProperties.getParamFlowRuleKeys(), RuleType.PARAM_FLOW, redisRuleManager);
 	}
 
-	@ComponentScan("com.yl.platform.common.sentinel.redis")
+	@ComponentScan("com.github.paganini2008.springplayer.common.sentinel.redis")
 	@Configuration
 	public static class EmbeddedConfig {
 	}
