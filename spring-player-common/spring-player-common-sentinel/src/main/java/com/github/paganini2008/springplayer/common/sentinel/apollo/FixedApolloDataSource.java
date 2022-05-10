@@ -20,7 +20,7 @@ import com.google.common.collect.Sets;
  * 
  * FixedApolloDataSource
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class FixedApolloDataSource<T> extends AbstractDataSource<String[], T> {

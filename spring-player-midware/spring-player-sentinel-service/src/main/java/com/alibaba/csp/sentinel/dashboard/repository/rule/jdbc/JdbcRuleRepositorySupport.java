@@ -27,7 +27,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
  * 
  * 支持Jdbc的方式存储规则配置
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

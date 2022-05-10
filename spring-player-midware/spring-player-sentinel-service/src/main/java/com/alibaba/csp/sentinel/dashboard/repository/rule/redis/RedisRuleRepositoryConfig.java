@@ -18,7 +18,7 @@ import com.alibaba.csp.sentinel.dashboard.repository.rule.RuleRepository;
  * 
  * RedisRuleRepositoryConfig
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

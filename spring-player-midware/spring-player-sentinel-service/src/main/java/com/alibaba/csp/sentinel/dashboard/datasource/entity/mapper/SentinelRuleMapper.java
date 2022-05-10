@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 
  * SentinelRuleMapper
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

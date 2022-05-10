@@ -8,7 +8,7 @@ import com.github.paganini2008.springplayer.common.ErrorCode;
  * 
  * MessageLocalization
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public interface MessageLocalization {

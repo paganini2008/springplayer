@@ -9,7 +9,7 @@ import com.github.paganini2008.springplayer.common.context.MessageLocalization;
  * 
  * I18nMessageLocalization
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class I18nMessageLocalization implements MessageLocalization {

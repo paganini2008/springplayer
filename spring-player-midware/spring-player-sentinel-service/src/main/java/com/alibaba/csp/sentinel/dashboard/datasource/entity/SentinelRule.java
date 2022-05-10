@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * 
  * SentinelRule
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

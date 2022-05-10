@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 
  * SentinelRuleService
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

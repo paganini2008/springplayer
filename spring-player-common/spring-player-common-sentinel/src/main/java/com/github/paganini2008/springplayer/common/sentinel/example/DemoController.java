@@ -18,7 +18,7 @@ package com.github.paganini2008.springplayer.common.sentinel.example;
 // * 
 // * DemoController
 // *
-// * @author Feng Yan
+// * @author Fred Feng
 // * @version 1.0.0
 // */
 //@RestController

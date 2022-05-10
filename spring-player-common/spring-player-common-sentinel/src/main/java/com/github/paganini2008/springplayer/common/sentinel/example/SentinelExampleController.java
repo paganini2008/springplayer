@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
  * 
  * SentinelExampleController
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 @Slf4j

@@ -15,7 +15,7 @@ package com.github.paganini2008.springplayer.common.sentinel.example;
 // * 
 // * DemoResourceService
 // *
-// * @author Feng Yan
+// * @author Fred Feng
 // * @version 1.0.0
 // */
 //@SentinelResource(value = "demoResourceService", fallbackClass = DemoResourceServiceFallback.class, blockHandlerClass = DemoResourceServiceFallback.class)

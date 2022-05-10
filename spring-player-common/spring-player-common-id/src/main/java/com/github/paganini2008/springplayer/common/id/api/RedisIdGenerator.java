@@ -16,7 +16,7 @@ import com.github.paganini2008.springplayer.common.id.IdGenerator;
  * 
  * RedisIdGenerator
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class RedisIdGenerator implements IdGenerator {
@@ -70,7 +70,7 @@ public class RedisIdGenerator implements IdGenerator {
 	 * 
 	 * ThreadSafeSupplier
 	 *
-	 * @author Feng Yan
+	 * @author Fred Feng
 	 * @version 1.0.0
 	 */
 	static class ThreadSafeSupplier implements Supplier<RedisAtomicLong> {

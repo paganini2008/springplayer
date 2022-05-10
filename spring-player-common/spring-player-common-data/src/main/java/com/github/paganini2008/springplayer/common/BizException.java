@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
  * 
  * BizException
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class BizException extends RuntimeException implements ExceptionDescriptor {

@@ -7,7 +7,7 @@ import com.github.paganini2008.springplayer.common.id.IdGeneratorFactory;
  * 
  * Uuid1IdGeneratorFactory
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class Uuid1IdGeneratorFactory implements IdGeneratorFactory {

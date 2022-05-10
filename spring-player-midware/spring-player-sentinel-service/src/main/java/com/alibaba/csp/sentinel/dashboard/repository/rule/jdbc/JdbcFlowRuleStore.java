@@ -24,7 +24,7 @@ import com.alibaba.csp.sentinel.slots.block.flow.ClusterFlowConfig;
  * 
  * JdbcFlowRuleStore
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

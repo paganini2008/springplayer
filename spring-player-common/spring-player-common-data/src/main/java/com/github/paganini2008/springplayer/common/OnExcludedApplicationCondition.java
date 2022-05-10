@@ -14,7 +14,7 @@ import com.github.paganini2008.devtools.ArrayUtils;
  * 
  * OnExcludedApplicationCondition
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

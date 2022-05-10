@@ -23,7 +23,7 @@ import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.SystemRuleEntit
  * 
  * JdbcSystemRuleStore
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

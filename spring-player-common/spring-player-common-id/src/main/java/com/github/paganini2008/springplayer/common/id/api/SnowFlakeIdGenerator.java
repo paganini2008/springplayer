@@ -9,7 +9,7 @@ import cn.hutool.core.util.IdUtil;
  * 
  * SnowFlakeIdGenerator
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public class SnowFlakeIdGenerator implements IdGenerator {

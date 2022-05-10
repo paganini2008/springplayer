@@ -40,7 +40,7 @@ import com.alibaba.csp.sentinel.util.AssertUtil;
  * 
  * 支持Redis的方式存储规则配置
  *
- * @author Feng Yan
+ * @author Fred Feng
  *
  * @version 2.0.5
  */

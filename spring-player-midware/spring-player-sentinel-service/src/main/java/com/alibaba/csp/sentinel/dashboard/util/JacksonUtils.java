@@ -18,7 +18,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
  * 
  * JacksonUtils
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 public abstract class JacksonUtils {

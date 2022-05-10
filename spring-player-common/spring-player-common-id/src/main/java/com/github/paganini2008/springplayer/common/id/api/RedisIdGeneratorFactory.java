@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
  * 
  * RedisIdGeneratorFactory
  *
- * @author Feng Yan
+ * @author Fred Feng
  * @version 1.0.0
  */
 @RequiredArgsConstructor
