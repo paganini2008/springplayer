@@ -6,7 +6,6 @@ import static com.github.paganini2008.springplayer.common.sentinel.SentinelConst
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Component;
 
 import com.github.paganini2008.springplayer.common.redis.pubsub.RedisMessageEvent;
 
@@ -20,7 +19,6 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0.0
  */
 @Slf4j
-@Component
 public class SentinelRuleEventPublisher implements ApplicationEventPublisherAware {
 
 	private ApplicationEventPublisher applicationEventPublisher;

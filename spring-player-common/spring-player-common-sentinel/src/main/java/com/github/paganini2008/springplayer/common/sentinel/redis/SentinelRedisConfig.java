@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -39,6 +37,16 @@ public class SentinelRedisConfig {
 	public RuleManager redisRuleManager(RedisTemplate<String, Object> redisTemplate,
 			SentinelRuleUpdateEventListenerContainer listenerContainer) {
 		return new RedisRuleManager(redisTemplate, listenerContainer);
+	}
+
+	@Bean
+	public SentinelRuleUpdateEventListenerContainer sentinelRuleUpdateEventListenerContainer() {
+		return new SentinelRuleUpdateEventListenerContainer();
+	}
+	
+	@Bean
+	public SentinelRuleEventPublisher sentinelRuleEventPublisher() {
+		return new SentinelRuleEventPublisher();
 	}
 
 	@ConditionalOnExpression("!'${spring.cloud.sentinel.rule.authority-rule-keys}'.isEmpty()")
@@ -74,11 +82,6 @@ public class SentinelRedisConfig {
 	public SentinelRuleAutoInitializer paramFlowRuleInitializer(SentinelRuleProperties sentinelRedisProperties,
 			RedisRuleManager redisRuleManager) {
 		return new SentinelRuleAutoInitializer(sentinelRedisProperties.getParamFlowRuleKeys(), RuleType.PARAM_FLOW, redisRuleManager);
-	}
-
-	@ComponentScan("com.github.paganini2008.springplayer.common.sentinel.redis")
-	@Configuration
-	public static class EmbeddedConfig {
 	}
 
 }

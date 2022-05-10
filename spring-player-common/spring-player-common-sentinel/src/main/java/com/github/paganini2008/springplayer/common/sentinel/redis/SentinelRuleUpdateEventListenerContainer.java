@@ -4,7 +4,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.context.ApplicationListener;
-import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Component;
  * @author Fred Feng
  * @version 1.0.0
  */
-@Component
 public class SentinelRuleUpdateEventListenerContainer implements ApplicationListener<SentinelRuleUpdateEvent> {
 
 	private final Map<String, SentinelRuleUpdateEventListener> listeners = new ConcurrentHashMap<>();
