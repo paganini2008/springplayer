@@ -23,7 +23,7 @@ import reactor.core.publisher.Mono;
 
 /**
  * 
- * 支持多版本API过滤请求头Header: API_VERSION
+ * MultiVersionRequestHeaderFilter
  *
  * @author Fred Feng
  * @version 1.0.0

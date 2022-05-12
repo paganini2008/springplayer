@@ -33,7 +33,7 @@ import reactor.core.publisher.Mono;
 @CrossOrigin(origins = "*")
 @Validated
 @RestController
-@RequestMapping("/admin/yl-gateway-admin/monitor")
+@RequestMapping("/gateway-admin/monitor")
 public class GatewayMonitorEndpoint {
 
 	@Autowired(required = false)

@@ -1,9 +1,9 @@
 package com.github.paganini2008.springplayer.common.gateway.monitor;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -13,9 +13,9 @@ import org.springframework.context.annotation.Configuration;
  * @author Fred Feng
  * @version 1.0.0
  */
-@Configuration(proxyBeanMethods = false)
-@ConditionalOnProperty(name = "spring.cloud.gateway.monitor.enabled", matchIfMissing = true)
+@ComponentScan("com.github.paganini2008.springplayer.common.gateway.monitor")
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.REACTIVE)
+@Configuration(proxyBeanMethods = false)
 public class GatewayMonitorConfig {
 
 	@Bean

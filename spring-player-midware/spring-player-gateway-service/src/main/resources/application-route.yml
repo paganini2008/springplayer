@@ -20,3 +20,9 @@ spring:
             - Path=/security/**
           filters:
             - StripPrefix=1
+        - id: test
+          uri: https://v0.yiketianqi.com
+          predicates:
+            - Path=/yq/**
+          filters:
+            - StripPrefix=1

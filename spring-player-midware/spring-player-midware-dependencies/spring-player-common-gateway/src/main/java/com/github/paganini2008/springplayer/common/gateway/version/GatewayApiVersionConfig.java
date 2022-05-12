@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Configuration;
  * @author Fred Feng
  * @version 1.0.0
  */
+@ConditionalOnProperty("spring.cloud.gateway.api-version.enabled")
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnProperty("spring.cloud.gateway.apiversion.enabled")
 public class GatewayApiVersionConfig {
 
 	@Bean
