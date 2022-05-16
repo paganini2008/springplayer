@@ -17,12 +17,14 @@ public class RemoteIdGenerator implements IdGenerator {
 
 	@Override
 	public long currentId() {
-		return remoteIdService.getCurrentValue().getData();
+		Long data = remoteIdService.getCurrentValue().getData();
+		return data != null ? data.longValue() : 0;
 	}
 
 	@Override
 	public long generateId() {
-		return remoteIdService.getNextValue().getData();
+		Long data = remoteIdService.getNextValue().getData();
+		return data != null ? data.longValue() : 0;
 	}
 
 }
