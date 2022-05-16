@@ -13,6 +13,7 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.paganini2008.springplayer.common.context.MessageLocalization;
 import com.github.paganini2008.springplayer.common.oauth.FailureAuthenticationEntryPoint;
 import com.github.paganini2008.springplayer.common.oauth.GlobalAccessDeniedHandler;
 
@@ -33,14 +34,15 @@ import lombok.SneakyThrows;
 public class OAuth2ServerWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private final ObjectMapper objectMapper;
+	private final MessageLocalization messageLocalization;
 
 	@Override
 	@SneakyThrows
 	protected void configure(HttpSecurity http) {
 		http.csrf().disable().httpBasic().disable().cors().and().authorizeRequests().antMatchers("/oauth/**", "/actuator/**").permitAll()
 				.anyRequest().authenticated().and().exceptionHandling()
-				.authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper))
-				.accessDeniedHandler(new GlobalAccessDeniedHandler(objectMapper));
+				.authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper, messageLocalization))
+				.accessDeniedHandler(new GlobalAccessDeniedHandler(objectMapper, messageLocalization));
 	}
 
 	@Override

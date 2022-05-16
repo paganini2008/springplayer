@@ -23,6 +23,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.paganini2008.springplayer.common.context.MessageLocalization;
 import com.github.paganini2008.springplayer.common.oauth.FailureAuthenticationEntryPoint;
 
 import lombok.AllArgsConstructor;
@@ -50,6 +51,8 @@ public class OAuth2ServerConfig extends AuthorizationServerConfigurerAdapter {
 
 	private final ObjectMapper objectMapper;
 
+	private final MessageLocalization messageLocalization;
+
 	@Override
 	@SneakyThrows
 	public void configure(ClientDetailsServiceConfigurer clients) {
@@ -59,8 +62,8 @@ public class OAuth2ServerConfig extends AuthorizationServerConfigurerAdapter {
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
 		oauthServer.passwordEncoder(passwordEncoder()).allowFormAuthenticationForClients()
-				.authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper)).checkTokenAccess("isAuthenticated()")
-				.tokenKeyAccess("permitAll()");
+				.authenticationEntryPoint(new FailureAuthenticationEntryPoint(objectMapper, messageLocalization))
+				.checkTokenAccess("isAuthenticated()").tokenKeyAccess("permitAll()");
 	}
 
 	@Override

@@ -18,39 +18,39 @@
 	</properties>
 
 	<modules>
-		<module>../spring-player-common-data</module>
-		<module>../spring-player-common-web</module>
-		<module>../spring-player-common-redis</module>
-		<module>../spring-player-common-kafka</module>
-		<module>../spring-player-common-amqp</module>
-		<module>../spring-player-common-crumb</module>
-		<module>../spring-player-common-log</module>
-		<module>../spring-player-common-jdbc</module>
-		<module>../spring-player-common-jpa</module>
-		<module>../spring-player-common-validation</module>
-		<module>../spring-player-common-elasticsearch</module>
-		<module>../spring-player-common-mybatis</module>
-		<module>../spring-player-common-cache</module>
-		<module>../spring-player-common-feign</module>
-		<module>../spring-player-common-transaction</module>
-		<module>../spring-player-common-i18n</module>
-		<module>../spring-player-common-file</module>
-		<module>../spring-player-common-id</module>
-		<module>../spring-player-common-sentinel</module>
-		<module>../spring-player-common-upms</module>
-		<module>../spring-player-common-oauth</module>
-		<module>../spring-player-common-xxljob</module>
-		<module>../spring-player-common-apollo</module>
-		<module>../spring-player-common-email</module>
-		<module>../spring-player-common-dingtalk</module>
-		<module>../spring-player-common-swagger</module>
-		<module>../spring-player-common-sysinfo</module>
-		<module>../spring-player-common-vm</module>
-		<module>../spring-player-common-monitor</module>
-		<module>../spring-player-common-zookeeper</module>
-		<module>../spring-player-common-hystrix</module>
-		<module>../spring-player-common-quartz</module>
-		<module>../spring-player-common-messenger</module>
+		<module>spring-player-common-data</module>
+		<module>spring-player-common-web</module>
+		<module>spring-player-common-redis</module>
+		<module>spring-player-common-kafka</module>
+		<module>spring-player-common-amqp</module>
+		<module>spring-player-common-crumb</module>
+		<module>spring-player-common-log</module>
+		<module>spring-player-common-jdbc</module>
+		<module>spring-player-common-jpa</module>
+		<module>spring-player-common-validation</module>
+		<module>spring-player-common-elasticsearch</module>
+		<module>spring-player-common-mybatis</module>
+		<module>spring-player-common-cache</module>
+		<module>spring-player-common-feign</module>
+		<module>spring-player-common-transaction</module>
+		<module>spring-player-common-i18n</module>
+		<module>spring-player-common-file</module>
+		<module>spring-player-common-id</module>
+		<module>spring-player-common-sentinel</module>
+		<module>spring-player-common-upms</module>
+		<module>spring-player-common-oauth</module>
+		<module>spring-player-common-xxljob</module>
+		<module>spring-player-common-apollo</module>
+		<module>spring-player-common-email</module>
+		<module>spring-player-common-dingtalk</module>
+		<module>spring-player-common-swagger</module>
+		<module>spring-player-common-sysinfo</module>
+		<module>spring-player-common-vm</module>
+		<module>spring-player-common-monitor</module>
+		<module>spring-player-common-zookeeper</module>
+		<module>spring-player-common-hystrix</module>
+		<module>spring-player-common-quartz</module>
+		<module>spring-player-common-messenger</module>
 	</modules>
 
 	<dependencyManagement>
