@@ -41,7 +41,7 @@ public class JacksonExceptionSerializer extends StdSerializer<ExceptionDescripto
 		gen.writeObjectField("code", 0);
 		gen.writeStringField("msg", getI18nMessage(e.getErrorCode()));
 		gen.writeStringField("data", null);
-		gen.writeStringField("requestPath", "");
+		gen.writeStringField("requestPath", HttpRequestContextHolder.getPath());
 		String timestamp = HttpRequestContextHolder.getHeader(REQUEST_HEADER_TIMESTAMP);
 		long elapsed = 0;
 		if (StringUtils.isNotBlank(timestamp)) {
