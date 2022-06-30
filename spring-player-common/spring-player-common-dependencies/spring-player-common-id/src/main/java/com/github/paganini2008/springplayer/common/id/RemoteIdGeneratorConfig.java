@@ -14,7 +14,7 @@ import com.github.paganini2008.springplayer.common.ConditionalOnExcludedApplicat
  *
  * @version 2.0.5
  */
-@ConditionalOnExcludedApplication({ "yl-platform-id-service" })
+@ConditionalOnExcludedApplication({ "spring-player-id-service" })
 @Configuration(proxyBeanMethods = false)
 public class RemoteIdGeneratorConfig {
 
