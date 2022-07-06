@@ -1,0 +1,133 @@
+springplayer
+├── README.md
+├── spring-player-codegen
+│   ├── pom.xml
+│   ├── src
+│   │   └── main
+│   └── target
+│       ├── classes
+│       ├── generated-sources
+│       ├── maven-archiver
+│       ├── maven-status
+│       └── spring-player-codegen-1.0.0-RELEASE.jar
+├── spring-player-common
+│   ├── spring-player-common-dependencies
+│   │   ├── pom.xml
+│   │   ├── spring-player-common-amqp
+│   │   ├── spring-player-common-apollo
+│   │   ├── spring-player-common-cache
+│   │   ├── spring-player-common-crumb
+│   │   ├── spring-player-common-data
+│   │   ├── spring-player-common-dingtalk
+│   │   ├── spring-player-common-elasticsearch
+│   │   ├── spring-player-common-email
+│   │   ├── spring-player-common-feign
+│   │   ├── spring-player-common-file
+│   │   ├── spring-player-common-hystrix
+│   │   ├── spring-player-common-i18n
+│   │   ├── spring-player-common-id
+│   │   ├── spring-player-common-jdbc
+│   │   ├── spring-player-common-jpa
+│   │   ├── spring-player-common-kafka
+│   │   ├── spring-player-common-log
+│   │   ├── spring-player-common-messenger
+│   │   ├── spring-player-common-monitor
+│   │   ├── spring-player-common-mybatis
+│   │   ├── spring-player-common-oauth
+│   │   ├── spring-player-common-quartz
+│   │   ├── spring-player-common-redis
+│   │   ├── spring-player-common-sentinel
+│   │   ├── spring-player-common-swagger
+│   │   ├── spring-player-common-sysinfo
+│   │   ├── spring-player-common-transaction
+│   │   ├── spring-player-common-upms
+│   │   ├── spring-player-common-validation
+│   │   ├── spring-player-common-vm
+│   │   ├── spring-player-common-web
+│   │   ├── spring-player-common-xxljob
+│   │   └── spring-player-common-zookeeper
+│   └── spring-player-midware-dependencies
+│       ├── pom.xml
+│       ├── spring-player-common-gateway
+│       ├── spring-player-common-webflux
+│       ├── spring-player-common-webmvc
+│       ├── spring-player-common-websocket
+│       ├── spring-player-webflux-dependencies
+│       └── spring-player-webmvc-dependencies
+├── spring-player-dependencies
+│   └── pom.xml
+├── spring-player-midware
+│   ├── spring-player-application-template
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-application-webflux-template
+│   │   ├── logs
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-channel-service
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-crumb-service
+│   │   ├── logs
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-file-service
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-gateway-service
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-i18n-service
+│   │   ├── logs
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-id-service
+│   │   ├── logs
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-log-service
+│   │   ├── logs
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-messenger-service
+│   │   ├── lib
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-oauth-service
+│   │   ├── logs
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-popup-service
+│   │   ├── logs
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-registry-service
+│   │   ├── logs
+│   │   ├── pom.xml
+│   │   ├── src
+│   │   └── target
+│   ├── spring-player-sentinel-service
+│   │   ├── README.md
+│   │   ├── Sentinel_Dashboard_Feature.md
+│   │   ├── pom.xml
+│   │   ├── readme.txt
+│   │   ├── src
+│   │   └── target
+│   └── spring-player-upms-service
+│       ├── logs
+│       ├── pom.xml
+│       ├── src
+│       └── target
+└── test.txt

@@ -1,44 +1,69 @@
 # Springplayer Project
-### SpringPlayer is a scaffolding project for developing SpringCloud Framework. It can help developer raise developing efficiency quickly.
+
+SpringPlayer is a quick developing template for developing project based on <code>SpringCloud Framework</code>. It aim to  help developer rapidly build project development environment and  focus on  implementing on business logical code rather than maintaining repeated basic code of framework self.
 
 ``` shell
 springplayer
+├── README.md
 ├── spring-player-dependencies
+├── spring-player-codegen
 ├── spring-player-common
-│   ├── spring-player-common-dependencies
-│   ├── spring-player-common-amqp.jar
-│   ├── spring-player-common-cache.jar
-│   ├── spring-player-common-data.jar
-│   ├── spring-player-common-elasticsearch.jar
-│   ├── spring-player-common-feign.jar
-│   ├── spring-player-common-file.jar
-│   ├── spring-player-common-i18n.jar
-│   ├── spring-player-common-id.jar
-│   ├── spring-player-common-jdbc.jar
-│   ├── spring-player-common-jpa.jar
-│   ├── spring-player-common-kafka.jar
-│   ├── spring-player-common-log.jar
-│   ├── spring-player-common-mybatis.jar
-│   ├── spring-player-common-oauth.jar
-│   ├── spring-player-common-redis.jar
-│   ├── spring-player-common-sentinel.jar
-│   ├── spring-player-common-swagger.jar
-│   ├── spring-player-common-transaction.jar
-│   ├── spring-player-common-upms.jar
-│   ├── spring-player-common-validation.jar
-│   └── spring-player-common-xxljob.jar
+│   ├── spring-player-common-dependencies
+│   │   ├── spring-player-common-amqp
+│   │   ├── spring-player-common-apollo
+│   │   ├── spring-player-common-cache
+│   │   ├── spring-player-common-crumb
+│   │   ├── spring-player-common-data
+│   │   ├── spring-player-common-dingtalk
+│   │   ├── spring-player-common-elasticsearch
+│   │   ├── spring-player-common-email
+│   │   ├── spring-player-common-feign
+│   │   ├── spring-player-common-file
+│   │   ├── spring-player-common-hystrix
+│   │   ├── spring-player-common-i18n
+│   │   ├── spring-player-common-id
+│   │   ├── spring-player-common-jdbc
+│   │   ├── spring-player-common-jpa
+│   │   ├── spring-player-common-kafka
+│   │   ├── spring-player-common-log
+│   │   ├── spring-player-common-messenger
+│   │   ├── spring-player-common-monitor
+│   │   ├── spring-player-common-mybatis
+│   │   ├── spring-player-common-oauth
+│   │   ├── spring-player-common-quartz
+│   │   ├── spring-player-common-redis
+│   │   ├── spring-player-common-sentinel
+│   │   ├── spring-player-common-swagger
+│   │   ├── spring-player-common-sysinfo
+│   │   ├── spring-player-common-transaction
+│   │   ├── spring-player-common-upms
+│   │   ├── spring-player-common-validation
+│   │   ├── spring-player-common-vm
+│   │   ├── spring-player-common-web
+│   │   ├── spring-player-common-xxljob
+│   │   └── spring-player-common-zookeeper
+│   └── spring-player-midware-dependencies
+│       ├── spring-player-common-gateway
+│       ├── spring-player-common-webflux
+│       ├── spring-player-common-webmvc
+│       ├── spring-player-common-websocket
+│       ├── spring-player-webflux-dependencies
+│       └── spring-player-webmvc-dependencies
 └── spring-player-midware
-    ├── spring-player-file-service.jar
-    ├── spring-player-gateway-service.jar
-    ├── spring-player-i18n-service.jar
-    ├── spring-player-oauth-service.jar
-    ├── spring-player-registry-service.jar
-    ├── spring-player-upms-service.jar
-    └── spring-player-midware-dependencies
-       ├── spring-player-common-webflux.jar
-       ├── spring-player-common-webmvc.jar
-       ├── spring-player-common-websocket.jar
-       ├── spring-player-webflux-dependencies
-       └── spring-player-webmvc-dependencies
+     ├── spring-player-application-template
+     ├── spring-player-application-webflux-template
+     ├── spring-player-channel-service
+     ├── spring-player-crumb-service
+     ├── spring-player-file-service
+     ├── spring-player-gateway-service
+     ├── spring-player-i18n-service
+     ├── spring-player-id-service
+     ├── spring-player-log-service
+     ├── spring-player-messenger-service
+     ├── spring-player-oauth-service
+     ├── spring-player-popup-service
+     ├── spring-player-registry-service
+     ├── spring-player-sentinel-service
+     └── spring-player-upms-service
 
 ```
