@@ -51,7 +51,7 @@ public class CodeGeneratorMojo extends AbstractMojo {
 	private String dbType = "mysql";
 
 	@Parameter(property = "packageName")
-	private String packageName = "com.yl.platform";
+	private String packageName = "com.demo";
 
 	@Parameter(property = "includedTables")
 	private String includedTables;

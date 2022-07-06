@@ -1,5 +1,4 @@
 package com.github.paganini2008.springplayer.common.sentinel.example;
-//package com.yl.platform.sentinel.example;
 //
 //import java.util.Map;
 //
@@ -12,7 +11,6 @@ package com.github.paganini2008.springplayer.common.sentinel.example;
 //import org.springframework.web.bind.annotation.RestController;
 //
 //import com.github.paganini2008.devtools.collection.MapUtils;
-//import com.yl.platform.sentinel.example.DemoResourceService.LoginDTO;
 //
 ///**
 // * 

@@ -1,2 +1,2 @@
-com.yl.platform.common.feign.FeignClientCandidatesAutoConfiguration=\
-  com.yl.platform.common.messenger.api.RemoteMessageService
+com.github.paganini2008.springplayer.common.feign.FeignClientCandidatesAutoConfiguration=\
+  com.github.paganini2008.springplayer.common.messenger.api.RemoteMessageService

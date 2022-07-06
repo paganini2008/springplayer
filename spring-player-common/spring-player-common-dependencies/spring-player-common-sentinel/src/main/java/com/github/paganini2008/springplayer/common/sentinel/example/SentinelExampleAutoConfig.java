@@ -26,7 +26,7 @@ import com.github.paganini2008.springplayer.common.sentinel.RuleManager;
  * @author Fred Feng
  * @version 1.0.0
  */
-@ConditionalOnProperty("yl.platform.sentinel.example.enabled")
+@ConditionalOnProperty("springplayer.sentinel.example.enabled")
 public class SentinelExampleAutoConfig {
 
 	/**
@@ -104,7 +104,7 @@ public class SentinelExampleAutoConfig {
 
 	}
 
-	@ComponentScan("com.yl.platform.common.sentinel.example")
+	@ComponentScan("com.github.paganini2008.springplayer.common.sentinel.example")
 	@Configuration
 	public static class EmbeddedConfig {
 	}

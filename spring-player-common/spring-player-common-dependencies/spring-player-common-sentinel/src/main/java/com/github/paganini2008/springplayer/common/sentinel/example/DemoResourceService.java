@@ -1,5 +1,4 @@
 package com.github.paganini2008.springplayer.common.sentinel.example;
-//package com.yl.platform.sentinel.example;
 //
 //import java.util.Map;
 //import java.util.UUID;
