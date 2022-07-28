@@ -41,7 +41,7 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
   mail:
-    host: smtp.tom.com
+    host: smtp.test.com
     username: tomcat@test.com
     password: 111111
     default-encoding: UTF-8
