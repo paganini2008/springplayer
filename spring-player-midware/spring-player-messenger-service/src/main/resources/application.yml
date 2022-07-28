@@ -42,8 +42,8 @@ spring:
       connection-timeout: 30000
   mail:
     host: smtp.tom.com
-    username: allyes-tester@tom.com
-    password: 12345678
+    username: tomcat@test.com
+    password: 111111
     default-encoding: UTF-8
   kafka:
     bootstrap-servers: 192.168.159.1:9092
