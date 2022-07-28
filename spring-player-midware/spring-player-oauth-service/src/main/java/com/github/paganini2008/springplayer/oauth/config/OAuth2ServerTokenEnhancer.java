@@ -25,7 +25,7 @@ public class OAuth2ServerTokenEnhancer implements TokenEnhancer {
 			Map<String, Object> info = new HashMap<>();
 			UpmsUser user = (UpmsUser) authentication.getUserAuthentication().getPrincipal();
 			info.put("user", user);
-			info.put("license", "Apache Spring Player");
+			info.put("license", "Spring Player");
 			((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);
 		}
 		return accessToken;

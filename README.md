@@ -1,6 +1,20 @@
-# Springplayer Project
+# SpringPlayer Framework
 
-SpringPlayer is a quick developing template for developing project based on <code>SpringCloud Framework</code>. It aim to  help developer rapidly build project development environment and  focus on  implementing on business logical code rather than maintaining repeated basic code of framework self.
+<code>SpringPlayer</code> is a quick-start template framework for developing project based on <code>SpringCloud Framework</code>. It aim to  help developer rapidly build project development environment and  focus on  implementing on business logical code rather than maintaining repeated basic code of framework self.
+
+
+
+## Compatibility
+
+1. Jdk8 (or later)
+2. `SpringBoot` Framework 2.3.12.RELEASE
+3. <code>SpringCloud</code> Framework Hoxton.SR12
+4. `Redis` 4.x (or later)
+5. MySQL 8.x
+
+
+
+## Hierachy
 
 ``` shell
 springplayer
@@ -65,5 +79,38 @@ springplayer
      ├── spring-player-registry-service
      ├── spring-player-sentinel-service
      └── spring-player-upms-service
+
+```
+
+
+
+## Quick Start
+
+#### Install Spring Mvc Application
+
+``` shell
+cd springplayer/spring-player-midware/spring-player-application-template
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype/
+mvn install
+mvn archetype:crawl
+mvn archetype:update-local-catalog
+mvn archetype:generate
+
+```
+
+
+#### Install Spring Webflux Application
+
+``` shell
+cd springplayer/spring-player-midware/spring-player-application-webflux-template
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype/
+mvn install
+mvn archetype:crawl
+mvn archetype:update-local-catalog
+mvn archetype:generate
 
 ```
